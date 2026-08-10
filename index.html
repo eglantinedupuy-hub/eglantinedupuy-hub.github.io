@@ -150,6 +150,52 @@
         color: #555;
       }
 
+      /* ---------- ABOUT ME: info sections ---------- */
+      .info-section {
+        margin-top: 24px;
+      }
+      .info-section h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+        color: #2c3e50;
+      }
+      .info-section p {
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+      .info-section a {
+        color: #2c3e50;
+      }
+
+      /* ---------- EDUCATION / EXPERIENCE entries ---------- */
+      .edu-entry,
+      .exp-entry {
+        margin-bottom: 16px;
+      }
+      .edu-entry:last-child,
+      .exp-entry:last-child {
+        margin-bottom: 0;
+      }
+      .edu-title,
+      .exp-entry h3 {
+        font-size: 15px;
+        margin-bottom: 2px;
+      }
+      .edu-meta,
+      .exp-meta {
+        font-size: 13px;
+        color: #777;
+        margin-bottom: 4px;
+      }
+      .exp-entry ul {
+        margin-left: 18px;
+        font-size: 14px;
+        color: #444;
+      }
+      .exp-entry li {
+        margin-bottom: 4px;
+      }
+
       /* ---------- MOBILE: stack cards vertically ---------- */
       @media (max-width: 640px) {
         .cards {
@@ -181,6 +227,9 @@
         <button class="tab-button active" onclick="showTab('about')">
           About Me
         </button>
+        <button class="tab-button" onclick="showTab('experience')">
+          Professional Experience
+        </button>
         <button class="tab-button" onclick="showTab('projects')">
           Projects
         </button>
@@ -192,10 +241,83 @@
           <p>
             My name is Eglantine Dupuy and I am currently studying Masters of Management in Analytics @ McGill's Desautels Faculty of Management. Previously I worked as a Research Associate @ Dealroom.co for 2.5 years in Amsterdam. My role involved selling, end-to-end project management and report delivery. This included developing and maintaining a robust taxonomy for emerging sectors, data validation, conducting quantitative analysis and qualitative research, and crafting insightful narratives. Following my Masters graduation in Summer 2027, I aspire to join a Venture Capital Fund in Montreal in a data scientist role.
           </p>
+
+          <div class="info-section">
+            <h3>Contact</h3>
+            <p>Phone: (+1) 263 376 5654</p>
+            <p>Email: dupuyeglantine1@gmail.com</p>
+            <p>
+              LinkedIn:
+              <a href="https://www.linkedin.com/in/eglantine-dupuy/" target="_blank" rel="noopener">https://www.linkedin.com/in/eglantine-dupuy/</a>
+            </p>
+          </div>
+
+          <div class="info-section">
+            <h3>Languages</h3>
+            <p>French — Native</p>
+            <p>English — Fluent</p>
+            <p>Spanish — Proficient</p>
+          </div>
+
+          <div class="info-section">
+            <h3>Skills</h3>
+            <p>Python, SQL, Microsoft Suite, GitHub</p>
+          </div>
+
+          <div class="info-section">
+            <h3>Education</h3>
+
+            <div class="edu-entry">
+              <p class="edu-title">McGill University, Desautels Faculty of Management — Master of Management in Analytics (MMA)</p>
+              <p class="edu-meta">Montreal, Canada — In Progress, Expected 2027</p>
+            </div>
+
+            <div class="edu-entry">
+              <p class="edu-title">IE University — Bachelor in Business Administration</p>
+              <p class="edu-meta">Madrid, Spain — Sep 2019–Jul 2023</p>
+              <p class="edu-meta">Graduated 8.77/10 GPA (Top 10% of class), Honors in Entrepreneurship & Innovation and Supply Chain Management</p>
+            </div>
+
+            <div class="edu-entry">
+              <p class="edu-title">McGill University — Exchange Semester, Desautels Faculty of Management</p>
+              <p class="edu-meta">Montreal, Canada — Jan–May 2022</p>
+              <p class="edu-meta">3.48 GPA</p>
+            </div>
+
+            <div class="edu-entry">
+              <p class="edu-title">International School of Brussels — International Baccalaureate</p>
+              <p class="edu-meta">Brussels, Belgium — Graduated May 2019</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- ---------- TAB 2: PROJECTS ---------- -->
+      <!-- ---------- TAB 2: PROFESSIONAL EXPERIENCE ---------- -->
+      <div id="experience" class="tab-content">
+        <div class="panel">
+          <div class="exp-entry">
+            <h3>Dealroom.co — Research Associate</h3>
+            <p class="exp-meta">Amsterdam, Netherlands — Sep 2023–Dec 2025</p>
+            <ul>
+              <li>Led end-to-end market intelligence reporting across Climate Tech, Deep Tech, and Health sectors, combining quantitative analysis, qualitative research, and data validation.</li>
+              <li>Authored a Blue Economy deep dive referenced at the UN World Ocean Conference and by the World Economic Forum.</li>
+              <li>Produced the most comprehensive industry report to date on Longevity for Speedinvest and Generali; shared insights on Dealroom's podcast.</li>
+              <li>Published 20+ market intelligence reports and presented at 5+ industry conferences.</li>
+            </ul>
+          </div>
+
+          <div class="exp-entry">
+            <h3>D2X Group — Jr. Business Developer (Internship)</h3>
+            <p class="exp-meta">Amsterdam, Netherlands — Jul–Dec 2022</p>
+            <ul>
+              <li>Produced research on new revenue opportunities, strategic partnerships, and industry developments for the CEO of an early-stage crypto derivatives trading platform.</li>
+              <li>Reported insights directly to the board of investors, executive committee, and financial regulators.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---------- TAB 3: PROJECTS ---------- -->
       <div id="projects" class="tab-content">
         <div class="cards">
           <!-- CARD 1 -->
