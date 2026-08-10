@@ -49,6 +49,20 @@
         justify-content: center;
         color: #888;
         font-size: 13px;
+        object-fit: cover;
+      }
+
+      header .links {
+        margin-top: 8px;
+      }
+      header .links a {
+        color: #2c3e50;
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      header .links a:hover {
+        text-decoration: underline;
       }
 
       header h1 {
@@ -151,11 +165,13 @@
          HEADER: photo, name, experiences
          ============================================================ -->
       <header>
-        <!-- Replace this div with <img src="your-photo.jpg" class="photo"> -->
-        <div class="photo">Photo</div>
+        <img src="photo.jpg" alt="Eglantine Dupuy" class="photo" />
 
-        <h1>Your Name</h1>
+        <h1>Eglantine Dupuy</h1>
         <p>Business Analyst · SQL · Python · Tableau</p>
+        <div class="links">
+          <a href="https://www.linkedin.com/in/eglantine-dupuy/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </header>
 
       <!-- ============================================================
