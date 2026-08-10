@@ -9,8 +9,12 @@
 
     <style>
       /* ============================================================
-       BASIC STYLES — students can tweak colors/fonts here
+       BASIC STYLES
        ============================================================ */
+      :root {
+        --accent: #1b4332;
+      }
+
       * {
         box-sizing: border-box;
         margin: 0;
@@ -19,82 +23,68 @@
 
       body {
         font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
         color: #222;
         background: #f7f7f7;
-        line-height: 1.5;
+        line-height: 1.6;
       }
 
       .container {
-        max-width: 900px;
+        max-width: 960px;
         margin: 0 auto;
-        padding: 40px 20px;
+        padding: 64px 28px;
       }
 
-      /* ---------- HEADER (photo + name + subheading) ---------- */
+      /* ---------- HEADER (photo + name) ---------- */
       header {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 48px;
       }
 
-      /* Empty space for photo — replace with your own <img> if you like */
-      .photo {
-        width: 140px;
-        height: 140px;
+      .photo-frame {
+        width: 180px;
+        height: 180px;
         border-radius: 50%;
-        background: #ddd;
-        border: 2px dashed #aaa;
-        margin: 0 auto 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #888;
-        font-size: 13px;
-        object-fit: cover;
+        overflow: hidden;
+        margin: 0 auto 24px;
+        border: 4px solid var(--accent);
       }
 
-      header .links {
-        margin-top: 8px;
-      }
-      header .links a {
-        color: #2c3e50;
-        font-size: 14px;
-        text-decoration: none;
-        font-weight: bold;
-      }
-      header .links a:hover {
-        text-decoration: underline;
+      .photo-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 20%;
+        transform: scale(1.5);
+        transform-origin: center 25%;
       }
 
       header h1 {
-        font-size: 28px;
+        font-size: 42px;
         margin-bottom: 6px;
-      } /* NAME */
-      header p {
-        font-size: 16px;
-        color: #555;
-      } /* EXPERIENCES */
+      }
 
       /* ---------- TABS ---------- */
       .tabs {
         display: flex;
         justify-content: center;
-        gap: 10px;
-        margin-bottom: 24px;
+        gap: 16px;
+        margin-bottom: 40px;
       }
 
       .tab-button {
-        padding: 10px 22px;
+        padding: 14px 30px;
         border: 1px solid #ccc;
         background: #fff;
         cursor: pointer;
-        font-size: 15px;
-        border-radius: 4px;
+        font-size: 18px;
+        border-radius: 6px;
       }
 
       .tab-button.active {
-        background: #2c3e50;
+        background: var(--accent);
         color: #fff;
-        border-color: #2c3e50;
+        border-color: var(--accent);
       }
 
       /* ---------- TAB CONTENT ---------- */
@@ -108,69 +98,74 @@
       .panel {
         background: #fff;
         border: 1px solid #eee;
-        border-radius: 6px;
-        padding: 24px;
+        border-radius: 8px;
+        padding: 44px;
+      }
+
+      .panel > p {
+        margin-bottom: 16px;
       }
 
       /* ---------- PROJECT CARDS (1 x 3 grid) ---------- */
       .cards {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
+        gap: 24px;
       }
 
       .card {
         border: 1px solid #eee;
-        border-radius: 6px;
+        border-radius: 8px;
         overflow: hidden;
         background: #fff;
       }
 
       /* Empty space for project photo */
       .card-photo {
-        height: 120px;
+        height: 140px;
         background: #ddd;
         border-bottom: 1px dashed #aaa;
         display: flex;
         align-items: center;
         justify-content: center;
         color: #888;
-        font-size: 12px;
+        font-size: 14px;
       }
 
       .card-text {
-        padding: 14px;
+        padding: 20px;
       }
       .card-text h3 {
-        font-size: 16px;
-        margin-bottom: 6px;
+        font-size: 20px;
+        margin-bottom: 8px;
       }
       .card-text p {
-        font-size: 14px;
+        font-size: 16px;
         color: #555;
       }
 
       /* ---------- ABOUT ME: info sections ---------- */
       .info-section {
-        margin-top: 24px;
+        margin-top: 36px;
       }
       .info-section h3 {
-        font-size: 16px;
-        margin-bottom: 8px;
-        color: #2c3e50;
+        font-size: 22px;
+        margin-bottom: 12px;
+        color: var(--accent);
       }
       .info-section p {
-        font-size: 14px;
-        margin-bottom: 4px;
+        font-size: 17px;
+        margin-bottom: 6px;
       }
       .info-section a {
-        color: #2c3e50;
+        color: var(--accent);
+        font-weight: bold;
       }
 
       /* ---------- EDUCATION / EXPERIENCE entries ---------- */
       .edu-entry,
       .exp-entry {
-        margin-bottom: 16px;
+        margin-bottom: 28px;
       }
       .edu-entry:last-child,
       .exp-entry:last-child {
@@ -178,22 +173,22 @@
       }
       .edu-title,
       .exp-entry h3 {
-        font-size: 15px;
-        margin-bottom: 2px;
+        font-size: 19px;
+        margin-bottom: 4px;
       }
       .edu-meta,
       .exp-meta {
-        font-size: 13px;
+        font-size: 16px;
         color: #777;
-        margin-bottom: 4px;
+        margin-bottom: 6px;
       }
       .exp-entry ul {
-        margin-left: 18px;
-        font-size: 14px;
+        margin: 12px 0 0 20px;
+        font-size: 16px;
         color: #444;
       }
       .exp-entry li {
-        margin-bottom: 4px;
+        margin-bottom: 10px;
       }
 
       /* ---------- MOBILE: stack cards vertically ---------- */
@@ -208,16 +203,14 @@
   <body>
     <div class="container">
       <!-- ============================================================
-         HEADER: photo, name, experiences
+         HEADER: photo, name
          ============================================================ -->
       <header>
-        <img src="photo.jpg" alt="Eglantine Dupuy" class="photo" />
+        <div class="photo-frame">
+          <img src="photo.jpg" alt="Eglantine Dupuy" />
+        </div>
 
         <h1>Eglantine Dupuy</h1>
-        <p>Business Analyst · SQL · Python · Tableau</p>
-        <div class="links">
-          <a href="https://www.linkedin.com/in/eglantine-dupuy/" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
       </header>
 
       <!-- ============================================================
@@ -239,54 +232,58 @@
       <div id="about" class="tab-content active">
         <div class="panel">
           <p>
-            My name is Eglantine Dupuy and I am currently studying Masters of Management in Analytics @ McGill's Desautels Faculty of Management. Previously I worked as a Research Associate @ Dealroom.co for 2.5 years in Amsterdam. My role involved selling, end-to-end project management and report delivery. This included developing and maintaining a robust taxonomy for emerging sectors, data validation, conducting quantitative analysis and qualitative research, and crafting insightful narratives. Following my Masters graduation in Summer 2027, I aspire to join a Venture Capital Fund in Montreal in a data scientist role.
+            I am currently pursuing a Masters of Management in Analytics @ McGill's Desautels Faculty of Management. Previously I worked as a Research Associate @ Dealroom.co for 2.5 years in Amsterdam. Following my Masters graduation in Summer 2027, I aspire to join a Venture Capital Fund or other type of investment fund in Montreal in a Data Scientist capacity.
+          </p>
+          <p>
+            French national. Will hold a valid Canadian Post-Graduation Work Permit (PGWP) upon graduation.
           </p>
 
           <div class="info-section">
             <h3>Contact</h3>
             <p>Phone: (+1) 263 376 5654</p>
             <p>Email: dupuyeglantine1@gmail.com</p>
-            <p>
-              LinkedIn:
-              <a href="https://www.linkedin.com/in/eglantine-dupuy/" target="_blank" rel="noopener">https://www.linkedin.com/in/eglantine-dupuy/</a>
-            </p>
+            <p><a href="https://www.linkedin.com/in/eglantine-dupuy/" target="_blank" rel="noopener">LinkedIn</a></p>
+          </div>
+
+          <div class="info-section">
+            <h3>Technical Skills</h3>
+            <p>Python</p>
+            <p>SQL</p>
+            <p>Microsoft Suite</p>
+            <p>Google Suite</p>
+            <p>GitHub</p>
           </div>
 
           <div class="info-section">
             <h3>Languages</h3>
-            <p>French — Native</p>
-            <p>English — Fluent</p>
-            <p>Spanish — Proficient</p>
-          </div>
-
-          <div class="info-section">
-            <h3>Skills</h3>
-            <p>Python, SQL, Microsoft Suite, GitHub</p>
+            <p>French (Native)</p>
+            <p>English (Fluent)</p>
+            <p>Spanish (Proficient)</p>
           </div>
 
           <div class="info-section">
             <h3>Education</h3>
 
             <div class="edu-entry">
-              <p class="edu-title">McGill University, Desautels Faculty of Management — Master of Management in Analytics (MMA)</p>
-              <p class="edu-meta">Montreal, Canada — In Progress, Expected 2027</p>
+              <p class="edu-title">McGill University, Desautels Faculty of Management - Master of Management in Analytics (MMA)</p>
+              <p class="edu-meta">Montreal, Canada - In Progress, Expected 2027</p>
             </div>
 
             <div class="edu-entry">
-              <p class="edu-title">IE University — Bachelor in Business Administration</p>
-              <p class="edu-meta">Madrid, Spain — Sep 2019–Jul 2023</p>
+              <p class="edu-title">IE University - Bachelor in Business Administration</p>
+              <p class="edu-meta">Madrid, Spain - Sep 2019 to Jul 2023</p>
               <p class="edu-meta">Graduated 8.77/10 GPA (Top 10% of class), Honors in Entrepreneurship & Innovation and Supply Chain Management</p>
             </div>
 
             <div class="edu-entry">
-              <p class="edu-title">McGill University — Exchange Semester, Desautels Faculty of Management</p>
-              <p class="edu-meta">Montreal, Canada — Jan–May 2022</p>
+              <p class="edu-title">McGill University - Exchange Semester, Desautels Faculty of Management</p>
+              <p class="edu-meta">Montreal, Canada - Jan to May 2022</p>
               <p class="edu-meta">3.48 GPA</p>
             </div>
 
             <div class="edu-entry">
-              <p class="edu-title">International School of Brussels — International Baccalaureate</p>
-              <p class="edu-meta">Brussels, Belgium — Graduated May 2019</p>
+              <p class="edu-title">International School of Brussels - International Baccalaureate</p>
+              <p class="edu-meta">Brussels, Belgium - Graduated May 2019</p>
             </div>
           </div>
         </div>
@@ -296,22 +293,25 @@
       <div id="experience" class="tab-content">
         <div class="panel">
           <div class="exp-entry">
-            <h3>Dealroom.co — Research Associate</h3>
-            <p class="exp-meta">Amsterdam, Netherlands — Sep 2023–Dec 2025</p>
+            <h3>Dealroom.co (Leading Data Platform on Global Tech Ecosystems & Startups)</h3>
+            <p class="exp-meta">Amsterdam, the Netherlands</p>
+            <p class="exp-meta">Graduate program to Innovation Analyst to Research Associate (Full-Time), Sep 2023 - Dec 2025</p>
             <ul>
-              <li>Led end-to-end market intelligence reporting across Climate Tech, Deep Tech, and Health sectors, combining quantitative analysis, qualitative research, and data validation.</li>
-              <li>Authored a Blue Economy deep dive referenced at the UN World Ocean Conference and by the World Economic Forum.</li>
-              <li>Produced the most comprehensive industry report to date on Longevity for Speedinvest and Generali; shared insights on Dealroom's podcast.</li>
-              <li>Published 20+ market intelligence reports and presented at 5+ industry conferences.</li>
+              <li>My role involves selling, end-to-end project management and report delivery. This includes developing and maintaining a robust taxonomy for emerging sectors, data validation, conducting quantitative analysis and qualitative research, and crafting insightful narratives. I also manage client communication, create assets for social media, and present findings in person at conferences and online.</li>
+              <li>My main industry focus areas include Climate Tech (Green Mobility, Sustainable Food & AgriTech, etc.), Deep Tech (Robotics, AI, etc.) and Health (Biotechnology, Digital Health, etc.).</li>
+              <li>Notable accomplishments include 1/ authoring a Blue Economy deep dive, which was referenced at the UN World Ocean Conference and by the World Economic Forum. 2/ collaborating with Bpifrance, France's leading public investment bank, to assess the State of Deep Tech in France. 3/ producing the most comprehensive industry report to date on Longevity for Speedinvest (a leading European VC) and Generali (a major global insurer) and sharing my insights on Dealroom's podcast.</li>
+              <li>To date, I have produced over 20 market intelligence reports and presented my work at more than five industry conferences. Each report published through Dealroom reaches over 2k online viewers, supported by a LinkedIn audience of 40k+ followers.</li>
+              <li>In my workflow, I leverage tools such as ChatGPT and OpenAI integrations, BigQuery SQL for large-scale data analysis, Excel for financial modeling and data manipulation, and Datawrapper for data visualization.</li>
             </ul>
           </div>
 
           <div class="exp-entry">
-            <h3>D2X Group — Jr. Business Developer (Internship)</h3>
-            <p class="exp-meta">Amsterdam, Netherlands — Jul–Dec 2022</p>
+            <h3>D2X Group (Digital Assets Derivatives Exchange)</h3>
+            <p class="exp-meta">Amsterdam, the Netherlands</p>
+            <p class="exp-meta">Jr. Business Developer (Internship), Jul 2022 - Dec 2022</p>
             <ul>
-              <li>Produced research on new revenue opportunities, strategic partnerships, and industry developments for the CEO of an early-stage crypto derivatives trading platform.</li>
-              <li>Reported insights directly to the board of investors, executive committee, and financial regulators.</li>
+              <li>Joined at a very early stage of this innovative startup which has since become the first regulated trading platform for institutional investors in crypto derivatives.</li>
+              <li>I produced research for the CEO on new revenue opportunities, strategic partnerships, and key industry developments. My insights were regularly reported to the board of investors, executive committee, and financial regulators.</li>
             </ul>
           </div>
         </div>
