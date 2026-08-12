@@ -7,12 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Business Analytics Portfolio</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
       /* ============================================================
        BASIC STYLES
        ============================================================ */
       :root {
         --accent: #1b4332;
+        --accent-soft: rgba(27, 67, 50, 0.08);
+        --accent-shadow: rgba(27, 67, 50, 0.18);
       }
 
       * {
@@ -22,11 +31,22 @@
       }
 
       body {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
         font-size: 18px;
         color: #222;
-        background: #f7f7f7;
+        background: linear-gradient(180deg, #f5f8f6 0%, #eef2ef 100%);
+        background-attachment: fixed;
         line-height: 1.6;
+        animation: pageFadeIn 0.5s ease;
+      }
+
+      @keyframes pageFadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
 
       .container {
@@ -48,6 +68,13 @@
         overflow: hidden;
         margin: 0 auto 24px;
         border: 4px solid var(--accent);
+        box-shadow: 0 10px 30px var(--accent-shadow);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .photo-frame:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 36px var(--accent-shadow);
       }
 
       .photo-frame img {
@@ -60,8 +87,20 @@
       }
 
       header h1 {
-        font-size: 42px;
-        margin-bottom: 6px;
+        font-size: 44px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-bottom: 14px;
+      }
+
+      header h1::after {
+        content: "";
+        display: block;
+        width: 56px;
+        height: 3px;
+        margin: 14px auto 0;
+        background: var(--accent);
+        border-radius: 2px;
       }
 
       /* ---------- TABS ---------- */
@@ -74,17 +113,33 @@
 
       .tab-button {
         padding: 14px 30px;
-        border: 1px solid #ccc;
+        border: 1px solid #dadfdc;
         background: #fff;
         cursor: pointer;
-        font-size: 18px;
-        border-radius: 6px;
+        font-size: 17px;
+        font-family: inherit;
+        font-weight: 500;
+        color: #444;
+        border-radius: 999px;
+        transition: all 0.2s ease;
+      }
+
+      .tab-button:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        background: var(--accent-soft);
+        transform: translateY(-1px);
       }
 
       .tab-button.active {
         background: var(--accent);
         color: #fff;
         border-color: var(--accent);
+        box-shadow: 0 6px 18px var(--accent-shadow);
+      }
+
+      .tab-button.active:hover {
+        transform: none;
       }
 
       /* ---------- TAB CONTENT ---------- */
@@ -93,13 +148,26 @@
       }
       .tab-content.active {
         display: block;
+        animation: tabFadeIn 0.35s ease;
+      }
+
+      @keyframes tabFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       .panel {
         background: #fff;
         border: 1px solid #eee;
-        border-radius: 8px;
+        border-radius: 12px;
         padding: 44px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 12px 30px rgba(0, 0, 0, 0.05);
       }
 
       .panel > p {
@@ -115,21 +183,33 @@
 
       .card {
         border: 1px solid #eee;
-        border-radius: 8px;
+        border-radius: 12px;
         overflow: hidden;
         background: #fff;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 8px 20px rgba(0, 0, 0, 0.04);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.09);
       }
 
       /* Empty space for project photo */
       .card-photo {
         height: 140px;
-        background: #ddd;
+        background: linear-gradient(135deg, #e4e9e6, #dde3e0);
         border-bottom: 1px dashed #aaa;
         display: flex;
         align-items: center;
         justify-content: center;
         color: #888;
         font-size: 14px;
+        transition: background 0.25s ease;
+      }
+
+      .card:hover .card-photo {
+        background: linear-gradient(135deg, var(--accent-soft), #dde3e0);
       }
 
       .card-text {
@@ -160,10 +240,21 @@
       .info-section a {
         color: var(--accent);
         font-weight: bold;
+        text-decoration-color: var(--accent-shadow);
+        transition: opacity 0.2s ease;
+      }
+
+      .info-section a:hover {
+        opacity: 0.7;
       }
 
       .exp-entry h3 a {
         color: var(--accent);
+        transition: opacity 0.2s ease;
+      }
+
+      .exp-entry h3 a:hover {
+        opacity: 0.7;
       }
 
       /* ---------- EDUCATION / EXPERIENCE entries ---------- */
