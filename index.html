@@ -248,7 +248,17 @@
         animation: heroRise var(--duration-slow) var(--ease) 0.18s forwards;
       }
 
-      header h1::after {
+      .header-subtitle {
+        font-family: var(--font-body);
+        font-size: var(--text-md);
+        font-weight: 500;
+        color: var(--color-text-secondary);
+        margin-top: var(--space-3);
+        opacity: 0;
+        animation: heroRise var(--duration-slow) var(--ease) 0.3s forwards;
+      }
+
+      .header-subtitle::after {
         content: "";
         display: block;
         width: 52px;
@@ -594,6 +604,7 @@
         </div>
 
         <h1>Eglantine Dupuy</h1>
+        <p class="header-subtitle">McGill MMA 2027 - Seeking Data Science opportunities in Venture Capital</p>
       </header>
 
       <!-- ============================================================
@@ -808,7 +819,7 @@
       </main>
     </div>
 
-    <footer>Portfolio page produced with support from Claude - Anthropic</footer>
+    <footer>Portfolio page designed using Claude Code, Anthropic</footer>
 
     <!-- ============================================================
        TABS + SCROLL REVEAL
