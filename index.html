@@ -6,76 +6,228 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eglantine Dupuy Portfolio</title>
+    <meta
+      name="description"
+      content="Eglantine Dupuy — Master of Management in Analytics candidate at McGill Desautels, building toward a career in venture capital."
+    />
     <link rel="icon" type="image/jpeg" href="photo.jpg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
     <style>
       /* ============================================================
-       BASIC STYLES
-       ============================================================ */
+         1. DESIGN TOKENS
+         ============================================================ */
       :root {
-        --accent: #1b4332;
-        --accent-soft: rgba(27, 67, 50, 0.08);
-        --accent-shadow: rgba(27, 67, 50, 0.18);
+        /* -- color: base surfaces (dark, green-charcoal) -- */
+        --color-bg: #0b1310;
+        --color-bg-elevated: #122019;
+        --color-bg-elevated-2: #16261f;
+
+        /* -- color: borders -- */
+        --color-border: rgba(237, 242, 239, 0.09);
+        --color-border-strong: rgba(237, 242, 239, 0.18);
+
+        /* -- color: text -- */
+        --color-text: #f2f5f3;
+        --color-text-secondary: #aec0b7;
+        --color-text-muted: #7c9187;
+
+        /* -- color: accents -- */
+        --color-accent: #7fb69b; /* sage / mint — links, icons, focus */
+        --color-accent-strong: #2e6f55; /* mid green — primary buttons, active states */
+        --color-accent-deep: #1b4332; /* deep brand green — gradients, subtle fills */
+        --color-gold: #d9b84a; /* muted gold — sparing highlight / CTA */
+
+        --shadow-color: 27, 67, 50;
+
+        /* -- spacing scale -- */
+        --space-1: 0.25rem;
+        --space-2: 0.5rem;
+        --space-3: 0.75rem;
+        --space-4: 1rem;
+        --space-5: 1.5rem;
+        --space-6: 2rem;
+        --space-7: 3rem;
+        --space-8: 4rem;
+        --space-9: 6rem;
+
+        /* -- type scale -- */
+        --text-xs: 0.8125rem;
+        --text-sm: 0.9375rem;
+        --text-base: 1.0625rem;
+        --text-md: 1.1875rem;
+        --text-lg: 1.375rem;
+        --text-xl: clamp(1.5rem, 1.3rem + 0.85vw, 1.875rem);
+        --text-hero: clamp(2.25rem, 1.75rem + 2.2vw, 3.25rem);
+
+        --font-heading: "Space Grotesk", "Inter", Arial, Helvetica, sans-serif;
+        --font-body: "Inter", Arial, Helvetica, sans-serif;
+
+        --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        --duration-fast: 0.18s;
+        --duration-base: 0.35s;
+        --duration-slow: 0.7s;
+
+        --radius-sm: 8px;
+        --radius-md: 14px;
+        --radius-pill: 999px;
       }
 
+      /* ============================================================
+         2. RESET & BASE
+         ============================================================ */
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
 
-      body {
-        font-family: "Inter", Arial, Helvetica, sans-serif;
-        font-size: 18px;
-        color: #222;
-        background: linear-gradient(180deg, #f5f8f6 0%, #eef2ef 100%);
-        background-attachment: fixed;
-        line-height: 1.6;
-        animation: pageFadeIn 0.5s ease;
+      html {
+        scroll-behavior: smooth;
       }
 
-      @keyframes pageFadeIn {
+      body {
+        font-family: var(--font-body);
+        font-size: var(--text-base);
+        color: var(--color-text);
+        background: var(--color-bg);
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      /* ============================================================
+         3. MOTION PREFERENCES
+         ============================================================ */
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+          scroll-behavior: auto !important;
+        }
+        .ambient-bg {
+          animation: none !important;
+        }
+      }
+
+      /* ============================================================
+         4. AMBIENT BACKGROUND
+         ============================================================ */
+      .ambient-bg {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background-image: radial-gradient(
+            circle at 18% 12%,
+            rgba(46, 111, 85, 0.28),
+            transparent 42%
+          ),
+          radial-gradient(
+            circle at 82% 78%,
+            rgba(217, 184, 74, 0.09),
+            transparent 45%
+          ),
+          radial-gradient(circle at 50% 100%, rgba(27, 67, 50, 0.35), transparent 55%);
+        background-size: 140% 140%;
+        background-position: 0% 0%;
+        animation: ambientShift 26s ease-in-out infinite alternate;
+      }
+
+      @keyframes ambientShift {
         from {
-          opacity: 0;
+          background-position: 0% 0%;
         }
         to {
-          opacity: 1;
+          background-position: 20% 12%;
         }
       }
 
-      .container {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 64px 28px;
+      /* ============================================================
+         5. SKIP LINK & FOCUS STATES
+         ============================================================ */
+      .skip-link {
+        position: absolute;
+        top: -48px;
+        left: var(--space-4);
+        background: var(--color-accent-strong);
+        color: var(--color-text);
+        padding: var(--space-3) var(--space-5);
+        border-radius: var(--radius-sm);
+        font-family: var(--font-heading);
+        font-size: var(--text-sm);
+        z-index: 100;
+        transition: top var(--duration-fast) var(--ease);
       }
 
-      /* ---------- HEADER (photo + name) ---------- */
+      .skip-link:focus {
+        top: var(--space-4);
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+
+      /* ============================================================
+         6. LAYOUT
+         ============================================================ */
+      .container {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: var(--space-8) var(--space-5) var(--space-9);
+      }
+
+      /* ============================================================
+         7. HEADER / HERO
+         ============================================================ */
       header {
         text-align: center;
-        margin-bottom: 48px;
+        margin-bottom: var(--space-8);
       }
 
       .photo-frame {
-        width: 180px;
-        height: 180px;
+        width: 168px;
+        height: 168px;
         border-radius: 50%;
         overflow: hidden;
-        margin: 0 auto 24px;
-        border: 4px solid var(--accent);
-        box-shadow: 0 10px 30px var(--accent-shadow);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin: 0 auto var(--space-5);
+        border: 3px solid var(--color-accent-strong);
+        box-shadow: 0 12px 32px rgba(var(--shadow-color), 0.45);
+        transition: transform var(--duration-base) var(--ease),
+          box-shadow var(--duration-base) var(--ease);
+        opacity: 0;
+        animation: heroRise var(--duration-slow) var(--ease) 0.05s forwards;
       }
 
       .photo-frame:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 14px 36px var(--accent-shadow);
+        transform: translateY(-4px);
+        box-shadow: 0 18px 40px rgba(var(--shadow-color), 0.55);
       }
 
       .photo-frame img {
@@ -88,74 +240,28 @@
       }
 
       header h1 {
-        font-size: 44px;
-        font-weight: 700;
+        font-family: var(--font-heading);
+        font-size: var(--text-hero);
+        font-weight: 600;
         letter-spacing: -0.02em;
-        margin-bottom: 14px;
+        opacity: 0;
+        animation: heroRise var(--duration-slow) var(--ease) 0.18s forwards;
       }
 
       header h1::after {
         content: "";
         display: block;
-        width: 56px;
+        width: 52px;
         height: 3px;
-        margin: 14px auto 0;
-        background: var(--accent);
+        margin: var(--space-4) auto 0;
+        background: linear-gradient(90deg, var(--color-accent-strong), var(--color-gold));
         border-radius: 2px;
       }
 
-      /* ---------- TABS ---------- */
-      .tabs {
-        display: flex;
-        justify-content: center;
-        gap: 16px;
-        margin-bottom: 40px;
-      }
-
-      .tab-button {
-        padding: 14px 30px;
-        border: 1px solid #dadfdc;
-        background: #fff;
-        cursor: pointer;
-        font-size: 17px;
-        font-family: inherit;
-        font-weight: 500;
-        color: #444;
-        border-radius: 999px;
-        transition: all 0.2s ease;
-      }
-
-      .tab-button:hover {
-        border-color: var(--accent);
-        color: var(--accent);
-        background: var(--accent-soft);
-        transform: translateY(-1px);
-      }
-
-      .tab-button.active {
-        background: var(--accent);
-        color: #fff;
-        border-color: var(--accent);
-        box-shadow: 0 6px 18px var(--accent-shadow);
-      }
-
-      .tab-button.active:hover {
-        transform: none;
-      }
-
-      /* ---------- TAB CONTENT ---------- */
-      .tab-content {
-        display: none;
-      }
-      .tab-content.active {
-        display: block;
-        animation: tabFadeIn 0.35s ease;
-      }
-
-      @keyframes tabFadeIn {
+      @keyframes heroRise {
         from {
           opacity: 0;
-          transform: translateY(8px);
+          transform: translateY(14px);
         }
         to {
           opacity: 1;
@@ -163,105 +269,179 @@
         }
       }
 
+      /* ============================================================
+         8. TABS
+         ============================================================ */
+      .tabs {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+        margin-bottom: var(--space-7);
+      }
+
+      .tab-button {
+        padding: var(--space-3) var(--space-6);
+        border: 1px solid var(--color-border-strong);
+        background: var(--color-bg-elevated);
+        cursor: pointer;
+        font-family: var(--font-heading);
+        font-size: var(--text-sm);
+        font-weight: 500;
+        color: var(--color-text-secondary);
+        border-radius: var(--radius-pill);
+        transition: border-color var(--duration-fast) var(--ease),
+          color var(--duration-fast) var(--ease),
+          background var(--duration-fast) var(--ease),
+          transform var(--duration-fast) var(--ease),
+          box-shadow var(--duration-fast) var(--ease);
+      }
+
+      .tab-button:hover {
+        border-color: var(--color-accent);
+        color: var(--color-text);
+        transform: translateY(-1px);
+      }
+
+      .tab-button[aria-selected="true"] {
+        background: var(--color-accent-strong);
+        color: var(--color-text);
+        border-color: var(--color-accent-strong);
+        box-shadow: 0 8px 22px rgba(var(--shadow-color), 0.4);
+      }
+
+      .tab-button[aria-selected="true"]:hover {
+        transform: none;
+      }
+
+      /* ============================================================
+         9. TAB PANELS
+         ============================================================ */
+      .tab-content {
+        display: none;
+      }
+      .tab-content.active {
+        display: block;
+      }
+
       .panel {
-        background: #fff;
-        border: 1px solid #eee;
-        border-radius: 12px;
-        padding: 44px;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 12px 30px rgba(0, 0, 0, 0.05);
+        background: var(--color-bg-elevated);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        padding: clamp(1.75rem, 1.4rem + 1.5vw, 2.75rem);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 20px 40px rgba(0, 0, 0, 0.25);
       }
 
       .panel > p {
-        margin-bottom: 16px;
+        margin-bottom: var(--space-4);
+        color: var(--color-text-secondary);
+        max-width: 68ch;
       }
 
-      /* ---------- PROJECT CARDS (1 x 3 grid) ---------- */
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
+      /* ---------- scroll reveal ---------- */
+      .reveal {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity var(--duration-slow) var(--ease),
+          transform var(--duration-slow) var(--ease);
+      }
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
       }
 
-      .card {
-        border: 1px solid #eee;
-        border-radius: 12px;
-        overflow: hidden;
-        background: #fff;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 8px 20px rgba(0, 0, 0, 0.04);
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-      }
-
-      .card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.09);
-      }
-
-      /* Empty space for project photo */
-      .card-photo {
-        height: 140px;
-        background: linear-gradient(135deg, #e4e9e6, #dde3e0);
-        border-bottom: 1px dashed #aaa;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #888;
-        font-size: 14px;
-        transition: background 0.25s ease;
-      }
-
-      .card:hover .card-photo {
-        background: linear-gradient(135deg, var(--accent-soft), #dde3e0);
-      }
-
-      .card-text {
-        padding: 20px;
-      }
-      .card-text h3 {
-        font-size: 20px;
-        margin-bottom: 8px;
-      }
-      .card-text p {
-        font-size: 16px;
-        color: #555;
-      }
-
-      /* ---------- ABOUT ME: info sections ---------- */
+      /* ============================================================
+         10. INFO SECTIONS
+         ============================================================ */
       .info-section {
-        margin-top: 36px;
+        margin-top: var(--space-7);
       }
       .info-section h3 {
-        font-size: 22px;
-        margin-bottom: 12px;
-        color: var(--accent);
+        font-family: var(--font-heading);
+        font-size: var(--text-lg);
+        font-weight: 600;
+        margin-bottom: var(--space-4);
+        color: var(--color-accent);
       }
       .info-section p {
-        font-size: 17px;
-        margin-bottom: 6px;
+        font-size: var(--text-base);
+        color: var(--color-text-secondary);
+        margin-bottom: var(--space-2);
       }
       .info-section a {
-        color: var(--accent);
-        font-weight: bold;
-        text-decoration-color: var(--accent-shadow);
-        transition: opacity 0.2s ease;
+        color: var(--color-text);
+        font-weight: 600;
+        text-underline-offset: 3px;
+        text-decoration-color: var(--color-accent);
+        transition: color var(--duration-fast) var(--ease);
       }
 
       .info-section a:hover {
-        opacity: 0.7;
+        color: var(--color-accent);
       }
 
-      .exp-entry h3 a {
-        color: var(--accent);
-        transition: opacity 0.2s ease;
+      /* ---------- pill chips (skills / languages) ---------- */
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-2);
       }
 
-      .exp-entry h3 a:hover {
-        opacity: 0.7;
+      .pill {
+        display: inline-block;
+        padding: var(--space-2) var(--space-4);
+        font-size: var(--text-sm);
+        color: var(--color-text-secondary);
+        background: var(--color-bg-elevated-2);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-pill);
+        transition: border-color var(--duration-fast) var(--ease),
+          color var(--duration-fast) var(--ease),
+          transform var(--duration-fast) var(--ease);
       }
 
-      /* ---------- EDUCATION / EXPERIENCE entries ---------- */
+      .pill:hover {
+        border-color: var(--color-accent);
+        color: var(--color-text);
+        transform: translateY(-2px);
+      }
+
+      .extracurricular-group {
+        margin-bottom: var(--space-4);
+      }
+      .extracurricular-group:last-child {
+        margin-bottom: 0;
+      }
+      .extracurricular-label {
+        display: block;
+        font-size: var(--text-xs);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--color-text-muted);
+        margin-bottom: var(--space-2);
+      }
+
+      /* ============================================================
+         11. TIMELINE ENTRIES (education / experience)
+         ============================================================ */
       .edu-entry,
       .exp-entry {
-        margin-bottom: 28px;
+        position: relative;
+        margin-bottom: var(--space-6);
+        padding-left: var(--space-5);
+        border-left: 2px solid var(--color-border-strong);
+      }
+      .edu-entry::before,
+      .exp-entry::before {
+        content: "";
+        position: absolute;
+        left: -5px;
+        top: 6px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--color-accent);
+        box-shadow: 0 0 0 4px rgba(127, 182, 155, 0.15);
       }
       .edu-entry:last-child,
       .exp-entry:last-child {
@@ -269,41 +449,141 @@
       }
       .edu-title,
       .exp-entry h3 {
-        font-size: 19px;
-        margin-bottom: 4px;
+        font-family: var(--font-heading);
+        font-size: var(--text-md);
+        font-weight: 600;
+        margin-bottom: var(--space-1);
       }
       .edu-meta,
       .exp-meta {
-        font-size: 16px;
-        color: #777;
-        margin-bottom: 6px;
+        font-size: var(--text-sm);
+        color: var(--color-text-muted);
+        margin-bottom: var(--space-1);
       }
       .exp-entry ul {
-        margin: 12px 0 0 20px;
-        font-size: 16px;
-        color: #444;
+        margin: var(--space-3) 0 0;
+        font-size: var(--text-sm);
+        color: var(--color-text-secondary);
       }
       .exp-entry li {
-        margin-bottom: 10px;
+        position: relative;
+        padding-left: var(--space-4);
+        margin-bottom: var(--space-3);
+      }
+      .exp-entry li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.65em;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--color-accent-strong);
+      }
+      .exp-entry li:last-child {
+        margin-bottom: 0;
       }
 
+      .exp-entry h3 a {
+        color: var(--color-text);
+        text-decoration-color: var(--color-accent);
+        transition: color var(--duration-fast) var(--ease);
+      }
+
+      .exp-entry h3 a:hover {
+        color: var(--color-accent);
+      }
+
+      /* ============================================================
+         12. PROJECT CARDS
+         ============================================================ */
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: var(--space-5);
+      }
+
+      .card {
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        background: var(--color-bg-elevated);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 12px 28px rgba(0, 0, 0, 0.2);
+        transition: transform var(--duration-base) var(--ease),
+          box-shadow var(--duration-base) var(--ease),
+          border-color var(--duration-base) var(--ease);
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+        border-color: var(--color-border-strong);
+      }
+
+      .card-photo {
+        height: 140px;
+        background: linear-gradient(135deg, var(--color-bg-elevated-2), var(--color-bg));
+        border-bottom: 1px dashed var(--color-border-strong);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-text-muted);
+        font-size: var(--text-xs);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        transition: background var(--duration-base) var(--ease);
+      }
+
+      .card:hover .card-photo {
+        background: linear-gradient(135deg, rgba(127, 182, 155, 0.14), var(--color-bg));
+      }
+
+      .card-text {
+        padding: var(--space-5);
+      }
+      .card-text h3 {
+        font-family: var(--font-heading);
+        font-size: var(--text-md);
+        font-weight: 600;
+        margin-bottom: var(--space-2);
+      }
+      .card-text p {
+        font-size: var(--text-sm);
+        color: var(--color-text-secondary);
+      }
+
+      /* ============================================================
+         13. FOOTER
+         ============================================================ */
       footer {
         text-align: center;
-        padding: 24px 28px 40px;
-        font-size: 13px;
-        color: #999;
+        padding: var(--space-6) var(--space-5) var(--space-8);
+        font-size: var(--text-xs);
+        color: var(--color-text-muted);
       }
 
-      /* ---------- MOBILE: stack cards vertically ---------- */
+      /* ============================================================
+         14. RESPONSIVE
+         ============================================================ */
       @media (max-width: 640px) {
-        .cards {
-          grid-template-columns: 1fr;
+        .container {
+          padding: var(--space-6) var(--space-4) var(--space-7);
+        }
+        .tab-button {
+          padding: var(--space-3) var(--space-4);
+          font-size: var(--text-xs);
+        }
+        .panel {
+          padding: var(--space-5);
         }
       }
     </style>
   </head>
 
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="ambient-bg" aria-hidden="true"></div>
+
     <div class="container">
       <!-- ============================================================
          HEADER: photo, name
@@ -319,170 +599,300 @@
       <!-- ============================================================
          TABS
          ============================================================ -->
-      <div class="tabs">
-        <button class="tab-button active" onclick="showTab('about')">
+      <div class="tabs" role="tablist" aria-label="Portfolio sections">
+        <button
+          class="tab-button"
+          role="tab"
+          id="tab-about"
+          aria-selected="true"
+          aria-controls="about"
+        >
           About Me
         </button>
-        <button class="tab-button" onclick="showTab('experience')">
+        <button
+          class="tab-button"
+          role="tab"
+          id="tab-experience"
+          aria-selected="false"
+          aria-controls="experience"
+          tabindex="-1"
+        >
           Professional Experience
         </button>
-        <button class="tab-button" onclick="showTab('projects')">
+        <button
+          class="tab-button"
+          role="tab"
+          id="tab-projects"
+          aria-selected="false"
+          aria-controls="projects"
+          tabindex="-1"
+        >
           Projects
         </button>
       </div>
 
-      <!-- ---------- TAB 1: ABOUT ME ---------- -->
-      <div id="about" class="tab-content active">
-        <div class="panel">
-          <p>
-            I am currently pursuing a Masters of Management in Analytics @ McGill's Desautels Faculty of Management and am expected to graduate in Summer 2027.
-          </p>
-          <p>
-            My goal is to build a career in venture capital, helping make capital allocation more data-driven, rigorous, and inclusive. The MMA is where I'm building the technical foundation for that: fluency in Python, R, and SQL, advanced statistics, and coursework spanning valuation analytics, text analytics, and AI, capped by a hands-on capstone project with live datasets and industry clients. I'm a strong fit for this path thanks to 2.5 years inside the VC data ecosystem at Dealroom.co, plus an undergraduate thesis researching gender bias in startup funding - both of which convinced me that better data models can meaningfully close those gaps.
-          </p>
+      <main id="main">
+        <!-- ---------- TAB 1: ABOUT ME ---------- -->
+        <div
+          id="about"
+          class="tab-content active"
+          role="tabpanel"
+          aria-labelledby="tab-about"
+          tabindex="0"
+        >
+          <div class="panel">
+            <p class="reveal">
+              I am currently pursuing a Masters of Management in Analytics @ McGill's Desautels Faculty of Management and am expected to graduate in Summer 2027.
+            </p>
+            <p class="reveal">
+              My goal is to build a career in venture capital, helping make capital allocation more data-driven, rigorous, and inclusive. The MMA is where I'm building the technical foundation for that: fluency in Python, R, and SQL, advanced statistics, and coursework spanning valuation analytics, text analytics, and AI, capped by a hands-on capstone project with live datasets and industry clients. I'm a strong fit for this path thanks to 2.5 years inside the VC data ecosystem at Dealroom.co, plus an undergraduate thesis researching gender bias in startup funding - both of which convinced me that better data models can meaningfully close those gaps.
+            </p>
 
-          <p>
-            French national. Will hold a valid Canadian Post-Graduation Work Permit (PGWP) upon graduation.
-          </p>
+            <p class="reveal">
+              French national. Will hold a valid Canadian Post-Graduation Work Permit (PGWP) upon graduation.
+            </p>
 
-          <div class="info-section">
-            <h3>Contact</h3>
-            <p>Phone: (+1) 263 376 5654</p>
-            <p>Email: dupuyeglantine1@gmail.com</p>
-            <p><a href="https://www.linkedin.com/in/eglantine-dupuy/" target="_blank" rel="noopener">LinkedIn</a></p>
-          </div>
-
-          <div class="info-section">
-            <h3>Education</h3>
-
-            <div class="edu-entry">
-              <p class="edu-title">McGill University, Desautels Faculty of Management - Master of Management in Analytics (MMA)</p>
-              <p class="edu-meta">Montreal, Canada - In Progress, Expected 2027</p>
+            <div class="info-section reveal">
+              <h3>Contact</h3>
+              <p>Phone: (+1) 263 376 5654</p>
+              <p>Email: dupuyeglantine1@gmail.com</p>
+              <p><a href="https://www.linkedin.com/in/eglantine-dupuy/" target="_blank" rel="noopener">LinkedIn</a></p>
             </div>
 
-            <div class="edu-entry">
-              <p class="edu-title">IE University - Bachelor in Business Administration</p>
-              <p class="edu-meta">Madrid, Spain - Sep 2019 to Jul 2023</p>
-              <p class="edu-meta">Graduated 8.77/10 GPA (Top 10% of class), Honors in Entrepreneurship & Innovation and Supply Chain Management</p>
+            <div class="info-section reveal">
+              <h3>Education</h3>
+
+              <div class="edu-entry">
+                <p class="edu-title">McGill University, Desautels Faculty of Management - Master of Management in Analytics (MMA)</p>
+                <p class="edu-meta">Montreal, Canada - In Progress, Expected 2027</p>
+              </div>
+
+              <div class="edu-entry">
+                <p class="edu-title">IE University - Bachelor in Business Administration</p>
+                <p class="edu-meta">Madrid, Spain - Sep 2019 to Jul 2023</p>
+                <p class="edu-meta">Graduated 8.77/10 GPA (Top 10% of class), Honors in Entrepreneurship & Innovation and Supply Chain Management</p>
+              </div>
+
+              <div class="edu-entry">
+                <p class="edu-title">McGill University - Exchange Semester, Desautels Faculty of Management</p>
+                <p class="edu-meta">Montreal, Canada - Jan to May 2022</p>
+                <p class="edu-meta">3.48 GPA</p>
+              </div>
+
+              <div class="edu-entry">
+                <p class="edu-title">International School of Brussels - International Baccalaureate</p>
+                <p class="edu-meta">Brussels, Belgium - Graduated May 2019</p>
+              </div>
             </div>
 
-            <div class="edu-entry">
-              <p class="edu-title">McGill University - Exchange Semester, Desautels Faculty of Management</p>
-              <p class="edu-meta">Montreal, Canada - Jan to May 2022</p>
-              <p class="edu-meta">3.48 GPA</p>
+            <div class="info-section reveal">
+              <h3>Technical Skills</h3>
+              <div class="pill-row">
+                <span class="pill">Python</span>
+                <span class="pill">SQL</span>
+                <span class="pill">Microsoft &amp; Google Suite</span>
+                <span class="pill">Datawrapper</span>
+                <span class="pill">GitHub</span>
+              </div>
             </div>
 
-            <div class="edu-entry">
-              <p class="edu-title">International School of Brussels - International Baccalaureate</p>
-              <p class="edu-meta">Brussels, Belgium - Graduated May 2019</p>
+            <div class="info-section reveal">
+              <h3>Languages</h3>
+              <div class="pill-row">
+                <span class="pill">French (Native)</span>
+                <span class="pill">English (Fluent)</span>
+                <span class="pill">Spanish (Proficient)</span>
+              </div>
             </div>
-          </div>
 
-          <div class="info-section">
-            <h3>Technical Skills</h3>
-            <p>Python</p>
-            <p>SQL</p>
-            <p>Microsoft & Google Suite</p>
-            <p>Datawrapper</p>
-            <p>GitHub</p>
-          </div>
-
-          <div class="info-section">
-            <h3>Languages</h3>
-            <p>French (Native)</p>
-            <p>English (Fluent)</p>
-            <p>Spanish (Proficient)</p>
-          </div>
-
-          <div class="info-section">
-            <h3>Extracurricular Activities</h3>
-            <p>Sports: Running, Hiking, Tennis, Swimming, Fitness</p>
-            <p>Creative: DJ, Photography</p>
-            <p>Other: Volunteering at Soup Kitchens</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- ---------- TAB 2: PROFESSIONAL EXPERIENCE ---------- -->
-      <div id="experience" class="tab-content">
-        <div class="panel">
-          <div class="exp-entry">
-            <h3><a href="https://dealroom.co/" target="_blank" rel="noopener">Dealroom.co</a> (Leading Data Platform on Global Tech Ecosystems & Startups)</h3>
-            <p class="exp-meta">Amsterdam, the Netherlands</p>
-            <p class="exp-meta">Graduate program to Innovation Analyst to Research Associate (Full-Time), Sep 2023 - Dec 2025</p>
-            <ul>
-              <li>My role involves selling, end-to-end project management and report delivery. This includes developing and maintaining a robust taxonomy for emerging sectors, data validation, conducting quantitative analysis and qualitative research, and crafting insightful narratives. I also manage client communication, create assets for social media, and present findings in person at conferences and online.</li>
-              <li>My main industry focus areas include Climate Tech (Green Mobility, Sustainable Food & AgriTech, etc.), Deep Tech (Robotics, AI, etc.) and Health (Biotechnology, Digital Health, etc.).</li>
-              <li>Notable accomplishments include 1/ authoring a Blue Economy deep dive, which was referenced at the UN World Ocean Conference and by the World Economic Forum. 2/ collaborating with Bpifrance, France's leading public investment bank, to assess the State of Deep Tech in France. 3/ producing the most comprehensive industry report to date on Longevity for Speedinvest (a leading European VC) and Generali (a major global insurer) and sharing my insights on Dealroom's podcast.</li>
-              <li>To date, I have produced over 20 market intelligence reports and presented my work at more than five industry conferences. Each report published through Dealroom reaches over 2k online viewers, supported by a LinkedIn audience of 40k+ followers.</li>
-              <li>In my workflow, I leverage tools such as ChatGPT and OpenAI integrations, BigQuery SQL for large-scale data analysis, Excel for financial modeling and data manipulation, and Datawrapper for data visualization.</li>
-            </ul>
-          </div>
-
-          <div class="exp-entry">
-            <h3><a href="https://d2x.com/" target="_blank" rel="noopener">D2X Group</a> (Digital Assets Derivatives Exchange)</h3>
-            <p class="exp-meta">Amsterdam, the Netherlands</p>
-            <p class="exp-meta">Jr. Business Developer (Internship), Jul 2022 - Dec 2022</p>
-            <ul>
-              <li>Joined at a very early stage of this innovative startup which has since become the first regulated trading platform for institutional investors in crypto derivatives.</li>
-              <li>I produced research for the CEO on new revenue opportunities, strategic partnerships, and key industry developments. My insights were regularly reported to the board of investors, executive committee, and financial regulators.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- ---------- TAB 3: PROJECTS ---------- -->
-      <div id="projects" class="tab-content">
-        <div class="cards">
-          <!-- CARD 1 -->
-          <div class="card">
-            <div class="card-photo">Project Image</div>
-            <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
-            </div>
-          </div>
-
-          <!-- CARD 2 -->
-          <div class="card">
-            <div class="card-photo">Project Image</div>
-            <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
-            </div>
-          </div>
-
-          <!-- CARD 3 -->
-          <div class="card">
-            <div class="card-photo">Project Image</div>
-            <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
+            <div class="info-section reveal">
+              <h3>Extracurricular Activities</h3>
+              <div class="extracurricular-group">
+                <span class="extracurricular-label">Sports</span>
+                <div class="pill-row">
+                  <span class="pill">Running</span>
+                  <span class="pill">Hiking</span>
+                  <span class="pill">Tennis</span>
+                  <span class="pill">Swimming</span>
+                  <span class="pill">Fitness</span>
+                </div>
+              </div>
+              <div class="extracurricular-group">
+                <span class="extracurricular-label">Creative</span>
+                <div class="pill-row">
+                  <span class="pill">DJ</span>
+                  <span class="pill">Photography</span>
+                </div>
+              </div>
+              <div class="extracurricular-group">
+                <span class="extracurricular-label">Other</span>
+                <div class="pill-row">
+                  <span class="pill">Volunteering at Soup Kitchens</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+
+        <!-- ---------- TAB 2: PROFESSIONAL EXPERIENCE ---------- -->
+        <div
+          id="experience"
+          class="tab-content"
+          role="tabpanel"
+          aria-labelledby="tab-experience"
+          tabindex="0"
+        >
+          <div class="panel">
+            <div class="exp-entry reveal">
+              <h3><a href="https://dealroom.co/" target="_blank" rel="noopener">Dealroom.co</a> (Leading Data Platform on Global Tech Ecosystems & Startups)</h3>
+              <p class="exp-meta">Amsterdam, the Netherlands</p>
+              <p class="exp-meta">Graduate program to Innovation Analyst to Research Associate (Full-Time), Sep 2023 - Dec 2025</p>
+              <ul>
+                <li>My role involves selling, end-to-end project management and report delivery. This includes developing and maintaining a robust taxonomy for emerging sectors, data validation, conducting quantitative analysis and qualitative research, and crafting insightful narratives. I also manage client communication, create assets for social media, and present findings in person at conferences and online.</li>
+                <li>My main industry focus areas include Climate Tech (Green Mobility, Sustainable Food & AgriTech, etc.), Deep Tech (Robotics, AI, etc.) and Health (Biotechnology, Digital Health, etc.).</li>
+                <li>Notable accomplishments include 1/ authoring a Blue Economy deep dive, which was referenced at the UN World Ocean Conference and by the World Economic Forum. 2/ collaborating with Bpifrance, France's leading public investment bank, to assess the State of Deep Tech in France. 3/ producing the most comprehensive industry report to date on Longevity for Speedinvest (a leading European VC) and Generali (a major global insurer) and sharing my insights on Dealroom's podcast.</li>
+                <li>To date, I have produced over 20 market intelligence reports and presented my work at more than five industry conferences. Each report published through Dealroom reaches over 2k online viewers, supported by a LinkedIn audience of 40k+ followers.</li>
+                <li>In my workflow, I leverage tools such as ChatGPT and OpenAI integrations, BigQuery SQL for large-scale data analysis, Excel for financial modeling and data manipulation, and Datawrapper for data visualization.</li>
+              </ul>
+            </div>
+
+            <div class="exp-entry reveal">
+              <h3><a href="https://d2x.com/" target="_blank" rel="noopener">D2X Group</a> (Digital Assets Derivatives Exchange)</h3>
+              <p class="exp-meta">Amsterdam, the Netherlands</p>
+              <p class="exp-meta">Jr. Business Developer (Internship), Jul 2022 - Dec 2022</p>
+              <ul>
+                <li>Joined at a very early stage of this innovative startup which has since become the first regulated trading platform for institutional investors in crypto derivatives.</li>
+                <li>I produced research for the CEO on new revenue opportunities, strategic partnerships, and key industry developments. My insights were regularly reported to the board of investors, executive committee, and financial regulators.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---------- TAB 3: PROJECTS ---------- -->
+        <div
+          id="projects"
+          class="tab-content"
+          role="tabpanel"
+          aria-labelledby="tab-projects"
+          tabindex="0"
+        >
+          <div class="cards">
+            <!-- CARD 1 -->
+            <div class="card reveal">
+              <div class="card-photo">Project Image</div>
+              <div class="card-text">
+                <h3>Project Title</h3>
+                <p>Short description of what you did and the tools you used.</p>
+              </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="card reveal">
+              <div class="card-photo">Project Image</div>
+              <div class="card-text">
+                <h3>Project Title</h3>
+                <p>Short description of what you did and the tools you used.</p>
+              </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="card reveal">
+              <div class="card-photo">Project Image</div>
+              <div class="card-text">
+                <h3>Project Title</h3>
+                <p>Short description of what you did and the tools you used.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
 
     <footer>Portfolio page produced with support from Claude - Anthropic</footer>
 
     <!-- ============================================================
-       SIMPLE TAB SWITCHING SCRIPT
+       TABS + SCROLL REVEAL
        ============================================================ -->
     <script>
-      function showTab(id) {
-        // hide all tab contents
-        document.querySelectorAll(".tab-content").forEach(function (el) {
-          el.classList.remove("active");
+      (function () {
+        var tabs = Array.prototype.slice.call(
+          document.querySelectorAll(".tab-button")
+        );
+        var panels = document.querySelectorAll(".tab-content");
+
+        function activate(tab, focusTab) {
+          tabs.forEach(function (btn) {
+            var selected = btn === tab;
+            btn.setAttribute("aria-selected", selected ? "true" : "false");
+            btn.tabIndex = selected ? 0 : -1;
+          });
+          panels.forEach(function (panel) {
+            panel.classList.toggle("active", panel.id === tab.getAttribute("aria-controls"));
+          });
+          if (focusTab) tab.focus();
+          revealVisible();
+        }
+
+        tabs.forEach(function (tab, index) {
+          tab.addEventListener("click", function () {
+            activate(tab, false);
+          });
+
+          tab.addEventListener("keydown", function (e) {
+            var newIndex = null;
+            if (e.key === "ArrowRight") newIndex = (index + 1) % tabs.length;
+            else if (e.key === "ArrowLeft")
+              newIndex = (index - 1 + tabs.length) % tabs.length;
+            else if (e.key === "Home") newIndex = 0;
+            else if (e.key === "End") newIndex = tabs.length - 1;
+
+            if (newIndex !== null) {
+              e.preventDefault();
+              activate(tabs[newIndex], true);
+            }
+          });
         });
-        // remove active state from all buttons
-        document.querySelectorAll(".tab-button").forEach(function (btn) {
-          btn.classList.remove("active");
-        });
-        // show the selected tab + highlight the clicked button
-        document.getElementById(id).classList.add("active");
-        event.target.classList.add("active");
-      }
+
+        /* ---------- scroll reveal ---------- */
+        var revealEls = document.querySelectorAll(".reveal");
+        var observer;
+
+        if ("IntersectionObserver" in window) {
+          observer = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("is-visible");
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+          );
+          revealEls.forEach(function (el) {
+            observer.observe(el);
+          });
+        } else {
+          revealEls.forEach(function (el) {
+            el.classList.add("is-visible");
+          });
+        }
+
+        function revealVisible() {
+          if (!observer) return;
+          revealEls.forEach(function (el) {
+            if (!el.classList.contains("is-visible")) {
+              var rect = el.getBoundingClientRect();
+              if (rect.top < window.innerHeight && rect.bottom > 0) {
+                el.classList.add("is-visible");
+                observer.unobserve(el);
+              }
+            }
+          });
+        }
+
+        revealVisible();
+      })();
     </script>
   </body>
 </html>
