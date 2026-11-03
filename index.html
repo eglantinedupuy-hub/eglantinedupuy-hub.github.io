@@ -514,11 +514,14 @@
       }
 
       .card {
+        display: block;
         border: 1px solid var(--color-border);
         border-radius: var(--radius-md);
         overflow: hidden;
         background: var(--color-bg-elevated);
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 12px 28px rgba(0, 0, 0, 0.2);
+        color: inherit;
+        text-decoration: none;
         transition: transform var(--duration-base) var(--ease),
           box-shadow var(--duration-base) var(--ease),
           border-color var(--duration-base) var(--ease);
@@ -560,6 +563,14 @@
       .card-text p {
         font-size: var(--text-sm);
         color: var(--color-text-secondary);
+      }
+      .card-text .card-link {
+        margin-top: var(--space-3);
+        color: var(--color-accent);
+        font-weight: 600;
+      }
+      .card:hover .card-text .card-link {
+        text-decoration: underline;
       }
 
       /* ============================================================
@@ -789,7 +800,12 @@
         >
           <div class="cards">
             <!-- CARD 1 -->
-            <div class="card reveal">
+            <a
+              class="card reveal"
+              href="https://github.com/eglantinedupuy-hub/quebec-startup-funding-prediction"
+              target="_blank"
+              rel="noopener"
+            >
               <div class="card-photo">Quebec VC Funding</div>
               <div class="card-text">
                 <h3>Predicting Quebec Startup Funding Round Size</h3>
@@ -802,19 +818,17 @@
                   bootstrap confidence interval. Built with Python, pandas,
                   and scikit-learn.
                 </p>
-                <p>
-                  <a
-                    href="https://github.com/eglantinedupuy-hub/quebec-startup-funding-prediction"
-                    target="_blank"
-                    rel="noopener"
-                    >View on GitHub</a
-                  >
-                </p>
+                <p class="card-link">View on GitHub &rarr;</p>
               </div>
-            </div>
+            </a>
 
             <!-- CARD 2 -->
-            <div class="card reveal">
+            <a
+              class="card reveal"
+              href="https://github.com/eglantinedupuy-hub/startup-failures-causal-inference"
+              target="_blank"
+              rel="noopener"
+            >
               <div class="card-photo">Causal Inference</div>
               <div class="card-text">
                 <h3>Causal Inference on Startup Failures</h3>
@@ -826,16 +840,9 @@
                   methods, and stress-testing them with refutation tests.
                   Built with Python, pandas, CausalML, DoWhy, and XGBoost.
                 </p>
-                <p>
-                  <a
-                    href="https://github.com/eglantinedupuy-hub/startup-failures-causal-inference"
-                    target="_blank"
-                    rel="noopener"
-                    >View on GitHub</a
-                  >
-                </p>
+                <p class="card-link">View on GitHub &rarr;</p>
               </div>
-            </div>
+            </a>
 
             <!-- CARD 3 -->
             <div class="card reveal">
