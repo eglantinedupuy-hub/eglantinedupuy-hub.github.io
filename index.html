@@ -551,6 +551,24 @@
         background: linear-gradient(135deg, rgba(127, 182, 155, 0.14), var(--color-bg));
       }
 
+      .card-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background: #f4f4f2;
+        padding: var(--space-2);
+        box-sizing: border-box;
+        display: block;
+      }
+
+      .card-stat {
+        font-family: var(--font-heading);
+        font-size: var(--text-sm);
+        font-weight: 700;
+        color: var(--color-accent);
+        margin-bottom: var(--space-3);
+      }
+
       .card-text {
         padding: var(--space-5);
       }
@@ -844,18 +862,25 @@
               target="_blank"
               rel="noopener"
             >
-              <div class="card-photo">Quebec VC Funding</div>
+              <div class="card-photo">
+                <img
+                  src="project-images/quebec-funding.png"
+                  alt="Boxplot of funding round amount by public backing, from the Quebec startup funding project"
+                  loading="lazy"
+                />
+              </div>
               <div class="card-text">
                 <h3>Predicting Quebec Startup Funding Round Size</h3>
+                <p class="card-stat">Test RMSE: $19.3M &middot; tuned Random Forest</p>
                 <p>
-                  End-to-end regression project on Dealroom.co data for
-                  Quebec-based startups (2021–present): data cleaning,
-                  feature engineering around government/semi-public investor
-                  backing, and model comparison (Linear Regression, Decision
-                  Tree, tuned Random Forest) evaluated with RMSE/MAE and a
-                  bootstrap confidence interval. Built with Python, pandas,
-                  and scikit-learn.
+                  I wanted to know what predicts the size of a startup
+                  funding round in Quebec. So I cleaned and modeled 356
+                  disclosed Dealroom.co funding rounds (2021–present) with a
+                  tuned Random Forest. Here's what I found: growth stage and
+                  funding history mattered far more than public/government
+                  backing itself.
                 </p>
+                <p class="card-tools">Python &middot; pandas &middot; scikit-learn</p>
                 <p class="card-link">View on GitHub &rarr;</p>
               </div>
             </a>
@@ -867,17 +892,25 @@
               target="_blank"
               rel="noopener"
             >
-              <div class="card-photo">Causal Inference</div>
+              <div class="card-photo">
+                <img
+                  src="project-images/startup-failures.png"
+                  alt="Causal graph linking confounders, high funding, and lifespan, from the startup failures causal inference project"
+                  loading="lazy"
+                />
+              </div>
               <div class="card-text">
                 <h3>Causal Inference on Startup Failures</h3>
+                <p class="card-stat">Est. effect: +2.2 years from high funding (95% CI 1.6&ndash;2.8)</p>
                 <p>
-                  Used CausalML and DoWhy on a Kaggle dataset of 356 failed
-                  startups to ask whether raising more funding and losing to
-                  tech giants actually change how long a startup lasts —
-                  building a causal graph, estimating effects with multiple
-                  methods, and stress-testing them with refutation tests.
-                  Built with Python, pandas, CausalML, DoWhy, and XGBoost.
+                  I wanted to know whether more funding, or losing to tech
+                  giants, actually changes how long a failed startup lasts.
+                  So I built causal models (CausalML, DoWhy) on 356 failed
+                  startups and stress-tested the estimates with refutation
+                  tests. Here's what I found: funding has a real, moderate
+                  effect; losing to giants doesn't.
                 </p>
+                <p class="card-tools">Python &middot; CausalML &middot; DoWhy &middot; XGBoost</p>
                 <p class="card-link">View on GitHub &rarr;</p>
               </div>
             </a>
