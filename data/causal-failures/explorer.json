@@ -1,0 +1,2635 @@
+{
+ "minCell": 5,
+ "total": 356,
+ "dims": [
+  "Sector",
+  "era",
+  "model",
+  "funding"
+ ],
+ "note": "Business model is assigned in priority order Hardware > B2B > Physical operations > Consumer digital > Other, so each startup is counted once.",
+ "cells": [
+  {
+   "Sector": "All",
+   "era": "All",
+   "model": "All",
+   "funding": "All",
+   "n": 356,
+   "meanLifespan": 7.72,
+   "medianLifespan": 7.0,
+   "medianFunding": 20.0
+  },
+  {
+   "Sector": "All",
+   "era": "All",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 176,
+   "meanLifespan": 8.96,
+   "medianLifespan": 9.0,
+   "medianFunding": 88.6
+  },
+  {
+   "Sector": "All",
+   "era": "All",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 180,
+   "meanLifespan": 6.51,
+   "medianLifespan": 6.0,
+   "medianFunding": 5.0
+  },
+  {
+   "Sector": "All",
+   "era": "All",
+   "model": "B2B",
+   "funding": "All",
+   "n": 54,
+   "meanLifespan": 9.52,
+   "medianLifespan": 10.0,
+   "medianFunding": 40.8
+  },
+  {
+   "Sector": "All",
+   "era": "All",
+   "model": "B2B",
+   "funding": "High (> $20M)",
+   "n": 32,
+   "meanLifespan": 11.5,
+   "medianLifespan": 12.0,
+   "medianFunding": 100.0
+  },
+  {
+   "Sector": "All",
+   "era": "All",
+   "model": "B2B",
+   "funding": "Low (<= $20M)",
+   "n": 22,
+   "meanLifespan": 6.64,
+   "medianLifespan": 6.0,
+   "medianFunding": 3.6
+  },
+  {
+   "Sector": "All",
+   "era": "All",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 217,
+   "meanLifespan": 7.57,
+   "medianLifespan": 7.0,
+   "medianFunding": 15.0
+  },
+  {
+   "Sector": "All",
+   "era": "All",
+   "model": "Consumer digital",
+   "funding": "High (> $20M)",
+   "n": 91,
+   "meanLifespan": 8.88,
+   "medianLifespan": 9.0,
+   "medianFunding": 75.0
+  },
+  {
+   "Sector": "All",
+   "era": "All",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 126,
+   "meanLifespan": 6.62,
+   "medianLifespan": 6.0,
+   "medianFunding": 5.0
+  },
+  {
+   "Sector": "All",
+   "era": "All",
+   "model": "Hardware",
+   "funding": "All",
+   "n": 49,
+   "meanLifespan": 7.16,
+   "medianLifespan": 6.0,
+   "medianFunding": 70.0
+  },
+  {
+   "Sector": "All",
+   "era": "All",
+   "model": "Hardware",
+   "funding": "High (> $20M)",
+   "n": 37,
+   "meanLifespan": 7.62,
+   "medianLifespan": 7.0,
+   "medianFunding": 150.0
+  },
+  {
+   "Sector": "All",
+   "era": "All",
+   "model": "Hardware",
+   "funding": "Low (<= $20M)",
+   "n": 12,
+   "meanLifespan": 5.75,
+   "medianLifespan": 6.0,
+   "medianFunding": 7.5
+  },
+  {
+   "Sector": "All",
+   "era": "All",
+   "model": "Physical operations",
+   "funding": "All",
+   "n": 36,
+   "meanLifespan": 6.69,
+   "medianLifespan": 5.0,
+   "medianFunding": 18.5
+  },
+  {
+   "Sector": "All",
+   "era": "All",
+   "model": "Physical operations",
+   "funding": "High (> $20M)",
+   "n": 16,
+   "meanLifespan": 7.44,
+   "medianLifespan": 6.0,
+   "medianFunding": 95.0
+  },
+  {
+   "Sector": "All",
+   "era": "All",
+   "model": "Physical operations",
+   "funding": "Low (<= $20M)",
+   "n": 20,
+   "meanLifespan": 6.1,
+   "medianLifespan": 5.0,
+   "medianFunding": 6.5
+  },
+  {
+   "Sector": "All",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "All",
+   "n": 234,
+   "meanLifespan": 7.0,
+   "medianLifespan": 7.0,
+   "medianFunding": 20.0
+  },
+  {
+   "Sector": "All",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 113,
+   "meanLifespan": 8.28,
+   "medianLifespan": 9.0,
+   "medianFunding": 84.0
+  },
+  {
+   "Sector": "All",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 121,
+   "meanLifespan": 5.81,
+   "medianLifespan": 6.0,
+   "medianFunding": 5.0
+  },
+  {
+   "Sector": "All",
+   "era": "2009–2014",
+   "model": "B2B",
+   "funding": "All",
+   "n": 27,
+   "meanLifespan": 8.89,
+   "medianLifespan": 10.0,
+   "medianFunding": 46.5
+  },
+  {
+   "Sector": "All",
+   "era": "2009–2014",
+   "model": "B2B",
+   "funding": "High (> $20M)",
+   "n": 15,
+   "meanLifespan": 10.87,
+   "medianLifespan": 12.0,
+   "medianFunding": 130.7
+  },
+  {
+   "Sector": "All",
+   "era": "2009–2014",
+   "model": "B2B",
+   "funding": "Low (<= $20M)",
+   "n": 12,
+   "meanLifespan": 6.42,
+   "medianLifespan": 6.0,
+   "medianFunding": 4.6
+  },
+  {
+   "Sector": "All",
+   "era": "2009–2014",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 150,
+   "meanLifespan": 6.86,
+   "medianLifespan": 7.0,
+   "medianFunding": 15.0
+  },
+  {
+   "Sector": "All",
+   "era": "2009–2014",
+   "model": "Consumer digital",
+   "funding": "High (> $20M)",
+   "n": 67,
+   "meanLifespan": 8.24,
+   "medianLifespan": 8.0,
+   "medianFunding": 79.0
+  },
+  {
+   "Sector": "All",
+   "era": "2009–2014",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 83,
+   "meanLifespan": 5.75,
+   "medianLifespan": 5.0,
+   "medianFunding": 5.0
+  },
+  {
+   "Sector": "All",
+   "era": "2009–2014",
+   "model": "Hardware",
+   "funding": "All",
+   "n": 29,
+   "meanLifespan": 6.48,
+   "medianLifespan": 6.0,
+   "medianFunding": 40.0
+  },
+  {
+   "Sector": "All",
+   "era": "2009–2014",
+   "model": "Hardware",
+   "funding": "High (> $20M)",
+   "n": 19,
+   "meanLifespan": 6.79,
+   "medianLifespan": 7.0,
+   "medianFunding": 73.0
+  },
+  {
+   "Sector": "All",
+   "era": "2009–2014",
+   "model": "Hardware",
+   "funding": "Low (<= $20M)",
+   "n": 10,
+   "meanLifespan": 5.9,
+   "medianLifespan": 6.0,
+   "medianFunding": 6.5
+  },
+  {
+   "Sector": "All",
+   "era": "2009–2014",
+   "model": "Physical operations",
+   "funding": "All",
+   "n": 28,
+   "meanLifespan": 6.5,
+   "medianLifespan": 5.5,
+   "medianFunding": 18.5
+  },
+  {
+   "Sector": "All",
+   "era": "2009–2014",
+   "model": "Physical operations",
+   "funding": "High (> $20M)",
+   "n": 12,
+   "meanLifespan": 7.67,
+   "medianLifespan": 7.5,
+   "medianFunding": 83.0
+  },
+  {
+   "Sector": "All",
+   "era": "2009–2014",
+   "model": "Physical operations",
+   "funding": "Low (<= $20M)",
+   "n": 16,
+   "meanLifespan": 5.62,
+   "medianLifespan": 5.0,
+   "medianFunding": 6.5
+  },
+  {
+   "Sector": "All",
+   "era": "2015 or later",
+   "model": "All",
+   "funding": "All",
+   "n": 38,
+   "meanLifespan": 4.87,
+   "medianLifespan": 5.0,
+   "medianFunding": 13.5
+  },
+  {
+   "Sector": "All",
+   "era": "2015 or later",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 13,
+   "meanLifespan": 5.08,
+   "medianLifespan": 5.0,
+   "medianFunding": 77.0
+  },
+  {
+   "Sector": "All",
+   "era": "2015 or later",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 25,
+   "meanLifespan": 4.76,
+   "medianLifespan": 4.0,
+   "medianFunding": 8.0
+  },
+  {
+   "Sector": "All",
+   "era": "2015 or later",
+   "model": "B2B",
+   "funding": "All",
+   "n": 6,
+   "meanLifespan": 5.5,
+   "medianLifespan": 6.0,
+   "medianFunding": 21.5
+  },
+  {
+   "Sector": "All",
+   "era": "2015 or later",
+   "model": "B2B",
+   "funding": "High (> $20M)",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "Sector": "All",
+   "era": "2015 or later",
+   "model": "B2B",
+   "funding": "Low (<= $20M)",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "Sector": "All",
+   "era": "2015 or later",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 22,
+   "meanLifespan": 4.86,
+   "medianLifespan": 5.0,
+   "medianFunding": 10.5
+  },
+  {
+   "Sector": "All",
+   "era": "2015 or later",
+   "model": "Consumer digital",
+   "funding": "High (> $20M)",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "Sector": "All",
+   "era": "2015 or later",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 18,
+   "meanLifespan": 4.72,
+   "medianLifespan": 4.5,
+   "medianFunding": 7.9
+  },
+  {
+   "Sector": "All",
+   "era": "2015 or later",
+   "model": "Hardware",
+   "funding": "All",
+   "n": 7,
+   "meanLifespan": 4.71,
+   "medianLifespan": 5.0,
+   "medianFunding": 200.0
+  },
+  {
+   "Sector": "All",
+   "era": "2015 or later",
+   "model": "Hardware",
+   "funding": "High (> $20M)",
+   "n": 5,
+   "meanLifespan": 4.6,
+   "medianLifespan": 5.0,
+   "medianFunding": 330.0
+  },
+  {
+   "Sector": "All",
+   "era": "2015 or later",
+   "model": "Hardware",
+   "funding": "Low (<= $20M)",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "All",
+   "era": "2015 or later",
+   "model": "Physical operations",
+   "funding": "All",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "Sector": "All",
+   "era": "2015 or later",
+   "model": "Physical operations",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "All",
+   "era": "2015 or later",
+   "model": "Physical operations",
+   "funding": "Low (<= $20M)",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "All",
+   "era": "Up to 2008",
+   "model": "All",
+   "funding": "All",
+   "n": 84,
+   "meanLifespan": 11.0,
+   "medianLifespan": 12.0,
+   "medianFunding": 39.5
+  },
+  {
+   "Sector": "All",
+   "era": "Up to 2008",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 50,
+   "meanLifespan": 11.5,
+   "medianLifespan": 12.0,
+   "medianFunding": 102.0
+  },
+  {
+   "Sector": "All",
+   "era": "Up to 2008",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 34,
+   "meanLifespan": 10.26,
+   "medianLifespan": 11.0,
+   "medianFunding": 5.0
+  },
+  {
+   "Sector": "All",
+   "era": "Up to 2008",
+   "model": "B2B",
+   "funding": "All",
+   "n": 21,
+   "meanLifespan": 11.48,
+   "medianLifespan": 12.0,
+   "medianFunding": 75.0
+  },
+  {
+   "Sector": "All",
+   "era": "Up to 2008",
+   "model": "B2B",
+   "funding": "High (> $20M)",
+   "n": 14,
+   "meanLifespan": 13.5,
+   "medianLifespan": 13.5,
+   "medianFunding": 96.0
+  },
+  {
+   "Sector": "All",
+   "era": "Up to 2008",
+   "model": "B2B",
+   "funding": "Low (<= $20M)",
+   "n": 7,
+   "meanLifespan": 7.43,
+   "medianLifespan": 6.0,
+   "medianFunding": 3.0
+  },
+  {
+   "Sector": "All",
+   "era": "Up to 2008",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 45,
+   "meanLifespan": 11.24,
+   "medianLifespan": 12.0,
+   "medianFunding": 20.0
+  },
+  {
+   "Sector": "All",
+   "era": "Up to 2008",
+   "model": "Consumer digital",
+   "funding": "High (> $20M)",
+   "n": 20,
+   "meanLifespan": 11.7,
+   "medianLifespan": 12.0,
+   "medianFunding": 65.0
+  },
+  {
+   "Sector": "All",
+   "era": "Up to 2008",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 25,
+   "meanLifespan": 10.88,
+   "medianLifespan": 11.0,
+   "medianFunding": 6.7
+  },
+  {
+   "Sector": "All",
+   "era": "Up to 2008",
+   "model": "Hardware",
+   "funding": "All",
+   "n": 13,
+   "meanLifespan": 10.0,
+   "medianLifespan": 10.0,
+   "medianFunding": 200.0
+  },
+  {
+   "Sector": "All",
+   "era": "Up to 2008",
+   "model": "Hardware",
+   "funding": "High (> $20M)",
+   "n": 13,
+   "meanLifespan": 10.0,
+   "medianLifespan": 10.0,
+   "medianFunding": 200.0
+  },
+  {
+   "Sector": "All",
+   "era": "Up to 2008",
+   "model": "Physical operations",
+   "funding": "All",
+   "n": 5,
+   "meanLifespan": 9.4,
+   "medianLifespan": 11.0,
+   "medianFunding": 110.0
+  },
+  {
+   "Sector": "All",
+   "era": "Up to 2008",
+   "model": "Physical operations",
+   "funding": "High (> $20M)",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "Sector": "All",
+   "era": "Up to 2008",
+   "model": "Physical operations",
+   "funding": "Low (<= $20M)",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "All",
+   "model": "All",
+   "funding": "All",
+   "n": 23,
+   "meanLifespan": 6.78,
+   "medianLifespan": 6.0,
+   "medianFunding": 15.0
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "All",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 9,
+   "meanLifespan": 7.78,
+   "medianLifespan": 8.0,
+   "medianFunding": 64.0
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "All",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 14,
+   "meanLifespan": 6.14,
+   "medianLifespan": 5.5,
+   "medianFunding": 10.0
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "All",
+   "model": "B2B",
+   "funding": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "All",
+   "model": "B2B",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "All",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "All",
+   "model": "Consumer digital",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "All",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "All",
+   "model": "Hardware",
+   "funding": "All",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "All",
+   "model": "Hardware",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "All",
+   "model": "Hardware",
+   "funding": "Low (<= $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "All",
+   "model": "Physical operations",
+   "funding": "All",
+   "n": 17,
+   "meanLifespan": 6.82,
+   "medianLifespan": 5.0,
+   "medianFunding": 13.0
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "All",
+   "model": "Physical operations",
+   "funding": "High (> $20M)",
+   "n": 6,
+   "meanLifespan": 7.5,
+   "medianLifespan": 6.5,
+   "medianFunding": 73.5
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "All",
+   "model": "Physical operations",
+   "funding": "Low (<= $20M)",
+   "n": 11,
+   "meanLifespan": 6.45,
+   "medianLifespan": 5.0,
+   "medianFunding": 10.0
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "All",
+   "n": 18,
+   "meanLifespan": 6.22,
+   "medianLifespan": 5.5,
+   "medianFunding": 16.5
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 7,
+   "meanLifespan": 7.14,
+   "medianLifespan": 8.0,
+   "medianFunding": 64.0
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 11,
+   "meanLifespan": 5.64,
+   "medianLifespan": 5.0,
+   "medianFunding": 10.0
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "2009–2014",
+   "model": "B2B",
+   "funding": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "2009–2014",
+   "model": "B2B",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "2009–2014",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "2009–2014",
+   "model": "Consumer digital",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "2009–2014",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "2009–2014",
+   "model": "Physical operations",
+   "funding": "All",
+   "n": 14,
+   "meanLifespan": 5.93,
+   "medianLifespan": 5.0,
+   "medianFunding": 16.5
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "2009–2014",
+   "model": "Physical operations",
+   "funding": "High (> $20M)",
+   "n": 5,
+   "meanLifespan": 6.0,
+   "medianLifespan": 5.0,
+   "medianFunding": 57.0
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "2009–2014",
+   "model": "Physical operations",
+   "funding": "Low (<= $20M)",
+   "n": 9,
+   "meanLifespan": 5.89,
+   "medianLifespan": 5.0,
+   "medianFunding": 10.0
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "2015 or later",
+   "model": "All",
+   "funding": "All",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "2015 or later",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "2015 or later",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "2015 or later",
+   "model": "Hardware",
+   "funding": "All",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "2015 or later",
+   "model": "Hardware",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "2015 or later",
+   "model": "Hardware",
+   "funding": "Low (<= $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "2015 or later",
+   "model": "Physical operations",
+   "funding": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "2015 or later",
+   "model": "Physical operations",
+   "funding": "Low (<= $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "Up to 2008",
+   "model": "All",
+   "funding": "All",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "Up to 2008",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "Up to 2008",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "Up to 2008",
+   "model": "Physical operations",
+   "funding": "All",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "Up to 2008",
+   "model": "Physical operations",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Accommodation and Food Services",
+   "era": "Up to 2008",
+   "model": "Physical operations",
+   "funding": "Low (<= $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "All",
+   "model": "All",
+   "funding": "All",
+   "n": 41,
+   "meanLifespan": 7.98,
+   "medianLifespan": 7.0,
+   "medianFunding": 15.0
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "All",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 17,
+   "meanLifespan": 9.88,
+   "medianLifespan": 11.0,
+   "medianFunding": 161.0
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "All",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 24,
+   "meanLifespan": 6.62,
+   "medianLifespan": 6.0,
+   "medianFunding": 5.0
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "All",
+   "model": "B2B",
+   "funding": "All",
+   "n": 9,
+   "meanLifespan": 8.22,
+   "medianLifespan": 8.0,
+   "medianFunding": 15.0
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "All",
+   "model": "B2B",
+   "funding": "High (> $20M)",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "All",
+   "model": "B2B",
+   "funding": "Low (<= $20M)",
+   "n": 6,
+   "meanLifespan": 6.33,
+   "medianLifespan": 5.5,
+   "medianFunding": 10.0
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "All",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 31,
+   "meanLifespan": 8.0,
+   "medianLifespan": 7.0,
+   "medianFunding": 20.0
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "All",
+   "model": "Consumer digital",
+   "funding": "High (> $20M)",
+   "n": 13,
+   "meanLifespan": 9.77,
+   "medianLifespan": 10.0,
+   "medianFunding": 161.0
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "All",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 18,
+   "meanLifespan": 6.72,
+   "medianLifespan": 6.0,
+   "medianFunding": 5.0
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "All",
+   "model": "Hardware",
+   "funding": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "All",
+   "model": "Hardware",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "All",
+   "n": 23,
+   "meanLifespan": 8.04,
+   "medianLifespan": 8.0,
+   "medianFunding": 20.0
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 11,
+   "meanLifespan": 9.64,
+   "medianLifespan": 11.0,
+   "medianFunding": 161.0
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 12,
+   "meanLifespan": 6.58,
+   "medianLifespan": 6.0,
+   "medianFunding": 5.5
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "2009–2014",
+   "model": "B2B",
+   "funding": "All",
+   "n": 6,
+   "meanLifespan": 8.83,
+   "medianLifespan": 9.5,
+   "medianFunding": 15.0
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "2009–2014",
+   "model": "B2B",
+   "funding": "High (> $20M)",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "2009–2014",
+   "model": "B2B",
+   "funding": "Low (<= $20M)",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "2009–2014",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 17,
+   "meanLifespan": 7.76,
+   "medianLifespan": 7.0,
+   "medianFunding": 25.0
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "2009–2014",
+   "model": "Consumer digital",
+   "funding": "High (> $20M)",
+   "n": 9,
+   "meanLifespan": 9.11,
+   "medianLifespan": 10.0,
+   "medianFunding": 161.0
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "2009–2014",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 8,
+   "meanLifespan": 6.25,
+   "medianLifespan": 6.0,
+   "medianFunding": 5.5
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "2015 or later",
+   "model": "All",
+   "funding": "All",
+   "n": 5,
+   "meanLifespan": 5.4,
+   "medianLifespan": 6.0,
+   "medianFunding": 11.0
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "2015 or later",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 5,
+   "meanLifespan": 5.4,
+   "medianLifespan": 6.0,
+   "medianFunding": 11.0
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "2015 or later",
+   "model": "B2B",
+   "funding": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "2015 or later",
+   "model": "B2B",
+   "funding": "Low (<= $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "2015 or later",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "2015 or later",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "Up to 2008",
+   "model": "All",
+   "funding": "All",
+   "n": 13,
+   "meanLifespan": 8.85,
+   "medianLifespan": 9.0,
+   "medianFunding": 20.0
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "Up to 2008",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 6,
+   "meanLifespan": 10.33,
+   "medianLifespan": 10.5,
+   "medianFunding": 130.0
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "Up to 2008",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 7,
+   "meanLifespan": 7.57,
+   "medianLifespan": 6.0,
+   "medianFunding": 3.0
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "Up to 2008",
+   "model": "B2B",
+   "funding": "All",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "Up to 2008",
+   "model": "B2B",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "Up to 2008",
+   "model": "B2B",
+   "funding": "Low (<= $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "Up to 2008",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 10,
+   "meanLifespan": 9.5,
+   "medianLifespan": 9.5,
+   "medianFunding": 12.5
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "Up to 2008",
+   "model": "Consumer digital",
+   "funding": "High (> $20M)",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "Up to 2008",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 6,
+   "meanLifespan": 8.33,
+   "medianLifespan": 6.5,
+   "medianFunding": 3.5
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "Up to 2008",
+   "model": "Hardware",
+   "funding": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Finance and Insurance",
+   "era": "Up to 2008",
+   "model": "Hardware",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Health Care",
+   "era": "All",
+   "model": "All",
+   "funding": "All",
+   "n": 57,
+   "meanLifespan": 7.05,
+   "medianLifespan": 6.0,
+   "medianFunding": 50.0
+  },
+  {
+   "Sector": "Health Care",
+   "era": "All",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 41,
+   "meanLifespan": 7.95,
+   "medianLifespan": 7.0,
+   "medianFunding": 118.0
+  },
+  {
+   "Sector": "Health Care",
+   "era": "All",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 16,
+   "meanLifespan": 4.75,
+   "medianLifespan": 4.0,
+   "medianFunding": 5.5
+  },
+  {
+   "Sector": "Health Care",
+   "era": "All",
+   "model": "B2B",
+   "funding": "All",
+   "n": 9,
+   "meanLifespan": 8.11,
+   "medianLifespan": 7.0,
+   "medianFunding": 48.0
+  },
+  {
+   "Sector": "Health Care",
+   "era": "All",
+   "model": "B2B",
+   "funding": "High (> $20M)",
+   "n": 7,
+   "meanLifespan": 8.86,
+   "medianLifespan": 7.0,
+   "medianFunding": 92.0
+  },
+  {
+   "Sector": "Health Care",
+   "era": "All",
+   "model": "B2B",
+   "funding": "Low (<= $20M)",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Health Care",
+   "era": "All",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 31,
+   "meanLifespan": 6.23,
+   "medianLifespan": 6.0,
+   "medianFunding": 50.0
+  },
+  {
+   "Sector": "Health Care",
+   "era": "All",
+   "model": "Consumer digital",
+   "funding": "High (> $20M)",
+   "n": 21,
+   "meanLifespan": 7.0,
+   "medianLifespan": 7.0,
+   "medianFunding": 115.0
+  },
+  {
+   "Sector": "Health Care",
+   "era": "All",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 10,
+   "meanLifespan": 4.6,
+   "medianLifespan": 4.0,
+   "medianFunding": 6.0
+  },
+  {
+   "Sector": "Health Care",
+   "era": "All",
+   "model": "Hardware",
+   "funding": "All",
+   "n": 16,
+   "meanLifespan": 8.19,
+   "medianLifespan": 6.0,
+   "medianFunding": 60.5
+  },
+  {
+   "Sector": "Health Care",
+   "era": "All",
+   "model": "Hardware",
+   "funding": "High (> $20M)",
+   "n": 12,
+   "meanLifespan": 9.33,
+   "medianLifespan": 9.5,
+   "medianFunding": 175.0
+  },
+  {
+   "Sector": "Health Care",
+   "era": "All",
+   "model": "Hardware",
+   "funding": "Low (<= $20M)",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "Sector": "Health Care",
+   "era": "All",
+   "model": "Physical operations",
+   "funding": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Health Care",
+   "era": "All",
+   "model": "Physical operations",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "All",
+   "n": 36,
+   "meanLifespan": 6.78,
+   "medianLifespan": 7.0,
+   "medianFunding": 96.5
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 29,
+   "meanLifespan": 7.14,
+   "medianLifespan": 7.0,
+   "medianFunding": 118.0
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 7,
+   "meanLifespan": 5.29,
+   "medianLifespan": 6.0,
+   "medianFunding": 5.0
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2009–2014",
+   "model": "B2B",
+   "funding": "All",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2009–2014",
+   "model": "B2B",
+   "funding": "High (> $20M)",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2009–2014",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 22,
+   "meanLifespan": 6.91,
+   "medianLifespan": 7.0,
+   "medianFunding": 107.5
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2009–2014",
+   "model": "Consumer digital",
+   "funding": "High (> $20M)",
+   "n": 18,
+   "meanLifespan": 7.22,
+   "medianLifespan": 7.0,
+   "medianFunding": 120.0
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2009–2014",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2009–2014",
+   "model": "Hardware",
+   "funding": "All",
+   "n": 9,
+   "meanLifespan": 5.89,
+   "medianLifespan": 5.0,
+   "medianFunding": 35.0
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2009–2014",
+   "model": "Hardware",
+   "funding": "High (> $20M)",
+   "n": 6,
+   "meanLifespan": 6.33,
+   "medianLifespan": 4.5,
+   "medianFunding": 121.5
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2009–2014",
+   "model": "Hardware",
+   "funding": "Low (<= $20M)",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2009–2014",
+   "model": "Physical operations",
+   "funding": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2009–2014",
+   "model": "Physical operations",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2015 or later",
+   "model": "All",
+   "funding": "All",
+   "n": 14,
+   "meanLifespan": 4.71,
+   "medianLifespan": 4.0,
+   "medianFunding": 13.5
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2015 or later",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 5,
+   "meanLifespan": 5.4,
+   "medianLifespan": 6.0,
+   "medianFunding": 77.0
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2015 or later",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 9,
+   "meanLifespan": 4.33,
+   "medianLifespan": 4.0,
+   "medianFunding": 8.0
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2015 or later",
+   "model": "B2B",
+   "funding": "All",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2015 or later",
+   "model": "B2B",
+   "funding": "High (> $20M)",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2015 or later",
+   "model": "B2B",
+   "funding": "Low (<= $20M)",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2015 or later",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 9,
+   "meanLifespan": 4.56,
+   "medianLifespan": 4.0,
+   "medianFunding": 15.0
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2015 or later",
+   "model": "Consumer digital",
+   "funding": "High (> $20M)",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2015 or later",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 6,
+   "meanLifespan": 4.0,
+   "medianLifespan": 4.0,
+   "medianFunding": 12.0
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2015 or later",
+   "model": "Hardware",
+   "funding": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Health Care",
+   "era": "2015 or later",
+   "model": "Hardware",
+   "funding": "Low (<= $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Health Care",
+   "era": "Up to 2008",
+   "model": "All",
+   "funding": "All",
+   "n": 7,
+   "meanLifespan": 13.14,
+   "medianLifespan": 15.0,
+   "medianFunding": 150.0
+  },
+  {
+   "Sector": "Health Care",
+   "era": "Up to 2008",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 7,
+   "meanLifespan": 13.14,
+   "medianLifespan": 15.0,
+   "medianFunding": 150.0
+  },
+  {
+   "Sector": "Health Care",
+   "era": "Up to 2008",
+   "model": "B2B",
+   "funding": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Health Care",
+   "era": "Up to 2008",
+   "model": "B2B",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Health Care",
+   "era": "Up to 2008",
+   "model": "Hardware",
+   "funding": "All",
+   "n": 6,
+   "meanLifespan": 12.33,
+   "medianLifespan": 13.0,
+   "medianFunding": 325.0
+  },
+  {
+   "Sector": "Health Care",
+   "era": "Up to 2008",
+   "model": "Hardware",
+   "funding": "High (> $20M)",
+   "n": 6,
+   "meanLifespan": 12.33,
+   "medianLifespan": 13.0,
+   "medianFunding": 325.0
+  },
+  {
+   "Sector": "Information",
+   "era": "All",
+   "model": "All",
+   "funding": "All",
+   "n": 126,
+   "meanLifespan": 8.67,
+   "medianLifespan": 8.0,
+   "medianFunding": 12.9
+  },
+  {
+   "Sector": "Information",
+   "era": "All",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 55,
+   "meanLifespan": 10.82,
+   "medianLifespan": 12.0,
+   "medianFunding": 64.0
+  },
+  {
+   "Sector": "Information",
+   "era": "All",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 71,
+   "meanLifespan": 7.01,
+   "medianLifespan": 6.0,
+   "medianFunding": 3.0
+  },
+  {
+   "Sector": "Information",
+   "era": "All",
+   "model": "B2B",
+   "funding": "All",
+   "n": 33,
+   "meanLifespan": 10.09,
+   "medianLifespan": 10.0,
+   "medianFunding": 47.2
+  },
+  {
+   "Sector": "Information",
+   "era": "All",
+   "model": "B2B",
+   "funding": "High (> $20M)",
+   "n": 20,
+   "meanLifespan": 12.3,
+   "medianLifespan": 12.5,
+   "medianFunding": 102.0
+  },
+  {
+   "Sector": "Information",
+   "era": "All",
+   "model": "B2B",
+   "funding": "Low (<= $20M)",
+   "n": 13,
+   "meanLifespan": 6.69,
+   "medianLifespan": 6.0,
+   "medianFunding": 3.0
+  },
+  {
+   "Sector": "Information",
+   "era": "All",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 91,
+   "meanLifespan": 8.22,
+   "medianLifespan": 7.0,
+   "medianFunding": 12.0
+  },
+  {
+   "Sector": "Information",
+   "era": "All",
+   "model": "Consumer digital",
+   "funding": "High (> $20M)",
+   "n": 35,
+   "meanLifespan": 9.97,
+   "medianLifespan": 11.0,
+   "medianFunding": 56.8
+  },
+  {
+   "Sector": "Information",
+   "era": "All",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 56,
+   "meanLifespan": 7.12,
+   "medianLifespan": 6.0,
+   "medianFunding": 2.8
+  },
+  {
+   "Sector": "Information",
+   "era": "All",
+   "model": "Physical operations",
+   "funding": "All",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Information",
+   "era": "All",
+   "model": "Physical operations",
+   "funding": "Low (<= $20M)",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Information",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "All",
+   "n": 77,
+   "meanLifespan": 6.96,
+   "medianLifespan": 6.0,
+   "medianFunding": 10.0
+  },
+  {
+   "Sector": "Information",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 29,
+   "meanLifespan": 9.52,
+   "medianLifespan": 10.0,
+   "medianFunding": 61.0
+  },
+  {
+   "Sector": "Information",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 48,
+   "meanLifespan": 5.42,
+   "medianLifespan": 5.0,
+   "medianFunding": 2.4
+  },
+  {
+   "Sector": "Information",
+   "era": "2009–2014",
+   "model": "B2B",
+   "funding": "All",
+   "n": 16,
+   "meanLifespan": 8.81,
+   "medianLifespan": 9.5,
+   "medianFunding": 29.5
+  },
+  {
+   "Sector": "Information",
+   "era": "2009–2014",
+   "model": "B2B",
+   "funding": "High (> $20M)",
+   "n": 8,
+   "meanLifespan": 11.62,
+   "medianLifespan": 12.0,
+   "medianFunding": 185.8
+  },
+  {
+   "Sector": "Information",
+   "era": "2009–2014",
+   "model": "B2B",
+   "funding": "Low (<= $20M)",
+   "n": 8,
+   "meanLifespan": 6.0,
+   "medianLifespan": 6.0,
+   "medianFunding": 3.6
+  },
+  {
+   "Sector": "Information",
+   "era": "2009–2014",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 59,
+   "meanLifespan": 6.49,
+   "medianLifespan": 6.0,
+   "medianFunding": 8.0
+  },
+  {
+   "Sector": "Information",
+   "era": "2009–2014",
+   "model": "Consumer digital",
+   "funding": "High (> $20M)",
+   "n": 21,
+   "meanLifespan": 8.71,
+   "medianLifespan": 8.0,
+   "medianFunding": 56.8
+  },
+  {
+   "Sector": "Information",
+   "era": "2009–2014",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 38,
+   "meanLifespan": 5.26,
+   "medianLifespan": 5.0,
+   "medianFunding": 2.0
+  },
+  {
+   "Sector": "Information",
+   "era": "2009–2014",
+   "model": "Physical operations",
+   "funding": "All",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Information",
+   "era": "2009–2014",
+   "model": "Physical operations",
+   "funding": "Low (<= $20M)",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Information",
+   "era": "2015 or later",
+   "model": "All",
+   "funding": "All",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "Sector": "Information",
+   "era": "2015 or later",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Information",
+   "era": "2015 or later",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Information",
+   "era": "2015 or later",
+   "model": "B2B",
+   "funding": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Information",
+   "era": "2015 or later",
+   "model": "B2B",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Information",
+   "era": "2015 or later",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "Sector": "Information",
+   "era": "2015 or later",
+   "model": "Consumer digital",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Information",
+   "era": "2015 or later",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Information",
+   "era": "Up to 2008",
+   "model": "All",
+   "funding": "All",
+   "n": 45,
+   "meanLifespan": 11.93,
+   "medianLifespan": 12.0,
+   "medianFunding": 24.0
+  },
+  {
+   "Sector": "Information",
+   "era": "Up to 2008",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 24,
+   "meanLifespan": 12.83,
+   "medianLifespan": 13.0,
+   "medianFunding": 84.1
+  },
+  {
+   "Sector": "Information",
+   "era": "Up to 2008",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 21,
+   "meanLifespan": 10.9,
+   "medianLifespan": 11.0,
+   "medianFunding": 7.3
+  },
+  {
+   "Sector": "Information",
+   "era": "Up to 2008",
+   "model": "B2B",
+   "funding": "All",
+   "n": 16,
+   "meanLifespan": 11.62,
+   "medianLifespan": 12.5,
+   "medianFunding": 84.1
+  },
+  {
+   "Sector": "Information",
+   "era": "Up to 2008",
+   "model": "B2B",
+   "funding": "High (> $20M)",
+   "n": 11,
+   "meanLifespan": 13.36,
+   "medianLifespan": 14.0,
+   "medianFunding": 100.0
+  },
+  {
+   "Sector": "Information",
+   "era": "Up to 2008",
+   "model": "B2B",
+   "funding": "Low (<= $20M)",
+   "n": 5,
+   "meanLifespan": 7.8,
+   "medianLifespan": 6.0,
+   "medianFunding": 1.0
+  },
+  {
+   "Sector": "Information",
+   "era": "Up to 2008",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 29,
+   "meanLifespan": 12.1,
+   "medianLifespan": 12.0,
+   "medianFunding": 20.0
+  },
+  {
+   "Sector": "Information",
+   "era": "Up to 2008",
+   "model": "Consumer digital",
+   "funding": "High (> $20M)",
+   "n": 13,
+   "meanLifespan": 12.38,
+   "medianLifespan": 13.0,
+   "medianFunding": 50.0
+  },
+  {
+   "Sector": "Information",
+   "era": "Up to 2008",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 16,
+   "meanLifespan": 11.88,
+   "medianLifespan": 12.0,
+   "medianFunding": 10.2
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "All",
+   "model": "All",
+   "funding": "All",
+   "n": 29,
+   "meanLifespan": 6.83,
+   "medianLifespan": 7.0,
+   "medianFunding": 73.0
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "All",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 23,
+   "meanLifespan": 6.96,
+   "medianLifespan": 7.0,
+   "medianFunding": 150.0
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "All",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 6,
+   "meanLifespan": 6.33,
+   "medianLifespan": 7.0,
+   "medianFunding": 10.0
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "All",
+   "model": "Hardware",
+   "funding": "All",
+   "n": 29,
+   "meanLifespan": 6.83,
+   "medianLifespan": 7.0,
+   "medianFunding": 73.0
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "All",
+   "model": "Hardware",
+   "funding": "High (> $20M)",
+   "n": 23,
+   "meanLifespan": 6.96,
+   "medianLifespan": 7.0,
+   "medianFunding": 150.0
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "All",
+   "model": "Hardware",
+   "funding": "Low (<= $20M)",
+   "n": 6,
+   "meanLifespan": 6.33,
+   "medianLifespan": 7.0,
+   "medianFunding": 10.0
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "All",
+   "n": 19,
+   "meanLifespan": 6.79,
+   "medianLifespan": 7.0,
+   "medianFunding": 50.0
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 13,
+   "meanLifespan": 7.0,
+   "medianLifespan": 7.0,
+   "medianFunding": 73.0
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 6,
+   "meanLifespan": 6.33,
+   "medianLifespan": 7.0,
+   "medianFunding": 10.0
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "2009–2014",
+   "model": "Hardware",
+   "funding": "All",
+   "n": 19,
+   "meanLifespan": 6.79,
+   "medianLifespan": 7.0,
+   "medianFunding": 50.0
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "2009–2014",
+   "model": "Hardware",
+   "funding": "High (> $20M)",
+   "n": 13,
+   "meanLifespan": 7.0,
+   "medianLifespan": 7.0,
+   "medianFunding": 73.0
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "2009–2014",
+   "model": "Hardware",
+   "funding": "Low (<= $20M)",
+   "n": 6,
+   "meanLifespan": 6.33,
+   "medianLifespan": 7.0,
+   "medianFunding": 10.0
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "2015 or later",
+   "model": "All",
+   "funding": "All",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "2015 or later",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "2015 or later",
+   "model": "Hardware",
+   "funding": "All",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "2015 or later",
+   "model": "Hardware",
+   "funding": "High (> $20M)",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "Up to 2008",
+   "model": "All",
+   "funding": "All",
+   "n": 6,
+   "meanLifespan": 8.5,
+   "medianLifespan": 8.0,
+   "medianFunding": 175.0
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "Up to 2008",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 6,
+   "meanLifespan": 8.5,
+   "medianLifespan": 8.0,
+   "medianFunding": 175.0
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "Up to 2008",
+   "model": "Hardware",
+   "funding": "All",
+   "n": 6,
+   "meanLifespan": 8.5,
+   "medianLifespan": 8.0,
+   "medianFunding": 175.0
+  },
+  {
+   "Sector": "Manufacturing",
+   "era": "Up to 2008",
+   "model": "Hardware",
+   "funding": "High (> $20M)",
+   "n": 6,
+   "meanLifespan": 8.5,
+   "medianLifespan": 8.0,
+   "medianFunding": 175.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "All",
+   "model": "All",
+   "funding": "All",
+   "n": 80,
+   "meanLifespan": 7.15,
+   "medianLifespan": 7.0,
+   "medianFunding": 15.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "All",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 31,
+   "meanLifespan": 8.32,
+   "medianLifespan": 9.0,
+   "medianFunding": 80.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "All",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 49,
+   "meanLifespan": 6.41,
+   "medianLifespan": 6.0,
+   "medianFunding": 7.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "All",
+   "model": "B2B",
+   "funding": "All",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "All",
+   "model": "B2B",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "All",
+   "model": "B2B",
+   "funding": "Low (<= $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "All",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 61,
+   "meanLifespan": 7.15,
+   "medianLifespan": 7.0,
+   "medianFunding": 13.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "All",
+   "model": "Consumer digital",
+   "funding": "High (> $20M)",
+   "n": 21,
+   "meanLifespan": 8.43,
+   "medianLifespan": 9.0,
+   "medianFunding": 80.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "All",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 40,
+   "meanLifespan": 6.47,
+   "medianLifespan": 6.0,
+   "medianFunding": 7.5
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "All",
+   "model": "Hardware",
+   "funding": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "All",
+   "model": "Hardware",
+   "funding": "Low (<= $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "All",
+   "model": "Physical operations",
+   "funding": "All",
+   "n": 16,
+   "meanLifespan": 6.75,
+   "medianLifespan": 5.5,
+   "medianFunding": 29.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "All",
+   "model": "Physical operations",
+   "funding": "High (> $20M)",
+   "n": 9,
+   "meanLifespan": 7.67,
+   "medianLifespan": 7.0,
+   "medianFunding": 100.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "All",
+   "model": "Physical operations",
+   "funding": "Low (<= $20M)",
+   "n": 7,
+   "meanLifespan": 5.57,
+   "medianLifespan": 4.0,
+   "medianFunding": 4.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "All",
+   "n": 61,
+   "meanLifespan": 7.1,
+   "medianLifespan": 7.0,
+   "medianFunding": 15.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 24,
+   "meanLifespan": 8.58,
+   "medianLifespan": 9.0,
+   "medianFunding": 77.5
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "2009–2014",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 37,
+   "meanLifespan": 6.14,
+   "medianLifespan": 6.0,
+   "medianFunding": 7.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "2009–2014",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 49,
+   "meanLifespan": 7.04,
+   "medianLifespan": 7.0,
+   "medianFunding": 15.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "2009–2014",
+   "model": "Consumer digital",
+   "funding": "High (> $20M)",
+   "n": 18,
+   "meanLifespan": 8.28,
+   "medianLifespan": 9.0,
+   "medianFunding": 77.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "2009–2014",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 31,
+   "meanLifespan": 6.32,
+   "medianLifespan": 6.0,
+   "medianFunding": 8.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "2009–2014",
+   "model": "Hardware",
+   "funding": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "2009–2014",
+   "model": "Hardware",
+   "funding": "Low (<= $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "2009–2014",
+   "model": "Physical operations",
+   "funding": "All",
+   "n": 11,
+   "meanLifespan": 7.45,
+   "medianLifespan": 7.0,
+   "medianFunding": 33.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "2009–2014",
+   "model": "Physical operations",
+   "funding": "High (> $20M)",
+   "n": 6,
+   "meanLifespan": 9.5,
+   "medianLifespan": 11.0,
+   "medianFunding": 88.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "2009–2014",
+   "model": "Physical operations",
+   "funding": "Low (<= $20M)",
+   "n": 5,
+   "meanLifespan": 5.0,
+   "medianLifespan": 4.0,
+   "medianFunding": 4.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "2015 or later",
+   "model": "All",
+   "funding": "All",
+   "n": 8,
+   "meanLifespan": 4.88,
+   "medianLifespan": 5.0,
+   "medianFunding": 7.9
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "2015 or later",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "2015 or later",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 7,
+   "meanLifespan": 4.86,
+   "medianLifespan": 5.0,
+   "medianFunding": 5.8
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "2015 or later",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 6,
+   "meanLifespan": 5.17,
+   "medianLifespan": 5.0,
+   "medianFunding": 7.9
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "2015 or later",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 6,
+   "meanLifespan": 5.17,
+   "medianLifespan": 5.0,
+   "medianFunding": 7.9
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "2015 or later",
+   "model": "Physical operations",
+   "funding": "All",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "2015 or later",
+   "model": "Physical operations",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "2015 or later",
+   "model": "Physical operations",
+   "funding": "Low (<= $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "Up to 2008",
+   "model": "All",
+   "funding": "All",
+   "n": 11,
+   "meanLifespan": 9.09,
+   "medianLifespan": 10.0,
+   "medianFunding": 35.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "Up to 2008",
+   "model": "All",
+   "funding": "High (> $20M)",
+   "n": 6,
+   "meanLifespan": 7.83,
+   "medianLifespan": 7.5,
+   "medianFunding": 116.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "Up to 2008",
+   "model": "All",
+   "funding": "Low (<= $20M)",
+   "n": 5,
+   "meanLifespan": 10.6,
+   "medianLifespan": 10.0,
+   "medianFunding": 10.0
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "Up to 2008",
+   "model": "B2B",
+   "funding": "All",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "Up to 2008",
+   "model": "B2B",
+   "funding": "High (> $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "Up to 2008",
+   "model": "B2B",
+   "funding": "Low (<= $20M)",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "Up to 2008",
+   "model": "Consumer digital",
+   "funding": "All",
+   "n": 6,
+   "meanLifespan": 10.0,
+   "medianLifespan": 10.5,
+   "medianFunding": 47.5
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "Up to 2008",
+   "model": "Consumer digital",
+   "funding": "High (> $20M)",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "Up to 2008",
+   "model": "Consumer digital",
+   "funding": "Low (<= $20M)",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "Up to 2008",
+   "model": "Physical operations",
+   "funding": "All",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "Up to 2008",
+   "model": "Physical operations",
+   "funding": "High (> $20M)",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "Sector": "Retail Trade",
+   "era": "Up to 2008",
+   "model": "Physical operations",
+   "funding": "Low (<= $20M)",
+   "n": 1,
+   "suppressed": true
+  }
+ ]
+}

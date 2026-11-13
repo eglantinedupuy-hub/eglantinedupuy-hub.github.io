@@ -1,0 +1,163 @@
+{
+ "source": "EglantineDupuy_EDS_Assignment2.ipynb (printed outputs)",
+ "n": 356,
+ "treated": {
+  "high_funding": 176,
+  "control": 180
+ },
+ "funding": {
+  "naiveGap": 2.45,
+  "estimates": [
+   {
+    "method": "Linear S-learner (CausalML)",
+    "ate": 2.21,
+    "lo": 1.58,
+    "hi": 2.84
+   },
+   {
+    "method": "XGBoost T-learner (CausalML)",
+    "ate": 2.02,
+    "lo": 1.57,
+    "hi": 2.48
+   },
+   {
+    "method": "Linear regression (DoWhy)",
+    "ate": 2.21,
+    "lo": 1.59,
+    "hi": 2.82
+   },
+   {
+    "method": "Propensity score stratification (DoWhy)",
+    "ate": 2.47,
+    "lo": null,
+    "hi": null
+   }
+  ],
+  "refutations": [
+   {
+    "test": "Random common cause",
+    "original": 2.21,
+    "new": 2.21,
+    "p": 0.98
+   },
+   {
+    "test": "Placebo treatment",
+    "original": 2.21,
+    "new": 0.04,
+    "p": 0.84
+   },
+   {
+    "test": "90% data subset",
+    "original": 2.21,
+    "new": 2.21,
+    "p": 0.88
+   },
+   {
+    "test": "Unobserved common cause (range)",
+    "original": 2.21,
+    "newLo": -0.97,
+    "newHi": 2.66
+   }
+  ]
+ },
+ "giants": {
+  "raw": {
+   "giants": 7.88,
+   "nGiants": 274,
+   "others": 7.2,
+   "nOthers": 82
+  },
+  "estimates": [
+   {
+    "method": "Linear regression (DoWhy)",
+    "ate": 0.44,
+    "lo": -0.27,
+    "hi": 1.15,
+    "p": 0.226
+   },
+   {
+    "method": "Propensity score stratification (DoWhy)",
+    "ate": 0.52,
+    "lo": null,
+    "hi": null
+   }
+  ],
+  "refutations": [
+   {
+    "test": "Random common cause",
+    "original": 0.44,
+    "new": 0.44,
+    "p": 0.86
+   },
+   {
+    "test": "Placebo treatment",
+    "original": 0.44,
+    "new": 0.02,
+    "p": 0.86
+   },
+   {
+    "test": "90% data subset",
+    "original": 0.44,
+    "new": 0.43,
+    "p": 0.92
+   },
+   {
+    "test": "Unobserved common cause (range)",
+    "original": 0.44,
+    "newLo": -0.59,
+    "newHi": 0.62
+   }
+  ]
+ },
+ "subgroups": [
+  {
+   "dimension": "Business model",
+   "group": "B2B",
+   "effect": 4.01,
+   "rawGap": 4.65,
+   "n": 60
+  },
+  {
+   "dimension": "Business model",
+   "group": "Not B2B",
+   "effect": 1.62,
+   "rawGap": 1.83,
+   "n": 296
+  },
+  {
+   "dimension": "Hardware",
+   "group": "Hardware",
+   "effect": -0.02,
+   "rawGap": 1.87,
+   "n": 49
+  },
+  {
+   "dimension": "Hardware",
+   "group": "Not hardware",
+   "effect": 2.35,
+   "rawGap": 2.76,
+   "n": 307
+  },
+  {
+   "dimension": "Founding era",
+   "group": "Up to 2008",
+   "effect": 1.47,
+   "rawGap": 1.24,
+   "n": 84
+  },
+  {
+   "dimension": "Founding era",
+   "group": "2009–2014",
+   "effect": 2.36,
+   "rawGap": 2.47,
+   "n": 234
+  },
+  {
+   "dimension": "Founding era",
+   "group": "2015 or later",
+   "effect": 1.13,
+   "rawGap": 0.32,
+   "n": 38
+  }
+ ]
+}

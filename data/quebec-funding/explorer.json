@@ -1,0 +1,2114 @@
+{
+ "minCell": 5,
+ "dims": [
+  "round",
+  "year",
+  "public"
+ ],
+ "cells": [
+  {
+   "round": "All",
+   "year": "All",
+   "public": "All",
+   "n": 1141,
+   "disclosed": 621,
+   "median": 3.0
+  },
+  {
+   "round": "All",
+   "year": "All",
+   "public": "No public investor",
+   "n": 912,
+   "disclosed": 445,
+   "median": 2.1
+  },
+  {
+   "round": "All",
+   "year": "All",
+   "public": "Publicly backed",
+   "n": 229,
+   "disclosed": 176,
+   "median": 11.0
+  },
+  {
+   "round": "All",
+   "year": 2021,
+   "public": "All",
+   "n": 281,
+   "disclosed": 169,
+   "median": 2.4
+  },
+  {
+   "round": "All",
+   "year": 2021,
+   "public": "No public investor",
+   "n": 241,
+   "disclosed": 139,
+   "median": 1.83
+  },
+  {
+   "round": "All",
+   "year": 2021,
+   "public": "Publicly backed",
+   "n": 40,
+   "disclosed": 30,
+   "median": 11.25
+  },
+  {
+   "round": "All",
+   "year": 2022,
+   "public": "All",
+   "n": 293,
+   "disclosed": 140,
+   "median": 3.69
+  },
+  {
+   "round": "All",
+   "year": 2022,
+   "public": "No public investor",
+   "n": 241,
+   "disclosed": 97,
+   "median": 2.2
+  },
+  {
+   "round": "All",
+   "year": 2022,
+   "public": "Publicly backed",
+   "n": 52,
+   "disclosed": 43,
+   "median": 10.27
+  },
+  {
+   "round": "All",
+   "year": 2023,
+   "public": "All",
+   "n": 267,
+   "disclosed": 119,
+   "median": 2.93
+  },
+  {
+   "round": "All",
+   "year": 2023,
+   "public": "No public investor",
+   "n": 214,
+   "disclosed": 80,
+   "median": 1.92
+  },
+  {
+   "round": "All",
+   "year": 2023,
+   "public": "Publicly backed",
+   "n": 53,
+   "disclosed": 39,
+   "median": 11.0
+  },
+  {
+   "round": "All",
+   "year": 2024,
+   "public": "All",
+   "n": 131,
+   "disclosed": 83,
+   "median": 2.71
+  },
+  {
+   "round": "All",
+   "year": 2024,
+   "public": "No public investor",
+   "n": 92,
+   "disclosed": 50,
+   "median": 1.96
+  },
+  {
+   "round": "All",
+   "year": 2024,
+   "public": "Publicly backed",
+   "n": 39,
+   "disclosed": 33,
+   "median": 8.07
+  },
+  {
+   "round": "All",
+   "year": 2025,
+   "public": "All",
+   "n": 104,
+   "disclosed": 67,
+   "median": 3.0
+  },
+  {
+   "round": "All",
+   "year": 2025,
+   "public": "No public investor",
+   "n": 79,
+   "disclosed": 51,
+   "median": 2.57
+  },
+  {
+   "round": "All",
+   "year": 2025,
+   "public": "Publicly backed",
+   "n": 25,
+   "disclosed": 16,
+   "median": 13.0
+  },
+  {
+   "round": "All",
+   "year": 2026,
+   "public": "All",
+   "n": 65,
+   "disclosed": 43,
+   "median": 3.96
+  },
+  {
+   "round": "All",
+   "year": 2026,
+   "public": "No public investor",
+   "n": 45,
+   "disclosed": 28,
+   "median": 2.29
+  },
+  {
+   "round": "All",
+   "year": 2026,
+   "public": "Publicly backed",
+   "n": 20,
+   "disclosed": 15,
+   "median": 11.0
+  },
+  {
+   "round": "Angel",
+   "year": "All",
+   "public": "All",
+   "n": 17,
+   "disclosed": 10,
+   "median": 0.44
+  },
+  {
+   "round": "Angel",
+   "year": "All",
+   "public": "No public investor",
+   "n": 17,
+   "disclosed": 10,
+   "median": 0.44
+  },
+  {
+   "round": "Angel",
+   "year": 2021,
+   "public": "All",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Angel",
+   "year": 2021,
+   "public": "No public investor",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Angel",
+   "year": 2022,
+   "public": "All",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Angel",
+   "year": 2022,
+   "public": "No public investor",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Angel",
+   "year": 2023,
+   "public": "All",
+   "n": 6,
+   "disclosed": 3,
+   "median": null
+  },
+  {
+   "round": "Angel",
+   "year": 2023,
+   "public": "No public investor",
+   "n": 6,
+   "disclosed": 3,
+   "median": null
+  },
+  {
+   "round": "Angel",
+   "year": 2024,
+   "public": "All",
+   "n": 6,
+   "disclosed": 4,
+   "median": null
+  },
+  {
+   "round": "Angel",
+   "year": 2024,
+   "public": "No public investor",
+   "n": 6,
+   "disclosed": 4,
+   "median": null
+  },
+  {
+   "round": "Angel",
+   "year": 2025,
+   "public": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Angel",
+   "year": 2025,
+   "public": "No public investor",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Convertible",
+   "year": "All",
+   "public": "All",
+   "n": 14,
+   "disclosed": 13,
+   "median": 3.7
+  },
+  {
+   "round": "Convertible",
+   "year": "All",
+   "public": "No public investor",
+   "n": 9,
+   "disclosed": 9,
+   "median": 1.17
+  },
+  {
+   "round": "Convertible",
+   "year": "All",
+   "public": "Publicly backed",
+   "n": 5,
+   "disclosed": 4,
+   "median": null
+  },
+  {
+   "round": "Convertible",
+   "year": 2021,
+   "public": "All",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "round": "Convertible",
+   "year": 2021,
+   "public": "No public investor",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "round": "Convertible",
+   "year": 2022,
+   "public": "All",
+   "n": 5,
+   "disclosed": 5,
+   "median": 2.79
+  },
+  {
+   "round": "Convertible",
+   "year": 2022,
+   "public": "No public investor",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "round": "Convertible",
+   "year": 2022,
+   "public": "Publicly backed",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Convertible",
+   "year": 2023,
+   "public": "All",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Convertible",
+   "year": 2023,
+   "public": "No public investor",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Convertible",
+   "year": 2023,
+   "public": "Publicly backed",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Convertible",
+   "year": 2024,
+   "public": "All",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Convertible",
+   "year": 2024,
+   "public": "Publicly backed",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Convertible",
+   "year": 2025,
+   "public": "All",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Convertible",
+   "year": 2025,
+   "public": "No public investor",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Convertible",
+   "year": 2025,
+   "public": "Publicly backed",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Early VC",
+   "year": "All",
+   "public": "All",
+   "n": 124,
+   "disclosed": 85,
+   "median": 3.5
+  },
+  {
+   "round": "Early VC",
+   "year": "All",
+   "public": "No public investor",
+   "n": 82,
+   "disclosed": 49,
+   "median": 2.4
+  },
+  {
+   "round": "Early VC",
+   "year": "All",
+   "public": "Publicly backed",
+   "n": 42,
+   "disclosed": 36,
+   "median": 6.61
+  },
+  {
+   "round": "Early VC",
+   "year": 2021,
+   "public": "All",
+   "n": 32,
+   "disclosed": 28,
+   "median": 2.7
+  },
+  {
+   "round": "Early VC",
+   "year": 2021,
+   "public": "No public investor",
+   "n": 22,
+   "disclosed": 19,
+   "median": 1.83
+  },
+  {
+   "round": "Early VC",
+   "year": 2021,
+   "public": "Publicly backed",
+   "n": 10,
+   "disclosed": 9,
+   "median": 3.08
+  },
+  {
+   "round": "Early VC",
+   "year": 2022,
+   "public": "All",
+   "n": 28,
+   "disclosed": 24,
+   "median": 3.25
+  },
+  {
+   "round": "Early VC",
+   "year": 2022,
+   "public": "No public investor",
+   "n": 17,
+   "disclosed": 14,
+   "median": 0.03
+  },
+  {
+   "round": "Early VC",
+   "year": 2022,
+   "public": "Publicly backed",
+   "n": 11,
+   "disclosed": 10,
+   "median": 7.61
+  },
+  {
+   "round": "Early VC",
+   "year": 2023,
+   "public": "All",
+   "n": 23,
+   "disclosed": 9,
+   "median": 8.07
+  },
+  {
+   "round": "Early VC",
+   "year": 2023,
+   "public": "No public investor",
+   "n": 15,
+   "disclosed": 4,
+   "median": null
+  },
+  {
+   "round": "Early VC",
+   "year": 2023,
+   "public": "Publicly backed",
+   "n": 8,
+   "disclosed": 5,
+   "median": 8.07
+  },
+  {
+   "round": "Early VC",
+   "year": 2024,
+   "public": "All",
+   "n": 12,
+   "disclosed": 10,
+   "median": 4.6
+  },
+  {
+   "round": "Early VC",
+   "year": 2024,
+   "public": "No public investor",
+   "n": 7,
+   "disclosed": 5,
+   "median": 5.0
+  },
+  {
+   "round": "Early VC",
+   "year": 2024,
+   "public": "Publicly backed",
+   "n": 5,
+   "disclosed": 5,
+   "median": 4.2
+  },
+  {
+   "round": "Early VC",
+   "year": 2025,
+   "public": "All",
+   "n": 15,
+   "disclosed": 8,
+   "median": 8.75
+  },
+  {
+   "round": "Early VC",
+   "year": 2025,
+   "public": "No public investor",
+   "n": 12,
+   "disclosed": 5,
+   "median": 3.01
+  },
+  {
+   "round": "Early VC",
+   "year": 2025,
+   "public": "Publicly backed",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "round": "Early VC",
+   "year": 2026,
+   "public": "All",
+   "n": 14,
+   "disclosed": 6,
+   "median": 4.0
+  },
+  {
+   "round": "Early VC",
+   "year": 2026,
+   "public": "No public investor",
+   "n": 9,
+   "disclosed": 2,
+   "median": null
+  },
+  {
+   "round": "Early VC",
+   "year": 2026,
+   "public": "Publicly backed",
+   "n": 5,
+   "disclosed": 4,
+   "median": null
+  },
+  {
+   "round": "Growth Equity VC",
+   "year": "All",
+   "public": "All",
+   "n": 43,
+   "disclosed": 22,
+   "median": 29.66
+  },
+  {
+   "round": "Growth Equity VC",
+   "year": "All",
+   "public": "No public investor",
+   "n": 31,
+   "disclosed": 17,
+   "median": 18.33
+  },
+  {
+   "round": "Growth Equity VC",
+   "year": "All",
+   "public": "Publicly backed",
+   "n": 12,
+   "disclosed": 5,
+   "median": 89.91
+  },
+  {
+   "round": "Growth Equity VC",
+   "year": 2021,
+   "public": "All",
+   "n": 16,
+   "disclosed": 8,
+   "median": 23.83
+  },
+  {
+   "round": "Growth Equity VC",
+   "year": 2021,
+   "public": "No public investor",
+   "n": 14,
+   "disclosed": 8,
+   "median": 23.83
+  },
+  {
+   "round": "Growth Equity VC",
+   "year": 2021,
+   "public": "Publicly backed",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Growth Equity VC",
+   "year": 2022,
+   "public": "All",
+   "n": 5,
+   "disclosed": 1,
+   "median": null
+  },
+  {
+   "round": "Growth Equity VC",
+   "year": 2022,
+   "public": "No public investor",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "round": "Growth Equity VC",
+   "year": 2022,
+   "public": "Publicly backed",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Growth Equity VC",
+   "year": 2023,
+   "public": "All",
+   "n": 12,
+   "disclosed": 7,
+   "median": 18.0
+  },
+  {
+   "round": "Growth Equity VC",
+   "year": 2023,
+   "public": "No public investor",
+   "n": 6,
+   "disclosed": 3,
+   "median": null
+  },
+  {
+   "round": "Growth Equity VC",
+   "year": 2023,
+   "public": "Publicly backed",
+   "n": 6,
+   "disclosed": 4,
+   "median": null
+  },
+  {
+   "round": "Growth Equity VC",
+   "year": 2024,
+   "public": "All",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "round": "Growth Equity VC",
+   "year": 2024,
+   "public": "No public investor",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "round": "Growth Equity VC",
+   "year": 2025,
+   "public": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Growth Equity VC",
+   "year": 2025,
+   "public": "No public investor",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Growth Equity VC",
+   "year": 2026,
+   "public": "All",
+   "n": 5,
+   "disclosed": 3,
+   "median": null
+  },
+  {
+   "round": "Growth Equity VC",
+   "year": 2026,
+   "public": "No public investor",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "round": "Growth Equity VC",
+   "year": 2026,
+   "public": "Publicly backed",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Late VC",
+   "year": "All",
+   "public": "All",
+   "n": 43,
+   "disclosed": 22,
+   "median": 56.5
+  },
+  {
+   "round": "Late VC",
+   "year": "All",
+   "public": "No public investor",
+   "n": 26,
+   "disclosed": 12,
+   "median": 98.0
+  },
+  {
+   "round": "Late VC",
+   "year": "All",
+   "public": "Publicly backed",
+   "n": 17,
+   "disclosed": 10,
+   "median": 28.5
+  },
+  {
+   "round": "Late VC",
+   "year": 2021,
+   "public": "All",
+   "n": 8,
+   "disclosed": 5,
+   "median": 43.0
+  },
+  {
+   "round": "Late VC",
+   "year": 2021,
+   "public": "No public investor",
+   "n": 5,
+   "disclosed": 4,
+   "median": null
+  },
+  {
+   "round": "Late VC",
+   "year": 2021,
+   "public": "Publicly backed",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "round": "Late VC",
+   "year": 2022,
+   "public": "All",
+   "n": 13,
+   "disclosed": 9,
+   "median": 70.0
+  },
+  {
+   "round": "Late VC",
+   "year": 2022,
+   "public": "No public investor",
+   "n": 9,
+   "disclosed": 6,
+   "median": 98.0
+  },
+  {
+   "round": "Late VC",
+   "year": 2022,
+   "public": "Publicly backed",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "round": "Late VC",
+   "year": 2023,
+   "public": "All",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Late VC",
+   "year": 2023,
+   "public": "No public investor",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Late VC",
+   "year": 2023,
+   "public": "Publicly backed",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Late VC",
+   "year": 2024,
+   "public": "All",
+   "n": 5,
+   "disclosed": 3,
+   "median": null
+  },
+  {
+   "round": "Late VC",
+   "year": 2024,
+   "public": "No public investor",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Late VC",
+   "year": 2024,
+   "public": "Publicly backed",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "round": "Late VC",
+   "year": 2025,
+   "public": "All",
+   "n": 12,
+   "disclosed": 4,
+   "median": null
+  },
+  {
+   "round": "Late VC",
+   "year": 2025,
+   "public": "No public investor",
+   "n": 8,
+   "disclosed": 2,
+   "median": null
+  },
+  {
+   "round": "Late VC",
+   "year": 2025,
+   "public": "Publicly backed",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "round": "Late VC",
+   "year": 2026,
+   "public": "All",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "round": "Late VC",
+   "year": 2026,
+   "public": "No public investor",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Late VC",
+   "year": 2026,
+   "public": "Publicly backed",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Not specified",
+   "year": "All",
+   "public": "All",
+   "n": 125,
+   "disclosed": 2,
+   "median": null
+  },
+  {
+   "round": "Not specified",
+   "year": "All",
+   "public": "No public investor",
+   "n": 113,
+   "disclosed": 2,
+   "median": null
+  },
+  {
+   "round": "Not specified",
+   "year": "All",
+   "public": "Publicly backed",
+   "n": 12,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Not specified",
+   "year": 2021,
+   "public": "All",
+   "n": 34,
+   "disclosed": 2,
+   "median": null
+  },
+  {
+   "round": "Not specified",
+   "year": 2021,
+   "public": "No public investor",
+   "n": 31,
+   "disclosed": 2,
+   "median": null
+  },
+  {
+   "round": "Not specified",
+   "year": 2021,
+   "public": "Publicly backed",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "round": "Not specified",
+   "year": 2022,
+   "public": "All",
+   "n": 43,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Not specified",
+   "year": 2022,
+   "public": "No public investor",
+   "n": 38,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Not specified",
+   "year": 2022,
+   "public": "Publicly backed",
+   "n": 5,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Not specified",
+   "year": 2023,
+   "public": "All",
+   "n": 40,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Not specified",
+   "year": 2023,
+   "public": "No public investor",
+   "n": 36,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Not specified",
+   "year": 2023,
+   "public": "Publicly backed",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "round": "Not specified",
+   "year": 2024,
+   "public": "All",
+   "n": 8,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Not specified",
+   "year": 2024,
+   "public": "No public investor",
+   "n": 8,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Private Placement VC",
+   "year": "All",
+   "public": "All",
+   "n": 18,
+   "disclosed": 17,
+   "median": 3.92
+  },
+  {
+   "round": "Private Placement VC",
+   "year": "All",
+   "public": "No public investor",
+   "n": 17,
+   "disclosed": 16,
+   "median": 4.24
+  },
+  {
+   "round": "Private Placement VC",
+   "year": "All",
+   "public": "Publicly backed",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Private Placement VC",
+   "year": 2021,
+   "public": "All",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "round": "Private Placement VC",
+   "year": 2021,
+   "public": "No public investor",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "round": "Private Placement VC",
+   "year": 2022,
+   "public": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Private Placement VC",
+   "year": 2022,
+   "public": "No public investor",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Private Placement VC",
+   "year": 2023,
+   "public": "All",
+   "n": 10,
+   "disclosed": 9,
+   "median": 2.2
+  },
+  {
+   "round": "Private Placement VC",
+   "year": 2023,
+   "public": "No public investor",
+   "n": 9,
+   "disclosed": 8,
+   "median": 1.7
+  },
+  {
+   "round": "Private Placement VC",
+   "year": 2023,
+   "public": "Publicly backed",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Private Placement VC",
+   "year": 2024,
+   "public": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Private Placement VC",
+   "year": 2024,
+   "public": "No public investor",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Private Placement VC",
+   "year": 2025,
+   "public": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Private Placement VC",
+   "year": 2025,
+   "public": "No public investor",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Private Placement VC",
+   "year": 2026,
+   "public": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Private Placement VC",
+   "year": 2026,
+   "public": "No public investor",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Seed",
+   "year": "All",
+   "public": "All",
+   "n": 426,
+   "disclosed": 300,
+   "median": 1.54
+  },
+  {
+   "round": "Seed",
+   "year": "All",
+   "public": "No public investor",
+   "n": 372,
+   "disclosed": 249,
+   "median": 1.47
+  },
+  {
+   "round": "Seed",
+   "year": "All",
+   "public": "Publicly backed",
+   "n": 54,
+   "disclosed": 51,
+   "median": 2.27
+  },
+  {
+   "round": "Seed",
+   "year": 2021,
+   "public": "All",
+   "n": 115,
+   "disclosed": 85,
+   "median": 1.3
+  },
+  {
+   "round": "Seed",
+   "year": 2021,
+   "public": "No public investor",
+   "n": 106,
+   "disclosed": 76,
+   "median": 1.25
+  },
+  {
+   "round": "Seed",
+   "year": 2021,
+   "public": "Publicly backed",
+   "n": 9,
+   "disclosed": 9,
+   "median": 3.0
+  },
+  {
+   "round": "Seed",
+   "year": 2022,
+   "public": "All",
+   "n": 99,
+   "disclosed": 59,
+   "median": 1.69
+  },
+  {
+   "round": "Seed",
+   "year": 2022,
+   "public": "No public investor",
+   "n": 88,
+   "disclosed": 49,
+   "median": 1.54
+  },
+  {
+   "round": "Seed",
+   "year": 2022,
+   "public": "Publicly backed",
+   "n": 11,
+   "disclosed": 10,
+   "median": 3.21
+  },
+  {
+   "round": "Seed",
+   "year": 2023,
+   "public": "All",
+   "n": 90,
+   "disclosed": 58,
+   "median": 1.6
+  },
+  {
+   "round": "Seed",
+   "year": 2023,
+   "public": "No public investor",
+   "n": 81,
+   "disclosed": 50,
+   "median": 1.57
+  },
+  {
+   "round": "Seed",
+   "year": 2023,
+   "public": "Publicly backed",
+   "n": 9,
+   "disclosed": 8,
+   "median": 2.33
+  },
+  {
+   "round": "Seed",
+   "year": 2024,
+   "public": "All",
+   "n": 55,
+   "disclosed": 40,
+   "median": 1.47
+  },
+  {
+   "round": "Seed",
+   "year": 2024,
+   "public": "No public investor",
+   "n": 43,
+   "disclosed": 28,
+   "median": 1.48
+  },
+  {
+   "round": "Seed",
+   "year": 2024,
+   "public": "Publicly backed",
+   "n": 12,
+   "disclosed": 12,
+   "median": 1.21
+  },
+  {
+   "round": "Seed",
+   "year": 2025,
+   "public": "All",
+   "n": 40,
+   "disclosed": 35,
+   "median": 2.27
+  },
+  {
+   "round": "Seed",
+   "year": 2025,
+   "public": "No public investor",
+   "n": 33,
+   "disclosed": 29,
+   "median": 2.49
+  },
+  {
+   "round": "Seed",
+   "year": 2025,
+   "public": "Publicly backed",
+   "n": 7,
+   "disclosed": 6,
+   "median": 1.75
+  },
+  {
+   "round": "Seed",
+   "year": 2026,
+   "public": "All",
+   "n": 27,
+   "disclosed": 23,
+   "median": 2.0
+  },
+  {
+   "round": "Seed",
+   "year": 2026,
+   "public": "No public investor",
+   "n": 21,
+   "disclosed": 17,
+   "median": 1.94
+  },
+  {
+   "round": "Seed",
+   "year": 2026,
+   "public": "Publicly backed",
+   "n": 6,
+   "disclosed": 6,
+   "median": 3.98
+  },
+  {
+   "round": "Series A",
+   "year": "All",
+   "public": "All",
+   "n": 86,
+   "disclosed": 79,
+   "median": 11.0
+  },
+  {
+   "round": "Series A",
+   "year": "All",
+   "public": "No public investor",
+   "n": 59,
+   "disclosed": 52,
+   "median": 9.84
+  },
+  {
+   "round": "Series A",
+   "year": "All",
+   "public": "Publicly backed",
+   "n": 27,
+   "disclosed": 27,
+   "median": 12.5
+  },
+  {
+   "round": "Series A",
+   "year": 2021,
+   "public": "All",
+   "n": 21,
+   "disclosed": 20,
+   "median": 10.88
+  },
+  {
+   "round": "Series A",
+   "year": 2021,
+   "public": "No public investor",
+   "n": 18,
+   "disclosed": 17,
+   "median": 8.53
+  },
+  {
+   "round": "Series A",
+   "year": 2021,
+   "public": "Publicly backed",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "round": "Series A",
+   "year": 2022,
+   "public": "All",
+   "n": 24,
+   "disclosed": 23,
+   "median": 8.0
+  },
+  {
+   "round": "Series A",
+   "year": 2022,
+   "public": "No public investor",
+   "n": 16,
+   "disclosed": 15,
+   "median": 6.97
+  },
+  {
+   "round": "Series A",
+   "year": 2022,
+   "public": "Publicly backed",
+   "n": 8,
+   "disclosed": 8,
+   "median": 15.04
+  },
+  {
+   "round": "Series A",
+   "year": 2023,
+   "public": "All",
+   "n": 16,
+   "disclosed": 14,
+   "median": 11.15
+  },
+  {
+   "round": "Series A",
+   "year": 2023,
+   "public": "No public investor",
+   "n": 10,
+   "disclosed": 8,
+   "median": 10.65
+  },
+  {
+   "round": "Series A",
+   "year": 2023,
+   "public": "Publicly backed",
+   "n": 6,
+   "disclosed": 6,
+   "median": 11.75
+  },
+  {
+   "round": "Series A",
+   "year": 2024,
+   "public": "All",
+   "n": 10,
+   "disclosed": 8,
+   "median": 21.5
+  },
+  {
+   "round": "Series A",
+   "year": 2024,
+   "public": "No public investor",
+   "n": 6,
+   "disclosed": 4,
+   "median": null
+  },
+  {
+   "round": "Series A",
+   "year": 2024,
+   "public": "Publicly backed",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "round": "Series A",
+   "year": 2025,
+   "public": "All",
+   "n": 11,
+   "disclosed": 10,
+   "median": 12.0
+  },
+  {
+   "round": "Series A",
+   "year": 2025,
+   "public": "No public investor",
+   "n": 7,
+   "disclosed": 6,
+   "median": 11.13
+  },
+  {
+   "round": "Series A",
+   "year": 2025,
+   "public": "Publicly backed",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "round": "Series A",
+   "year": 2026,
+   "public": "All",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "round": "Series A",
+   "year": 2026,
+   "public": "No public investor",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Series A",
+   "year": 2026,
+   "public": "Publicly backed",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Series B",
+   "year": "All",
+   "public": "All",
+   "n": 36,
+   "disclosed": 32,
+   "median": 23.96
+  },
+  {
+   "round": "Series B",
+   "year": "All",
+   "public": "No public investor",
+   "n": 16,
+   "disclosed": 14,
+   "median": 25.34
+  },
+  {
+   "round": "Series B",
+   "year": "All",
+   "public": "Publicly backed",
+   "n": 20,
+   "disclosed": 18,
+   "median": 20.5
+  },
+  {
+   "round": "Series B",
+   "year": 2021,
+   "public": "All",
+   "n": 10,
+   "disclosed": 8,
+   "median": 22.5
+  },
+  {
+   "round": "Series B",
+   "year": 2021,
+   "public": "No public investor",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "round": "Series B",
+   "year": 2021,
+   "public": "Publicly backed",
+   "n": 6,
+   "disclosed": 5,
+   "median": 20.0
+  },
+  {
+   "round": "Series B",
+   "year": 2022,
+   "public": "All",
+   "n": 6,
+   "disclosed": 6,
+   "median": 19.16
+  },
+  {
+   "round": "Series B",
+   "year": 2022,
+   "public": "No public investor",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Series B",
+   "year": 2022,
+   "public": "Publicly backed",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "round": "Series B",
+   "year": 2023,
+   "public": "All",
+   "n": 9,
+   "disclosed": 8,
+   "median": 22.37
+  },
+  {
+   "round": "Series B",
+   "year": 2023,
+   "public": "No public investor",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Series B",
+   "year": 2023,
+   "public": "Publicly backed",
+   "n": 7,
+   "disclosed": 6,
+   "median": 25.96
+  },
+  {
+   "round": "Series B",
+   "year": 2024,
+   "public": "All",
+   "n": 7,
+   "disclosed": 7,
+   "median": 23.0
+  },
+  {
+   "round": "Series B",
+   "year": 2024,
+   "public": "No public investor",
+   "n": 4,
+   "suppressed": true
+  },
+  {
+   "round": "Series B",
+   "year": 2024,
+   "public": "Publicly backed",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "round": "Series B",
+   "year": 2025,
+   "public": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series B",
+   "year": 2025,
+   "public": "No public investor",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series B",
+   "year": 2026,
+   "public": "All",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "round": "Series B",
+   "year": 2026,
+   "public": "No public investor",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "round": "Series C",
+   "year": "All",
+   "public": "All",
+   "n": 17,
+   "disclosed": 15,
+   "median": 41.99
+  },
+  {
+   "round": "Series C",
+   "year": "All",
+   "public": "No public investor",
+   "n": 8,
+   "disclosed": 6,
+   "median": 66.5
+  },
+  {
+   "round": "Series C",
+   "year": "All",
+   "public": "Publicly backed",
+   "n": 9,
+   "disclosed": 9,
+   "median": 22.0
+  },
+  {
+   "round": "Series C",
+   "year": 2021,
+   "public": "All",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "round": "Series C",
+   "year": 2021,
+   "public": "No public investor",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series C",
+   "year": 2021,
+   "public": "Publicly backed",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Series C",
+   "year": 2022,
+   "public": "All",
+   "n": 7,
+   "disclosed": 6,
+   "median": 87.5
+  },
+  {
+   "round": "Series C",
+   "year": 2022,
+   "public": "No public investor",
+   "n": 5,
+   "disclosed": 4,
+   "median": null
+  },
+  {
+   "round": "Series C",
+   "year": 2022,
+   "public": "Publicly backed",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Series C",
+   "year": 2023,
+   "public": "All",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "round": "Series C",
+   "year": 2023,
+   "public": "Publicly backed",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "round": "Series C",
+   "year": 2024,
+   "public": "All",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "round": "Series C",
+   "year": 2024,
+   "public": "No public investor",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series C",
+   "year": 2024,
+   "public": "Publicly backed",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Series C",
+   "year": 2025,
+   "public": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series C",
+   "year": 2025,
+   "public": "No public investor",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series D",
+   "year": "All",
+   "public": "All",
+   "n": 8,
+   "disclosed": 7,
+   "median": 110.0
+  },
+  {
+   "round": "Series D",
+   "year": "All",
+   "public": "Publicly backed",
+   "n": 8,
+   "disclosed": 7,
+   "median": 110.0
+  },
+  {
+   "round": "Series D",
+   "year": 2021,
+   "public": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series D",
+   "year": 2021,
+   "public": "Publicly backed",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series D",
+   "year": 2022,
+   "public": "All",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "round": "Series D",
+   "year": 2022,
+   "public": "Publicly backed",
+   "n": 3,
+   "suppressed": true
+  },
+  {
+   "round": "Series D",
+   "year": 2023,
+   "public": "All",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Series D",
+   "year": 2023,
+   "public": "Publicly backed",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Series D",
+   "year": 2024,
+   "public": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series D",
+   "year": 2024,
+   "public": "Publicly backed",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series D",
+   "year": 2026,
+   "public": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series D",
+   "year": 2026,
+   "public": "Publicly backed",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series E",
+   "year": "All",
+   "public": "All",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Series E",
+   "year": "All",
+   "public": "Publicly backed",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Series E",
+   "year": 2024,
+   "public": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series E",
+   "year": 2024,
+   "public": "Publicly backed",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series E",
+   "year": 2026,
+   "public": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series E",
+   "year": 2026,
+   "public": "Publicly backed",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series F",
+   "year": "All",
+   "public": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series F",
+   "year": "All",
+   "public": "No public investor",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series F",
+   "year": 2021,
+   "public": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series F",
+   "year": 2021,
+   "public": "No public investor",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series G",
+   "year": "All",
+   "public": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series G",
+   "year": "All",
+   "public": "No public investor",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series G",
+   "year": 2021,
+   "public": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Series G",
+   "year": 2021,
+   "public": "No public investor",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Spinout",
+   "year": "All",
+   "public": "All",
+   "n": 75,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Spinout",
+   "year": "All",
+   "public": "No public investor",
+   "n": 74,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Spinout",
+   "year": "All",
+   "public": "Publicly backed",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Spinout",
+   "year": 2021,
+   "public": "All",
+   "n": 13,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Spinout",
+   "year": 2021,
+   "public": "No public investor",
+   "n": 12,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Spinout",
+   "year": 2021,
+   "public": "Publicly backed",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Spinout",
+   "year": 2022,
+   "public": "All",
+   "n": 49,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Spinout",
+   "year": 2022,
+   "public": "No public investor",
+   "n": 49,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Spinout",
+   "year": 2023,
+   "public": "All",
+   "n": 10,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Spinout",
+   "year": 2023,
+   "public": "No public investor",
+   "n": 10,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Spinout",
+   "year": 2024,
+   "public": "All",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Spinout",
+   "year": 2024,
+   "public": "No public investor",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Spinout",
+   "year": 2025,
+   "public": "All",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Spinout",
+   "year": 2025,
+   "public": "No public investor",
+   "n": 2,
+   "suppressed": true
+  },
+  {
+   "round": "Support Program",
+   "year": "All",
+   "public": "All",
+   "n": 105,
+   "disclosed": 13,
+   "median": 0.32
+  },
+  {
+   "round": "Support Program",
+   "year": "All",
+   "public": "No public investor",
+   "n": 86,
+   "disclosed": 7,
+   "median": 0.1
+  },
+  {
+   "round": "Support Program",
+   "year": "All",
+   "public": "Publicly backed",
+   "n": 19,
+   "disclosed": 6,
+   "median": 0.71
+  },
+  {
+   "round": "Support Program",
+   "year": 2021,
+   "public": "All",
+   "n": 17,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Support Program",
+   "year": 2021,
+   "public": "No public investor",
+   "n": 17,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Support Program",
+   "year": 2022,
+   "public": "All",
+   "n": 8,
+   "disclosed": 1,
+   "median": null
+  },
+  {
+   "round": "Support Program",
+   "year": 2022,
+   "public": "No public investor",
+   "n": 7,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Support Program",
+   "year": 2022,
+   "public": "Publicly backed",
+   "n": 1,
+   "suppressed": true
+  },
+  {
+   "round": "Support Program",
+   "year": 2023,
+   "public": "All",
+   "n": 42,
+   "disclosed": 5,
+   "median": 0.72
+  },
+  {
+   "round": "Support Program",
+   "year": 2023,
+   "public": "No public investor",
+   "n": 37,
+   "disclosed": 1,
+   "median": null
+  },
+  {
+   "round": "Support Program",
+   "year": 2023,
+   "public": "Publicly backed",
+   "n": 5,
+   "disclosed": 4,
+   "median": null
+  },
+  {
+   "round": "Support Program",
+   "year": 2024,
+   "public": "All",
+   "n": 15,
+   "disclosed": 1,
+   "median": null
+  },
+  {
+   "round": "Support Program",
+   "year": 2024,
+   "public": "No public investor",
+   "n": 9,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Support Program",
+   "year": 2024,
+   "public": "Publicly backed",
+   "n": 6,
+   "disclosed": 1,
+   "median": null
+  },
+  {
+   "round": "Support Program",
+   "year": 2025,
+   "public": "All",
+   "n": 17,
+   "disclosed": 5,
+   "median": 0.26
+  },
+  {
+   "round": "Support Program",
+   "year": 2025,
+   "public": "No public investor",
+   "n": 11,
+   "disclosed": 5,
+   "median": 0.26
+  },
+  {
+   "round": "Support Program",
+   "year": 2025,
+   "public": "Publicly backed",
+   "n": 6,
+   "disclosed": 0,
+   "median": null
+  },
+  {
+   "round": "Support Program",
+   "year": 2026,
+   "public": "All",
+   "n": 6,
+   "disclosed": 1,
+   "median": null
+  },
+  {
+   "round": "Support Program",
+   "year": 2026,
+   "public": "No public investor",
+   "n": 5,
+   "disclosed": 1,
+   "median": null
+  },
+  {
+   "round": "Support Program",
+   "year": 2026,
+   "public": "Publicly backed",
+   "n": 1,
+   "suppressed": true
+  }
+ ]
+}

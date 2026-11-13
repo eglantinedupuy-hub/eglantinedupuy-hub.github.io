@@ -1,0 +1,142 @@
+{
+ "nDisclosed": 621,
+ "nTrain": 496,
+ "nTest": 125,
+ "cvRmse": {
+  "Linear Regression": {
+   "mean": 25.13,
+   "folds": [
+    21.5,
+    19.85,
+    20.13,
+    25.43,
+    38.72
+   ]
+  },
+  "Decision Tree": {
+   "mean": 21.67,
+   "folds": [
+    23.8,
+    17.13,
+    19.37,
+    15.78,
+    32.3
+   ]
+  },
+  "Random Forest": {
+   "mean": 20.99,
+   "folds": [
+    15.98,
+    16.39,
+    15.39,
+    23.21,
+    34.0
+   ]
+  }
+ },
+ "tunedCvRmse": 20.67,
+ "bestParams": {
+  "max_depth": 17,
+  "max_features": 13,
+  "n_estimators": 104
+ },
+ "testRmse": 19.3,
+ "testMae": 7.56,
+ "featureImportance": [
+  {
+   "feature": "cat__Growth stage_late stage",
+   "importance": 0.1987
+  },
+  {
+   "feature": "num__Launch year",
+   "importance": 0.0997
+  },
+  {
+   "feature": "num__Total rounds number",
+   "importance": 0.0764
+  },
+  {
+   "feature": "cat__Industries_telecom",
+   "importance": 0.074
+  },
+  {
+   "feature": "cat__Growth stage_early stage",
+   "importance": 0.0611
+  },
+  {
+   "feature": "cat__Round_LATE VC",
+   "importance": 0.0529
+  },
+  {
+   "feature": "num__Round Month",
+   "importance": 0.0487
+  },
+  {
+   "feature": "num__Number of investors",
+   "importance": 0.0481
+  },
+  {
+   "feature": "num__Round Year",
+   "importance": 0.0351
+  },
+  {
+   "feature": "cat__Growth stage_breakout stage",
+   "importance": 0.0302
+  },
+  {
+   "feature": "cat__Round_SEED",
+   "importance": 0.0274
+  },
+  {
+   "feature": "cat__Industries_marketing;enterprise software",
+   "importance": 0.023
+  },
+  {
+   "feature": "cat__Round_GROWTH EQUITY VC",
+   "importance": 0.0208
+  },
+  {
+   "feature": "cat__Round_SERIES C",
+   "importance": 0.0165
+  },
+  {
+   "feature": "cat__Industries_travel;enterprise software",
+   "importance": 0.0162
+  }
+ ],
+ "predVsActual": [
+  {
+   "bucket": "< $4M",
+   "n": 72,
+   "medianActual": 1.1,
+   "medianPredicted": 2.48,
+   "mae": 2.56
+  },
+  {
+   "bucket": "$4\u201315M",
+   "n": 28,
+   "medianActual": 8.84,
+   "medianPredicted": 12.34,
+   "mae": 7.07
+  },
+  {
+   "bucket": "$15\u201340M",
+   "n": 14,
+   "medianActual": 23.0,
+   "medianPredicted": 16.05,
+   "mae": 9.38
+  },
+  {
+   "bucket": "$40\u2013100M",
+   "n": 7,
+   "medianActual": 73.33,
+   "medianPredicted": 57.01,
+   "mae": 19.24
+  },
+  {
+   "bucket": "> $100M",
+   "n": 4,
+   "suppressed": true
+  }
+ ]
+}

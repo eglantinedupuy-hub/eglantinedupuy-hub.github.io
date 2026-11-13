@@ -2,3 +2,9 @@
 venv/
 __pycache__/
 *.pyc
+
+# raw / proprietary data must never be committed
+*.xlsx
+*.xls
+data/raw/
+scripts/__pycache__/
