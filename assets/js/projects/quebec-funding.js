@@ -66,7 +66,7 @@
           }
         },
         scales: {
-          x: { grid: { display: false }, ticks: { autoSkip: false, maxRotation: 0, callback: function (v) { return wrap(this.getLabelForValue(v)); } } },
+          x: { grid: { display: false }, ticks: { autoSkip: false, maxRotation: 0, callback: function (v) { return P.wrapLabel(this.getLabelForValue(v), window.innerWidth < 640 ? 12 : 30); } } },
           y: { beginAtZero: true, title: { display: true, text: "RMSE (USD M)" } }
         }
       }
@@ -81,13 +81,6 @@
     P.table(document.getElementById("table-models"), "Cross-validated RMSE by model",
       [{ label: "Model" }, { label: "Average RMSE ($M)", num: true }, { label: "Fold RMSEs ($M)" }],
       labels.map(function (l, i) { return [l, fmt(means[i]), folds[i].map(function (v) { return fmt(v); }).join(", ")]; }));
-  }
-
-  function wrap(label) {
-    // split long axis labels onto two lines on narrow screens
-    if (window.innerWidth > 640 || label.length < 14) return label;
-    var mid = label.lastIndexOf(" ", Math.ceil(label.length / 2) + 2);
-    return mid > 0 ? [label.slice(0, mid), label.slice(mid + 1)] : label;
   }
 
   /* ---------- feature importance ---------- */
@@ -105,19 +98,16 @@
         scales: {
           x: { beginAtZero: true, title: { display: true, text: "Share of total importance" } },
           y: { grid: { display: false }, ticks: { autoSkip: false, callback: function (v) {
-            var l = this.getLabelForValue(v);
-            return window.innerWidth < 640 && l.length > 26 ? l.slice(0, 25) + "…" : l;
+            return P.wrapLabel(this.getLabelForValue(v), window.innerWidth < 640 ? 18 : 40, 2);
           } } }
         }
       }
     });
-    var box = document.getElementById("chart-importance").parentNode;
     P.segmented(document.getElementById("imp-toggle"), function (v) {
       var top = all.slice(0, Number(v));
       chart.data.labels = top.map(function (f) { return f.name; });
       chart.data.datasets[0].data = top.map(function (f) { return f.v; });
-      box.style.height = (Number(v) === 5 ? 260 : 480) + "px";
-      chart.resize();
+      P.fitHeight(chart, chart.data.labels, window.innerWidth < 640 ? 18 : 40, 2);
       chart.update();
     });
     P.table(document.getElementById("table-importance"), "Top 15 features by importance",

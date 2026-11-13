@@ -33,7 +33,7 @@
       options: {
         indexAxis: "y",
         plugins: {
-          legend: { position: "top", align: "start" },
+          legend: { position: "top", align: "start", labels: { usePointStyle: true } },
           tooltip: {
             callbacks: {
               label: function (ctx) {
@@ -46,10 +46,7 @@
         scales: {
           x: { title: { display: true, text: "Effect on lifespan (years)" }, suggestedMin: -0.5, suggestedMax: 3 },
           y: { grid: { display: false }, ticks: { autoSkip: false, callback: function (v) {
-            var l = this.getLabelForValue(v);
-            if (window.innerWidth >= 640) return l;
-            var i = l.indexOf(" (");
-            return i > 0 ? [l.slice(0, i), l.slice(i + 1)] : l;
+            return P.wrapLabel(this.getLabelForValue(v));
           } } }
         }
       }
@@ -62,6 +59,7 @@
         {
           type: "bar",
           label: "95% confidence interval",
+          pointStyle: "rect",
           data: rows.map(function (r) { return r.lo == null ? null : [r.lo, r.hi]; }),
           backgroundColor: C.soft,
           borderRadius: 3,
@@ -79,9 +77,12 @@
           pointBackgroundColor: rows.map(function (r) { return r.naive ? "#fff" : C.accentStrong; }),
           pointBorderColor: C.accentStrong,
           pointBorderWidth: 2,
+          backgroundColor: C.accentStrong,
+          borderColor: C.accentStrong,
           order: 1
         }
       ];
+      P.fitHeight(chart, chart.data.labels);
       chart.update();
       document.getElementById("forest-caption").textContent = sets[key].caption;
       P.table(document.getElementById("table-forest"), "Estimated effects on lifespan",
@@ -118,7 +119,7 @@
         },
         scales: {
           x: { title: { display: true, text: "Years of lifespan" }, suggestedMin: 0 },
-          y: { grid: { display: false } }
+          y: { grid: { display: false }, ticks: { callback: function (v) { return P.wrapLabel(this.getLabelForValue(v)); } } }
         }
       }
     });
@@ -128,6 +129,7 @@
       chart.data.labels = current.map(function (s) { return s.group + " (n=" + s.n + ")"; });
       chart.data.datasets[0].data = current.map(function (s) { return s.effect; });
       chart.data.datasets[1].data = current.map(function (s) { return s.rawGap; });
+      P.fitHeight(chart, chart.data.labels);
       chart.update();
       document.getElementById("sub-caption").textContent = captions[dim] +
         " Exploratory: averages from a single model fit, with no uncertainty estimates; groups overlap.";

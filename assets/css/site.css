@@ -172,6 +172,8 @@ a:hover { text-decoration-thickness: 2px; }
   border-bottom: 1px solid var(--border);
 }
 .section-nav ul {
+  list-style: none;
+  padding: 0;
   display: flex;
   gap: var(--s1);
   overflow-x: auto;
@@ -237,9 +239,11 @@ a:hover { text-decoration-thickness: 2px; }
 .pill-group + .pill-group { margin-top: var(--s4); }
 
 @media (min-width: 48em) {
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s6); }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s6); margin-top: var(--s7); }
   .two-col > .subsection { margin-top: 0; }
 }
+.nav-long { display: none; }
+@media (min-width: 30em) { .nav-long { display: inline; } .nav-short { display: none; } }
 
 /* ---------- timeline (experience + education) ---------- */
 .timeline { position: relative; display: grid; gap: var(--s6); }
@@ -261,7 +265,7 @@ a:hover { text-decoration-thickness: 2px; }
 .timeline .org { font-weight: 600; }
 .timeline .meta { font-size: var(--fs-sm); color: var(--muted); margin-top: var(--s1); }
 .timeline .progression { font-size: var(--fs-sm); color: var(--muted); margin-top: var(--s1); }
-.timeline ul.bullets { margin-top: var(--s3); padding-left: 1.1rem; display: grid; gap: var(--s2); font-size: var(--fs-sm); }
+.timeline ul.bullets { list-style: disc; margin-top: var(--s3); padding-left: 1.1rem; display: grid; gap: var(--s2); font-size: var(--fs-sm); }
 .timeline ul.bullets li::marker { color: var(--accent); }
 
 .badge {
@@ -294,7 +298,17 @@ details.more[open] > summary .when-closed, details.more:not([open]) > summary .w
 details.more ul.bullets { margin-top: 0; }
 
 /* ---------- project filters + cards ---------- */
-.filters { display: flex; flex-wrap: wrap; gap: var(--s2); margin-bottom: var(--s5); }
+.filters {
+  display: flex;
+  gap: var(--s2);
+  margin: 0 calc(var(--gutter) * -1) var(--s5);
+  padding: 2px var(--gutter);            /* room for the focus ring */
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.filters::-webkit-scrollbar { display: none; }
+.filters .filter-btn { flex: none; }
+@media (min-width: 40em) { .filters { flex-wrap: wrap; overflow: visible; margin-inline: 0; padding-inline: 0; } }
 .filters[hidden] { display: none; }
 .filter-btn {
   min-height: 36px;

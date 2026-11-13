@@ -13,7 +13,7 @@ window.Portfolio = (function () {
   var COLORS = {
     accent: token("--accent", "#4e7a5c"),
     accentStrong: token("--accent-strong", "#3a5e46"),
-    soft: "#a8c2ae",       // light sage, for secondary series / CI bars
+    soft: "#7a9a84",       // light sage for secondary series / CI bars (3.1:1 on white)
     muted: token("--muted", "#525e54"),
     text: token("--text", "#1f2620"),
     grid: "#e3e6df",
@@ -29,7 +29,9 @@ window.Portfolio = (function () {
     C.defaults.color = COLORS.muted;
     C.defaults.borderColor = COLORS.grid;
     C.defaults.maintainAspectRatio = false;
-    C.defaults.animation = reduceMotion ? false : { duration: 400 };
+    // set fields individually: replacing the object drops the default easing function
+    if (reduceMotion) C.defaults.animation = false;
+    else C.defaults.animation.duration = 400;
     C.defaults.plugins.legend.labels.boxWidth = 12;
     C.defaults.plugins.legend.labels.boxHeight = 12;
     C.defaults.plugins.tooltip.backgroundColor = COLORS.text;
@@ -141,6 +143,38 @@ window.Portfolio = (function () {
     });
   }
 
+  /* Wrap an axis label into lines of at most `max` characters (narrower on phones),
+     capped at `maxLines` lines with an ellipsis. Tooltips still show the full label. */
+  function wrapLabel(label, max, maxLines) {
+    max = max || (window.innerWidth < 640 ? 18 : 30);
+    maxLines = maxLines || 3;
+    if (typeof label !== "string" || label.length <= max) return label;
+    var lines = [], line = "";
+    label.split(" ").forEach(function (word) {
+      if (line && (line + " " + word).length > max) { lines.push(line); line = word; }
+      else line = line ? line + " " + word : word;
+    });
+    if (line) lines.push(line);
+    if (lines.length > maxLines) {
+      lines = lines.slice(0, maxLines);
+      lines[maxLines - 1] = lines[maxLines - 1].replace(/[;,]?$/, "") + "…";
+    }
+    return lines;
+  }
+
+  /* Size a horizontal bar chart's box so the tallest (wrapped) label fits its row;
+     Chart.js gives every category row the same height. */
+  function fitHeight(chart, labels, max, maxLines) {
+    var tallest = 1;
+    labels.forEach(function (l) {
+      var w = wrapLabel(l, max, maxLines);
+      tallest = Math.max(tallest, Array.isArray(w) ? w.length : 1);
+    });
+    var h = labels.length * (tallest * 17 + 16) + 110;  // + axis, legend, padding
+    chart.canvas.parentNode.style.height = Math.max(220, h) + "px";
+    chart.resize();
+  }
+
   function chart(canvas, config) {
     canvas.setAttribute("data-ready", "");
     return new window.Chart(canvas, config);
@@ -155,6 +189,8 @@ window.Portfolio = (function () {
     segmented: segmented,
     fillSelect: fillSelect,
     fail: fail,
-    chart: chart
+    chart: chart,
+    wrapLabel: wrapLabel,
+    fitHeight: fitHeight
   };
 })();
