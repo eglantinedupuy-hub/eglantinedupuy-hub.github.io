@@ -1,0 +1,97 @@
+{
+  "_readme": "Dealroom showcase under Experience. Slides come from 'Eglantine Dupuy - Dealroom Research Portfolio.pdf' (pages rendered to assets/img/dealroom/slides/slide-NN). 'links' holds LinkedIn featured items (article, podcasts, reports): type, title, url, description, thumbnail. Run python scripts/render.py after editing.",
+  "reports": [
+    {
+      "title": "The State of European Foodtech 2024",
+      "partners": "Five Seasons Ventures",
+      "date": "March 2024",
+      "slides": [
+        { "n": 1, "alt": "Cover: The State of European Foodtech 2024, Dealroom.co and Five Seasons Ventures, March 2024" },
+        { "n": 2, "alt": "Chart: revenue growth of fast-growing B2C Foodtech startups such as Air up benchmarked against SaaS and fintech companies like N26" }
+      ]
+    },
+    {
+      "title": "TechBio x Drug Discovery",
+      "partners": "Speedinvest",
+      "date": "April 2024",
+      "slides": [
+        { "n": 3, "alt": "Cover: TechBio x Drug Discovery, developing new drugs faster and cheaper, Speedinvest and Dealroom.co, April 2024" },
+        { "n": 4, "alt": "Chart: VC funding in European techbio drug discovery startups peaked at $2.6B in 2021, with a table of selected rounds" }
+      ]
+    },
+    {
+      "title": "Food for Climate: Sustainable Food- & AgTech in Europe",
+      "partners": "FoodLabs",
+      "date": "June 2024",
+      "slides": [
+        { "n": 5, "alt": "Cover: Food for Climate, the State of the Sustainable Food- and AgTech Ecosystem in Europe, FoodLabs and Dealroom.co, June 2024" },
+        { "n": 6, "alt": "Chart: European alternative protein startups raised $365M in 2023, broken down by plant-based, lab-grown, fermentation and mycelium" }
+      ]
+    },
+    {
+      "title": "Growth Equity in European Healthtech",
+      "partners": "MTIP",
+      "date": "June 2024",
+      "slides": [
+        { "n": 7, "alt": "Cover: Growth Equity in European Healthtech, MTIP and Dealroom.co, June 2024" },
+        { "n": 8, "alt": "Chart: AI-based health solutions have gathered $6B since 2016, comparing VC funding with potential market value by AI trend" }
+      ]
+    },
+    {
+      "title": "Longevity & Healthy Ageing",
+      "partners": "Speedinvest, Generali",
+      "date": "December 2024",
+      "slides": [
+        { "n": 9, "alt": "Cover: Longevity and Healthy Ageing, technology to live longer and healthier, Speedinvest, Generali and Dealroom.co, December 2024" },
+        { "n": 10, "alt": "Chart: top European healthy ageing segments by VC funding and growth; drug discovery and therapeutics is the most funded" },
+        { "n": 11, "alt": "Graphic: approaches to slowing or reversing ageing by combined funding, led by cell repair and regeneration at $1B" },
+        { "n": 12, "alt": "Chart: US longevity startups raised almost 3x more than European ones in 2024; 2022 led by Altos Labs' $3B round" }
+      ]
+    },
+    {
+      "title": "State of Impact 2025: A decade in transition",
+      "partners": "ImpactCity, Microsoft Entrepreneurship for Positive Impact",
+      "date": "October 2025",
+      "slides": [
+        { "n": 13, "alt": "Cover: State of Impact 2025, a decade in transition, Dealroom.co, ImpactCity and Microsoft, October 2025" },
+        { "n": 14, "alt": "Charts: enterprise value of peace tech versus defence tech startups, a gap of about 250x" },
+        { "n": 15, "alt": "Chart: impact investment as a share of total VC funding; the Netherlands leads at 20%, Europe 15%" }
+      ]
+    },
+    {
+      "title": "TechBio x AI Drug Discovery",
+      "partners": "Speedinvest",
+      "date": "December 2025",
+      "slides": [
+        { "n": 16, "alt": "Cover: TechBio x AI Drug Discovery, developing new drugs faster and cheaper, Speedinvest and Dealroom.co, December 2025" },
+        { "n": 17, "alt": "Chart: the UK attracts more techbio and AI drug discovery funding than the rest of Europe combined, driven by Isomorphic's $600M round" },
+        { "n": 18, "alt": "Network diagram: big pharma companies' investments in AI drug discovery startups" },
+        { "n": 19, "alt": "Key stats: 250+ European techbio and AI drug discovery university spinouts, $5.8B VC funding since 2020" }
+      ]
+    },
+    {
+      "title": "French Deep Tech Report 2026",
+      "partners": "Bpifrance, Les Deep Tech",
+      "date": "June 2026",
+      "slides": [
+        { "n": 20, "alt": "Cover: French Deep Tech Report 2026, Dealroom.co and Bpifrance, June 2026" },
+        { "n": 21, "alt": "Chart: 2026 is the strongest start of the year for French Deep Tech VC funding, $2.5B by May 20" },
+        { "n": 22, "alt": "Funnel: about 1.3K VC-backed French Deep Tech companies, from 928 startups to 13 unicorns and one decacorn, Mistral AI" },
+        { "n": 23, "alt": "Bubble chart: enterprise value of French Deep Tech startups by hub; Paris holds half, AI about a third" }
+      ]
+    },
+    {
+      "title": "Swiss Deep Tech Report 2026",
+      "partners": "Founderful, Kickfund, Deep Tech Nation Switzerland, startupticker.ch",
+      "date": "June 2026",
+      "slides": [
+        { "n": 24, "alt": "Cover: Swiss Deep Tech Report 2026, June 2026" },
+        { "n": 25, "alt": "Bubble chart: Deep Tech VC funding per capita and share by country; Switzerland leads Europe at $1,470 per capita" },
+        { "n": 26, "alt": "Map: the Swiss ecosystem at the core of the Alpine Tech Cluster, 1,500+ VC-backed Deep Tech startups" },
+        { "n": 27, "alt": "Bar charts: Swiss Deep Tech startups attract more international capital than European peers at every stage" },
+        { "n": 28, "alt": "Table: Swiss Deep Tech startup creation shifts toward AI/ML and robotics" }
+      ]
+    }
+  ],
+  "links": []
+}

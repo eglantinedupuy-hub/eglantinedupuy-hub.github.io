@@ -110,3 +110,51 @@
     apply("all");
   }
 })();
+
+/* Dealroom slide carousel: native scroll-snap (works without JS), enhanced with
+   prev/next buttons, a counter, a report picker and arrow keys. */
+(function () {
+  "use strict";
+  var root = document.querySelector(".carousel");
+  if (!root) return;
+  var track = root.querySelector(".carousel-track");
+  var slides = Array.prototype.slice.call(track.children);
+  var bar = root.querySelector(".carousel-bar");
+  var count = root.querySelector(".carousel-count");
+  var select = root.querySelector(".carousel-select");
+  var prev = root.querySelector('[data-dir="-1"]');
+  var next = root.querySelector('[data-dir="1"]');
+  var starts = Array.prototype.map.call(select.options, function (o) { return Number(o.value); });
+  bar.hidden = false;
+
+  function current() {
+    if (!track.clientWidth) return 0;  // panel hidden
+    return Math.max(0, Math.min(slides.length - 1, Math.round(track.scrollLeft / track.clientWidth)));
+  }
+  function go(i) {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior: "smooth" });
+  }
+  function sync() {
+    var i = current();
+    count.textContent = i + 1 + " / " + slides.length;
+    prev.disabled = i === 0;
+    next.disabled = i === slides.length - 1;
+    var r = 0;
+    for (var k = 0; k < starts.length; k++) if (starts[k] <= i) r = k;
+    if (select.selectedIndex !== r) select.selectedIndex = r;
+  }
+  var t;
+  track.addEventListener("scroll", function () { clearTimeout(t); t = setTimeout(sync, 60); }, { passive: true });
+  prev.addEventListener("click", function () { go(current() - 1); });
+  next.addEventListener("click", function () { go(current() + 1); });
+  select.addEventListener("change", function () { go(Number(select.value)); });
+  track.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowRight") { e.preventDefault(); go(current() + 1); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); go(current() - 1); }
+    else if (e.key === "Home") { e.preventDefault(); go(0); }
+    else if (e.key === "End") { e.preventDefault(); go(slides.length - 1); }
+  });
+  window.addEventListener("resize", sync);
+  sync();
+})();

@@ -119,10 +119,85 @@ def render_pages(projects):
         print(f"{p['page']}: pager updated")
 
 
+def render_dealroom():
+    """Slide carousel + featured links under the Dealroom role (index.html)."""
+    path = ROOT / "data" / "dealroom.json"
+    if not path.exists():
+        return
+    d = json.loads(path.read_text(encoding="utf-8"))
+    slides = [(r, s) for r in d["reports"] for s in r["slides"]]
+    total = len(slides)
+
+    options = []
+    i = 0
+    for r in d["reports"]:
+        options.append(f'<option value="{i}">{esc(r["title"])} ({esc(r["date"])})</option>')
+        i += len(r["slides"])
+
+    items = []
+    for k, (r, s) in enumerate(slides, 1):
+        base = f'assets/img/dealroom/slides/slide-{s["n"]:02d}'
+        loading = 'fetchpriority="low"' if k == 1 else 'loading="lazy"'
+        items.append(f"""<li class="carousel-slide" id="dr-slide-{k}" aria-roledescription="slide" aria-label="{k} of {total}: {esc(r["title"])}">
+  <picture>
+    <source srcset="{base}.webp" type="image/webp" />
+    <img src="{base}.jpg" alt="{esc(s["alt"])}" width="1200" height="675" {loading} decoding="async" />
+  </picture>
+  <p class="carousel-caption"><strong>{esc(r["title"])}</strong> · with {esc(r["partners"])} · {esc(r["date"])}</p>
+</li>""")
+
+    html_out = f"""<div class="showcase">
+  <h4 class="showcase-title">Selected research <span class="showcase-sub">{len(d["reports"])} reports · {total} slides</span></h4>
+  <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Dealroom report slides">
+    <div class="carousel-bar" hidden>
+      <label class="visually-hidden" for="dr-report">Jump to report</label>
+      <select id="dr-report" class="carousel-select">
+{indent_lines(chr(10).join(options), "        ")}
+      </select>
+      <span class="carousel-count" aria-live="polite">1 / {total}</span>
+      <button type="button" class="carousel-btn" data-dir="-1" aria-label="Previous slide">&#8249;</button>
+      <button type="button" class="carousel-btn" data-dir="1" aria-label="Next slide">&#8250;</button>
+    </div>
+    <ul class="carousel-track" tabindex="0" aria-label="Report slides, scroll horizontally">
+{indent_lines(chr(10).join(items), "      ")}
+    </ul>
+  </div>"""
+
+    links = d.get("links") or []
+    if links:
+        cards = []
+        for l in links:
+            thumb = ""
+            if l.get("thumbnail"):
+                thumb = (f'<img class="link-thumb" src="{esc(l["thumbnail"])}" alt="" width="320" height="180" '
+                         f'loading="lazy" decoding="async" />')
+            cards.append(f"""<li class="link-card">
+  {thumb}
+  <div class="link-body">
+    <span class="link-type">{esc(l["type"])}</span>
+    <h5 class="link-title"><a class="link-anchor" href="{esc(l["url"])}" rel="noopener">{esc(l["title"])}</a></h5>
+    <p class="link-desc">{esc(l.get("description", ""))}</p>
+  </div>
+</li>""")
+        html_out += f"""
+  <h4 class="showcase-title">Articles, podcasts &amp; reports</h4>
+  <ul class="link-cards">
+{indent_lines(chr(10).join(cards), "    ")}
+  </ul>"""
+    html_out += "\n</div>"
+
+    idx = ROOT / "index.html"
+    text = idx.read_text(encoding="utf-8")
+    text = replace_block(text, "dealroom-showcase", html_out, "            ")
+    idx.write_text(text, encoding="utf-8", newline="\n")
+    print(f"index.html: Dealroom showcase with {total} slides, {len(links)} links")
+
+
 def main():
     projects = json.loads((ROOT / "data" / "projects.json").read_text(encoding="utf-8"))["projects"]
     render_index(projects)
     render_pages(projects)
+    render_dealroom()
 
 
 if __name__ == "__main__":
