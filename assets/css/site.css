@@ -561,3 +561,6 @@ td.num, th.num { text-align: right; }
 .link-desc { font-size: var(--fs-xs); color: var(--muted); line-height: 1.5; }
 .carousel-btn[data-dir="-1"] { margin-left: auto; }
 @media (max-width: 39.99em) { .carousel-select { flex-basis: 100%; } .carousel-count { text-align: left; } }
+.showcase-intro { font-size: var(--fs-sm); color: var(--muted); margin: calc(var(--s2) * -1) 0 var(--s3); }
+.link-thumb { flex: none; width: 112px; height: auto; background: none; }
+.link-thumb img { width: 112px; height: 63px; object-fit: cover; border-radius: 6px; background: var(--surface); }

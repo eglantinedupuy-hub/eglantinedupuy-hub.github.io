@@ -148,6 +148,7 @@ def render_dealroom():
 
     html_out = f"""<div class="showcase">
   <h4 class="showcase-title">Selected research <span class="showcase-sub">{len(d["reports"])} reports · {total} slides</span></h4>
+  {f'<p class="showcase-intro">{esc(d["intro"])}</p>' if d.get("intro") else ""}
   <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Dealroom report slides">
     <div class="carousel-bar" hidden>
       <label class="visually-hidden" for="dr-report">Jump to report</label>
@@ -169,8 +170,9 @@ def render_dealroom():
         for l in links:
             thumb = ""
             if l.get("thumbnail"):
-                thumb = (f'<img class="link-thumb" src="{esc(l["thumbnail"])}" alt="" width="320" height="180" '
-                         f'loading="lazy" decoding="async" />')
+                t = esc(l["thumbnail"])  # base path; .webp + .jpg fallback
+                thumb = (f'<picture class="link-thumb"><source srcset="{t}.webp" type="image/webp" />'
+                         f'<img src="{t}.jpg" alt="" width="640" height="360" loading="lazy" decoding="async" /></picture>')
             cards.append(f"""<li class="link-card">
   {thumb}
   <div class="link-body">
@@ -180,7 +182,7 @@ def render_dealroom():
   </div>
 </li>""")
         html_out += f"""
-  <h4 class="showcase-title">Articles, podcasts &amp; reports</h4>
+  <h4 class="showcase-title">Podcasts &amp; articles</h4>
   <ul class="link-cards">
 {indent_lines(chr(10).join(cards), "    ")}
   </ul>"""
