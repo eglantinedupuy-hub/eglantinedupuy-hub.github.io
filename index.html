@@ -1,1019 +1,318 @@
-<!-- Generated with Claude -->
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eglantine Dupuy Portfolio</title>
+    <title>Eglantine Dupuy | Data Science &amp; Analytics</title>
     <meta
       name="description"
-      content="Eglantine Dupuy — Master of Management in Analytics candidate at McGill Desautels, building toward a career in venture capital."
+      content="Eglantine Dupuy, Master of Management in Analytics candidate at McGill Desautels with 2.5 years in venture capital data at Dealroom.co. Seeking data science and analytics roles in the VC and startup ecosystem."
     />
-    <link rel="icon" type="image/jpeg" href="photo.jpg" />
+    <meta name="theme-color" content="#fafaf7" />
+    <link rel="icon" type="image/jpeg" href="assets/img/photo.jpg" />
+    <script>document.documentElement.classList.add("js");</script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <style>
-      /* ============================================================
-         1. DESIGN TOKENS
-         ============================================================ */
-      :root {
-        /* -- color: base surfaces (dark, green-charcoal) -- */
-        --color-bg: #0b1310;
-        --color-bg-elevated: #122019;
-        --color-bg-elevated-2: #16261f;
-
-        /* -- color: borders -- */
-        --color-border: rgba(237, 242, 239, 0.09);
-        --color-border-strong: rgba(237, 242, 239, 0.18);
-
-        /* -- color: text -- */
-        --color-text: #f2f5f3;
-        --color-text-secondary: #aec0b7;
-        --color-text-muted: #7c9187;
-
-        /* -- color: accents -- */
-        --color-accent: #7fb69b; /* sage / mint — links, icons, focus */
-        --color-accent-strong: #2e6f55; /* mid green — primary buttons, active states */
-        --color-accent-deep: #1b4332; /* deep brand green — gradients, subtle fills */
-        --color-gold: #d9b84a; /* muted gold — sparing highlight / CTA */
-
-        --shadow-color: 27, 67, 50;
-
-        /* -- spacing scale -- */
-        --space-1: 0.25rem;
-        --space-2: 0.5rem;
-        --space-3: 0.75rem;
-        --space-4: 1rem;
-        --space-5: 1.5rem;
-        --space-6: 2rem;
-        --space-7: 3rem;
-        --space-8: 4rem;
-        --space-9: 6rem;
-
-        /* -- type scale -- */
-        --text-xs: 0.8125rem;
-        --text-sm: 0.9375rem;
-        --text-base: 1.0625rem;
-        --text-md: 1.1875rem;
-        --text-lg: 1.375rem;
-        --text-xl: clamp(1.5rem, 1.3rem + 0.85vw, 1.875rem);
-        --text-hero: clamp(2.25rem, 1.75rem + 2.2vw, 3.25rem);
-
-        --font-heading: "Space Grotesk", "Inter", Arial, Helvetica, sans-serif;
-        --font-body: "Inter", Arial, Helvetica, sans-serif;
-
-        --ease: cubic-bezier(0.22, 1, 0.36, 1);
-        --duration-fast: 0.18s;
-        --duration-base: 0.35s;
-        --duration-slow: 0.7s;
-
-        --radius-sm: 8px;
-        --radius-md: 14px;
-        --radius-pill: 999px;
-      }
-
-      /* ============================================================
-         2. RESET & BASE
-         ============================================================ */
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: var(--font-body);
-        font-size: var(--text-base);
-        color: var(--color-text);
-        background: var(--color-bg);
-        line-height: 1.65;
-        -webkit-font-smoothing: antialiased;
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
-      }
-
-      a {
-        color: inherit;
-      }
-
-      ul {
-        list-style: none;
-      }
-
-      /* ============================================================
-         3. MOTION PREFERENCES
-         ============================================================ */
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-        *,
-        *::before,
-        *::after {
-          animation-duration: 0.001ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.001ms !important;
-          scroll-behavior: auto !important;
-        }
-        .ambient-bg {
-          animation: none !important;
-        }
-      }
-
-      /* ============================================================
-         4. AMBIENT BACKGROUND
-         ============================================================ */
-      .ambient-bg {
-        position: fixed;
-        inset: 0;
-        z-index: -1;
-        pointer-events: none;
-        background-image: radial-gradient(
-            circle at 18% 12%,
-            rgba(46, 111, 85, 0.28),
-            transparent 42%
-          ),
-          radial-gradient(
-            circle at 82% 78%,
-            rgba(217, 184, 74, 0.09),
-            transparent 45%
-          ),
-          radial-gradient(circle at 50% 100%, rgba(27, 67, 50, 0.35), transparent 55%);
-        background-size: 140% 140%;
-        background-position: 0% 0%;
-        animation: ambientShift 26s ease-in-out infinite alternate;
-      }
-
-      @keyframes ambientShift {
-        from {
-          background-position: 0% 0%;
-        }
-        to {
-          background-position: 20% 12%;
-        }
-      }
-
-      /* ============================================================
-         5. SKIP LINK & FOCUS STATES
-         ============================================================ */
-      .skip-link {
-        position: absolute;
-        top: -48px;
-        left: var(--space-4);
-        background: var(--color-accent-strong);
-        color: var(--color-text);
-        padding: var(--space-3) var(--space-5);
-        border-radius: var(--radius-sm);
-        font-family: var(--font-heading);
-        font-size: var(--text-sm);
-        z-index: 100;
-        transition: top var(--duration-fast) var(--ease);
-      }
-
-      .skip-link:focus {
-        top: var(--space-4);
-      }
-
-      :focus-visible {
-        outline: 2px solid var(--color-accent);
-        outline-offset: 3px;
-        border-radius: 4px;
-      }
-
-      /* ============================================================
-         6. LAYOUT
-         ============================================================ */
-      .container {
-        max-width: 980px;
-        margin: 0 auto;
-        padding: var(--space-8) var(--space-5) var(--space-9);
-      }
-
-      /* ============================================================
-         7. HEADER / HERO
-         ============================================================ */
-      header {
-        text-align: center;
-        margin-bottom: var(--space-8);
-      }
-
-      .photo-frame {
-        width: 168px;
-        height: 168px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin: 0 auto var(--space-5);
-        border: 3px solid var(--color-accent-strong);
-        box-shadow: 0 12px 32px rgba(var(--shadow-color), 0.45);
-        transition: transform var(--duration-base) var(--ease),
-          box-shadow var(--duration-base) var(--ease);
-        opacity: 0;
-        animation: heroRise var(--duration-slow) var(--ease) 0.05s forwards;
-      }
-
-      .photo-frame:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 18px 40px rgba(var(--shadow-color), 0.55);
-      }
-
-      .photo-frame img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center 20%;
-        transform: scale(1.5);
-        transform-origin: center 25%;
-      }
-
-      header h1 {
-        font-family: var(--font-heading);
-        font-size: var(--text-hero);
-        font-weight: 600;
-        letter-spacing: -0.02em;
-        opacity: 0;
-        animation: heroRise var(--duration-slow) var(--ease) 0.18s forwards;
-      }
-
-      .header-subtitle {
-        font-family: var(--font-body);
-        font-size: var(--text-md);
-        font-weight: 500;
-        color: var(--color-text-secondary);
-        margin-top: var(--space-3);
-        opacity: 0;
-        animation: heroRise var(--duration-slow) var(--ease) 0.3s forwards;
-      }
-
-      .header-subtitle::after {
-        content: "";
-        display: block;
-        width: 52px;
-        height: 3px;
-        margin: var(--space-4) auto 0;
-        background: linear-gradient(90deg, var(--color-accent-strong), var(--color-gold));
-        border-radius: 2px;
-      }
-
-      @keyframes heroRise {
-        from {
-          opacity: 0;
-          transform: translateY(14px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* ============================================================
-         8. TABS
-         ============================================================ */
-      .tabs {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: var(--space-3);
-        margin-bottom: var(--space-7);
-      }
-
-      .tab-button {
-        padding: var(--space-3) var(--space-6);
-        border: 1px solid var(--color-border-strong);
-        background: var(--color-bg-elevated);
-        cursor: pointer;
-        font-family: var(--font-heading);
-        font-size: var(--text-sm);
-        font-weight: 500;
-        color: var(--color-text-secondary);
-        border-radius: var(--radius-pill);
-        transition: border-color var(--duration-fast) var(--ease),
-          color var(--duration-fast) var(--ease),
-          background var(--duration-fast) var(--ease),
-          transform var(--duration-fast) var(--ease),
-          box-shadow var(--duration-fast) var(--ease);
-      }
-
-      .tab-button:hover {
-        border-color: var(--color-accent);
-        color: var(--color-text);
-        transform: translateY(-1px);
-      }
-
-      .tab-button[aria-selected="true"] {
-        background: var(--color-accent-strong);
-        color: var(--color-text);
-        border-color: var(--color-accent-strong);
-        box-shadow: 0 8px 22px rgba(var(--shadow-color), 0.4);
-      }
-
-      .tab-button[aria-selected="true"]:hover {
-        transform: none;
-      }
-
-      /* ============================================================
-         9. TAB PANELS
-         ============================================================ */
-      .tab-content {
-        display: none;
-      }
-      .tab-content.active {
-        display: block;
-      }
-
-      .panel {
-        background: var(--color-bg-elevated);
-        border: 1px solid var(--color-border);
-        border-radius: var(--radius-md);
-        padding: clamp(1.75rem, 1.4rem + 1.5vw, 2.75rem);
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 20px 40px rgba(0, 0, 0, 0.25);
-      }
-
-      .panel > p {
-        margin-bottom: var(--space-4);
-        color: var(--color-text-secondary);
-        max-width: 68ch;
-      }
-
-      /* ---------- scroll reveal ---------- */
-      .reveal {
-        opacity: 0;
-        transform: translateY(16px);
-        transition: opacity var(--duration-slow) var(--ease),
-          transform var(--duration-slow) var(--ease);
-      }
-      .reveal.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* ============================================================
-         10. INFO SECTIONS
-         ============================================================ */
-      .info-section {
-        margin-top: var(--space-7);
-      }
-      .info-section h3 {
-        font-family: var(--font-heading);
-        font-size: var(--text-lg);
-        font-weight: 600;
-        margin-bottom: var(--space-4);
-        color: var(--color-accent);
-      }
-      .info-section p {
-        font-size: var(--text-base);
-        color: var(--color-text-secondary);
-        margin-bottom: var(--space-2);
-      }
-      .info-section a {
-        color: var(--color-text);
-        font-weight: 600;
-        text-underline-offset: 3px;
-        text-decoration-color: var(--color-accent);
-        transition: color var(--duration-fast) var(--ease);
-      }
-
-      .info-section a:hover {
-        color: var(--color-accent);
-      }
-
-      /* ---------- pill chips (skills / languages) ---------- */
-      .pill-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-2);
-      }
-
-      .pill {
-        display: inline-block;
-        padding: var(--space-2) var(--space-4);
-        font-size: var(--text-sm);
-        color: var(--color-text-secondary);
-        background: var(--color-bg-elevated-2);
-        border: 1px solid var(--color-border);
-        border-radius: var(--radius-pill);
-        transition: border-color var(--duration-fast) var(--ease),
-          color var(--duration-fast) var(--ease),
-          transform var(--duration-fast) var(--ease);
-      }
-
-      .pill:hover {
-        border-color: var(--color-accent);
-        color: var(--color-text);
-        transform: translateY(-2px);
-      }
-
-      .extracurricular-group {
-        margin-bottom: var(--space-4);
-      }
-      .extracurricular-group:last-child {
-        margin-bottom: 0;
-      }
-      .extracurricular-label {
-        display: block;
-        font-size: var(--text-xs);
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: var(--color-text-muted);
-        margin-bottom: var(--space-2);
-      }
-
-      /* ============================================================
-         11. TIMELINE ENTRIES (education / experience)
-         ============================================================ */
-      .edu-entry,
-      .exp-entry {
-        position: relative;
-        margin-bottom: var(--space-6);
-        padding-left: var(--space-5);
-        border-left: 2px solid var(--color-border-strong);
-      }
-      .edu-entry::before,
-      .exp-entry::before {
-        content: "";
-        position: absolute;
-        left: -5px;
-        top: 6px;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: var(--color-accent);
-        box-shadow: 0 0 0 4px rgba(127, 182, 155, 0.15);
-      }
-      .edu-entry:last-child,
-      .exp-entry:last-child {
-        margin-bottom: 0;
-      }
-      .edu-title,
-      .exp-entry h3 {
-        font-family: var(--font-heading);
-        font-size: var(--text-md);
-        font-weight: 600;
-        margin-bottom: var(--space-1);
-      }
-      .edu-meta,
-      .exp-meta {
-        font-size: var(--text-sm);
-        color: var(--color-text-muted);
-        margin-bottom: var(--space-1);
-      }
-      .exp-entry ul {
-        margin: var(--space-3) 0 0;
-        font-size: var(--text-sm);
-        color: var(--color-text-secondary);
-      }
-      .exp-entry li {
-        position: relative;
-        padding-left: var(--space-4);
-        margin-bottom: var(--space-3);
-      }
-      .exp-entry li::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0.65em;
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background: var(--color-accent-strong);
-      }
-      .exp-entry li:last-child {
-        margin-bottom: 0;
-      }
-
-      .exp-entry h3 a {
-        color: var(--color-text);
-        text-decoration-color: var(--color-accent);
-        transition: color var(--duration-fast) var(--ease);
-      }
-
-      .exp-entry h3 a:hover {
-        color: var(--color-accent);
-      }
-
-      /* ============================================================
-         12. PROJECT CARDS
-         ============================================================ */
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-        gap: var(--space-5);
-      }
-
-      .card {
-        display: block;
-        border: 1px solid var(--color-border);
-        border-radius: var(--radius-md);
-        overflow: hidden;
-        background: var(--color-bg-elevated);
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 12px 28px rgba(0, 0, 0, 0.2);
-        color: inherit;
-        text-decoration: none;
-        transition: transform var(--duration-base) var(--ease),
-          box-shadow var(--duration-base) var(--ease),
-          border-color var(--duration-base) var(--ease);
-      }
-
-      .card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-        border-color: var(--color-border-strong);
-      }
-
-      .card-photo {
-        height: 140px;
-        background: linear-gradient(135deg, var(--color-bg-elevated-2), var(--color-bg));
-        border-bottom: 1px dashed var(--color-border-strong);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--color-text-muted);
-        font-size: var(--text-xs);
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        transition: background var(--duration-base) var(--ease);
-      }
-
-      .card:hover .card-photo {
-        background: linear-gradient(135deg, rgba(127, 182, 155, 0.14), var(--color-bg));
-      }
-
-      .card-photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        background: #f4f4f2;
-        padding: var(--space-2);
-        box-sizing: border-box;
-        display: block;
-      }
-
-      .card-stat {
-        font-family: var(--font-heading);
-        font-size: var(--text-sm);
-        font-weight: 700;
-        color: var(--color-accent);
-        margin-bottom: var(--space-3);
-      }
-
-      .card-text {
-        padding: var(--space-5);
-      }
-      .card-text h3 {
-        font-family: var(--font-heading);
-        font-size: var(--text-md);
-        font-weight: 600;
-        margin-bottom: var(--space-2);
-      }
-      .card-text p {
-        font-size: var(--text-sm);
-        color: var(--color-text-secondary);
-      }
-      .card-text .card-link {
-        margin-top: var(--space-3);
-        color: var(--color-accent);
-        font-weight: 600;
-      }
-      .card:hover .card-text .card-link {
-        text-decoration: underline;
-      }
-
-      /* ============================================================
-         13. FOOTER
-         ============================================================ */
-      footer {
-        text-align: center;
-        padding: var(--space-6) var(--space-5) var(--space-8);
-        font-size: var(--text-xs);
-        color: var(--color-text-muted);
-      }
-
-      /* ============================================================
-         14. RESPONSIVE
-         ============================================================ */
-      @media (max-width: 640px) {
-        .container {
-          padding: var(--space-6) var(--space-4) var(--space-7);
-        }
-        .tab-button {
-          padding: var(--space-3) var(--space-4);
-          font-size: var(--text-xs);
-        }
-        .panel {
-          padding: var(--space-5);
-        }
-      }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/site.css" />
   </head>
 
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <div class="ambient-bg" aria-hidden="true"></div>
 
-    <div class="container">
-      <!-- ============================================================
-         HEADER: photo, name
-         ============================================================ -->
-      <header>
-        <div class="photo-frame">
-          <img src="photo.jpg" alt="Eglantine Dupuy" />
+    <!-- ============ HERO (always visible) ============ -->
+    <header class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-photo">
+          <picture>
+            <source srcset="assets/img/photo.webp" type="image/webp" />
+            <img src="assets/img/photo.jpg" alt="Portrait of Eglantine Dupuy" width="400" height="400" />
+          </picture>
         </div>
-
-        <h1>Eglantine Dupuy</h1>
-        <p class="header-subtitle">Seeking Data Science and Analytics opportunities in the Venture Capital ecosystem</p>
-      </header>
-
-      <!-- ============================================================
-         TABS
-         ============================================================ -->
-      <div class="tabs" role="tablist" aria-label="Portfolio sections">
-        <button
-          class="tab-button"
-          role="tab"
-          id="tab-about"
-          aria-selected="true"
-          aria-controls="about"
-        >
-          About Me
-        </button>
-        <button
-          class="tab-button"
-          role="tab"
-          id="tab-experience"
-          aria-selected="false"
-          aria-controls="experience"
-          tabindex="-1"
-        >
-          Professional Experience
-        </button>
-        <button
-          class="tab-button"
-          role="tab"
-          id="tab-projects"
-          aria-selected="false"
-          aria-controls="projects"
-          tabindex="-1"
-        >
-          Projects
-        </button>
+        <div>
+          <h1>Eglantine Dupuy</h1>
+          <p class="hero-pitch">
+            Master of Management in Analytics candidate at McGill, with 2.5 years in venture capital data at Dealroom.co,
+            seeking data science and analytics roles in the VC and startup ecosystem.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="assets/Eglantine_Dupuy_CV.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14" /></svg>
+            Download CV
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/eglantine-dupuy/" rel="noopener">LinkedIn</a>
+          <a class="btn" href="mailto:dupuyeglantine1@gmail.com">Email</a>
+          <a class="btn" href="https://github.com/eglantinedupuy-hub" rel="noopener">GitHub</a>
+        </div>
       </div>
+    </header>
 
-      <main id="main">
-        <!-- ---------- TAB 1: ABOUT ME ---------- -->
-        <div
-          id="about"
-          class="tab-content active"
-          role="tabpanel"
-          aria-labelledby="tab-about"
-          tabindex="0"
-        >
-          <div class="panel">
-            <p class="reveal">
-              I am currently pursuing a Masters of Management in Analytics @ McGill's Desautels Faculty of Management and am expected to graduate in Summer 2027.
-            </p>
-            <p class="reveal">
-              My goal is to build a career in venture capital or adjacent organizations, helping make capital allocation more data-driven, rigorous, and inclusive. The MMA is where I'm building the technical foundation for that: fluency in Python, R, and SQL, advanced statistics, and coursework spanning valuation analytics, text analytics, and AI, capped by a hands-on capstone project with live datasets and industry clients. I'm a strong fit for this path thanks to 2.5 years inside the VC data ecosystem at Dealroom.co, plus an undergraduate thesis researching gender bias in startup funding - both of which convinced me that better data models can meaningfully close those gaps.
-            </p>
+    <!-- ============ SECTION NAV (tabs; plain anchors without JS) ============ -->
+    <nav class="section-nav" aria-label="Sections">
+      <div class="wrap">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education &amp; Skills</a></li>
+        </ul>
+      </div>
+    </nav>
 
-            <p class="reveal">
-              French national. Will hold a valid Canadian Post-Graduation Work Permit (PGWP) upon graduation.
-            </p>
-
-            <div class="info-section reveal">
-              <h3>Contact</h3>
-              <p>Phone: (+1) 263 376 5654</p>
-              <p>Email: dupuyeglantine1@gmail.com</p>
-              <p><a href="https://www.linkedin.com/in/eglantine-dupuy/" target="_blank" rel="noopener">LinkedIn</a></p>
-            </div>
-
-            <div class="info-section reveal">
-              <h3>Education</h3>
-
-              <div class="edu-entry">
-                <p class="edu-title">McGill University, Desautels Faculty of Management - Master of Management in Analytics (MMA)</p>
-                <p class="edu-meta">Montreal, Canada - In Progress, Expected 2027</p>
-                <p class="edu-meta">4.0 GPA</p>
-              </div>
-
-              <div class="edu-entry">
-                <p class="edu-title">IE University - Bachelor in Business Administration</p>
-                <p class="edu-meta">Madrid, Spain - Sep 2019 to Jul 2023</p>
-                <p class="edu-meta">Graduated 3.7 GPA (Top 10% of class), Honors in Entrepreneurship & Innovation and Supply Chain Management</p>
-              </div>
-
-              <div class="edu-entry">
-                <p class="edu-title">McGill University - Exchange Semester, Desautels Faculty of Management</p>
-                <p class="edu-meta">Montreal, Canada - Jan to May 2022</p>
-              </div>
-
-              <div class="edu-entry">
-                <p class="edu-title">International School of Brussels - International Baccalaureate</p>
-                <p class="edu-meta">Brussels, Belgium - Graduated May 2019</p>
-              </div>
-            </div>
-
-            <div class="info-section reveal">
-              <h3>Technical Skills</h3>
-              <div class="extracurricular-group">
-                <span class="extracurricular-label">Software</span>
-                <div class="pill-row">
-                  <span class="pill">Python</span>
-                  <span class="pill">SQL (BigQuery &amp; MySQL)</span>
-                  <span class="pill">Databricks</span>
-                  <span class="pill">Confluent</span>
-                  <span class="pill">Looker Studio</span>
-                  <span class="pill">Excel</span>
-                  <span class="pill">Datawrapper</span>
-                  <span class="pill">LLM Tools</span>
-                </div>
-              </div>
-              <div class="extracurricular-group">
-                <span class="extracurricular-label">Models (Perfecting)</span>
-                <div class="pill-row">
-                  <span class="pill">NLP</span>
-                  <span class="pill">Multiple Linear Regression</span>
-                  <span class="pill">Causal Inference</span>
-                  <span class="pill">Random Forest</span>
-                </div>
-              </div>
-              <div class="extracurricular-group">
-                <span class="extracurricular-label">Certifications (In Progress)</span>
-                <div class="pill-row">
-                  <span class="pill">Microsoft Azure Cloud &amp; Solutions Architect</span>
-                  <span class="pill">dbt Fundamentals</span>
-                  <span class="pill">Anthropic AI Fluency</span>
-                  <span class="pill">Jira</span>
-                  <span class="pill">Power BI</span>
-                  <span class="pill">Power Query</span>
-                  <span class="pill">Snowflake</span>
-                  <span class="pill">AWS</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="info-section reveal">
-              <h3>Languages</h3>
-              <div class="pill-row">
-                <span class="pill">French (Native)</span>
-                <span class="pill">English (Fluent)</span>
-                <span class="pill">Spanish (Proficient)</span>
-              </div>
-            </div>
-
-            <div class="info-section reveal">
-              <h3>Extracurricular Activities</h3>
-              <div class="extracurricular-group">
-                <span class="extracurricular-label">Sports</span>
-                <div class="pill-row">
-                  <span class="pill">Running</span>
-                  <span class="pill">Hiking</span>
-                  <span class="pill">Tennis</span>
-                  <span class="pill">Swimming</span>
-                  <span class="pill">Fitness</span>
-                </div>
-              </div>
-              <div class="extracurricular-group">
-                <span class="extracurricular-label">Creative</span>
-                <div class="pill-row">
-                  <span class="pill">DJ</span>
-                  <span class="pill">Photography</span>
-                </div>
-              </div>
-              <div class="extracurricular-group">
-                <span class="extracurricular-label">Other</span>
-                <div class="pill-row">
-                  <span class="pill">Volunteering at Soup Kitchens</span>
-                </div>
-              </div>
-            </div>
-          </div>
+    <main id="main" class="wrap" tabindex="-1">
+      <!-- ---------------- ABOUT ---------------- -->
+      <section id="about" class="panel" aria-labelledby="about-title">
+        <h2 id="about-title">About</h2>
+        <div class="stack">
+          <p class="lead">
+            I’m pursuing a Master of Management in Analytics (MMA) at McGill’s Desautels Faculty of Management,
+            expected to graduate in Summer 2027.
+          </p>
+          <p>
+            My goal is to build a career in venture capital or adjacent organizations, helping make capital
+            allocation more data-driven, rigorous and inclusive. The MMA is where I’m building the technical
+            foundation for that: Python, R and SQL, advanced statistics, and coursework spanning valuation analytics,
+            text analytics and AI, capped by a hands-on capstone project with live datasets and industry clients.
+          </p>
+          <p>
+            I bring 2.5 years inside the VC data ecosystem at Dealroom.co, plus an undergraduate thesis researching
+            gender bias in startup funding. Both convinced me that better data models can meaningfully close those gaps.
+          </p>
+          <p>French national. Will hold a valid Canadian Post-Graduation Work Permit (PGWP) upon graduation.</p>
         </div>
 
-        <!-- ---------- TAB 2: PROFESSIONAL EXPERIENCE ---------- -->
-        <div
-          id="experience"
-          class="tab-content"
-          role="tabpanel"
-          aria-labelledby="tab-experience"
-          tabindex="0"
-        >
-          <div class="panel">
-            <div class="exp-entry reveal">
-              <h3>Originelle (Global-Renowned Fertility Clinic) — Academic Analytics Consulting Project</h3>
-              <p class="exp-meta">Montreal, Canada</p>
-              <p class="exp-meta">Solutions Architect, Sep 2026 - May 2027</p>
-              <ul>
-                <li>8-month capstone project with McGill's Master of Management in Analytics, partnering with Originelle to architect a secure, unified data infrastructure on Azure linking previously siloed lab, nursing, and clinical records to support operational bottleneck analysis and efficiency recommendations.</li>
-                <li>Designing the technical framework for exploratory and clustering-based patient analytics, structuring how treatment-response patterns are derived from historical IVF/IUI data.</li>
-                <li>Selecting the tool stack (Python, SQL, Power BI) and structuring the architecture for a prototype lab-quality monitoring dashboard tracking core oocyte and embryo KPIs.</li>
+        <div class="two-col">
+          <div class="subsection">
+            <h3>Contact</h3>
+            <ul class="contact-list">
+              <li><span class="label">Email</span><a href="mailto:dupuyeglantine1@gmail.com">dupuyeglantine1@gmail.com</a></li>
+              <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/eglantine-dupuy/" rel="noopener">linkedin.com/in/eglantine-dupuy</a></li>
+              <li><span class="label">GitHub</span><a href="https://github.com/eglantinedupuy-hub" rel="noopener">github.com/eglantinedupuy-hub</a></li>
+              <li><span class="label">CV</span><a href="assets/Eglantine_Dupuy_CV.pdf" download>Download CV (PDF)</a></li>
+            </ul>
+          </div>
+
+          <div class="subsection">
+            <h3>Languages</h3>
+            <ul class="pills">
+              <li class="pill">French (Native)</li>
+              <li class="pill">English (Fluent)</li>
+              <li class="pill">Spanish (Proficient)</li>
+            </ul>
+
+            <h3 class="subsection" style="margin-top: var(--s6)">Outside work</h3>
+            <div class="pill-group">
+              <span class="label">Sports</span>
+              <ul class="pills">
+                <li class="pill">Running</li>
+                <li class="pill">Hiking</li>
+                <li class="pill">Tennis</li>
+                <li class="pill">Swimming</li>
+                <li class="pill">Fitness</li>
               </ul>
             </div>
-
-            <div class="exp-entry reveal">
-              <h3><a href="https://dealroom.co/" target="_blank" rel="noopener">Dealroom.co</a> (Leading Data Platform on Global Tech Ecosystems & Startups)</h3>
-              <p class="exp-meta">Amsterdam, the Netherlands</p>
-              <p class="exp-meta">Graduate program to Innovation Analyst to Research Associate (Full-Time), Sep 2023 - Dec 2025</p>
-              <ul>
-                <li>My role involves selling, end-to-end project management and report delivery. This includes developing and maintaining a robust taxonomy for emerging sectors, data validation, conducting quantitative analysis and qualitative research, and crafting insightful narratives. I also manage client communication, create assets for social media, and present findings in person at conferences and online.</li>
-                <li>My main industry focus areas include Climate Tech (Green Mobility, Sustainable Food & AgriTech, etc.), Deep Tech (Robotics, AI, etc.) and Health (Biotechnology, Digital Health, etc.).</li>
-                <li>Notable accomplishments include 1/ authoring a Blue Economy deep dive, which was referenced at the UN World Ocean Conference and by the World Economic Forum. 2/ collaborating with Bpifrance, France's leading public investment bank, to assess the State of Deep Tech in France. 3/ producing the most comprehensive industry report to date on Longevity for Speedinvest (a leading European VC) and Generali (a major global insurer) and sharing my insights on Dealroom's podcast.</li>
-                <li>To date, I have produced over 20 market intelligence reports and presented my work at more than five industry conferences. Each report published through Dealroom reaches over 2k online viewers, supported by a LinkedIn audience of 40k+ followers.</li>
-                <li>In my workflow, I leverage tools such as ChatGPT and OpenAI integrations, BigQuery SQL for large-scale data analysis, Excel for financial modeling and data manipulation, and Datawrapper for data visualization.</li>
+            <div class="pill-group">
+              <span class="label">Creative</span>
+              <ul class="pills">
+                <li class="pill">DJ</li>
+                <li class="pill">Photography</li>
               </ul>
             </div>
-
-            <div class="exp-entry reveal">
-              <h3><a href="https://d2x.com/" target="_blank" rel="noopener">D2X Group</a> (Digital Assets Derivatives Exchange)</h3>
-              <p class="exp-meta">Amsterdam, the Netherlands</p>
-              <p class="exp-meta">Jr. Business Developer (Internship), Jul 2022 - Dec 2022</p>
-              <ul>
-                <li>Joined at a very early stage of this innovative startup which has since become the first regulated trading platform for institutional investors in crypto derivatives.</li>
-                <li>I produced research for the CEO on new revenue opportunities, strategic partnerships, and key industry developments. My insights were regularly reported to the board of investors, executive committee, and financial regulators.</li>
+            <div class="pill-group">
+              <span class="label">Community</span>
+              <ul class="pills">
+                <li class="pill">Volunteering at soup kitchens</li>
               </ul>
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- ---------- TAB 3: PROJECTS ---------- -->
-        <div
-          id="projects"
-          class="tab-content"
-          role="tabpanel"
-          aria-labelledby="tab-projects"
-          tabindex="0"
-        >
-          <div class="cards">
-            <!-- CARD 1 -->
-            <a
-              class="card reveal"
-              href="https://github.com/eglantinedupuy-hub/quebec-startup-funding-prediction"
-              target="_blank"
-              rel="noopener"
-            >
-              <div class="card-photo">
-                <img
-                  src="project-images/quebec-funding.png"
-                  alt="Boxplot of funding round amount by public backing, from the Quebec startup funding project"
-                  loading="lazy"
-                />
-              </div>
-              <div class="card-text">
-                <h3>Predicting Quebec Startup Funding Round Size</h3>
-                <p class="card-stat">Test RMSE: $19.3M &middot; tuned Random Forest</p>
-                <p>
-                  I wanted to know what predicts the size of a startup
-                  funding round in Quebec. So I cleaned and modeled 356
-                  disclosed Dealroom.co funding rounds (2021–present) with a
-                  tuned Random Forest. Here's what I found: growth stage and
-                  funding history mattered far more than public/government
-                  backing itself.
-                </p>
-                <p class="card-tools">Python &middot; pandas &middot; scikit-learn</p>
-                <p class="card-link">View on GitHub &rarr;</p>
-              </div>
-            </a>
+      <!-- ---------------- EXPERIENCE ---------------- -->
+      <section id="experience" class="panel" aria-labelledby="experience-title">
+        <h2 id="experience-title">Experience</h2>
+        <ol class="timeline">
+          <li>
+            <h3>
+              Solutions Architect · <span class="org">OriginElle</span>
+              <span class="badge">In progress</span>
+            </h3>
+            <p class="meta">
+              MMA capstone (academic analytics consulting project) · Montreal · Sep 2026 – May 2027
+            </p>
+            <ul class="bullets">
+              <li>8-month capstone with a globally renowned fertility clinic: architecting a secure, unified data infrastructure on Azure that links previously siloed lab, nursing and clinical records.</li>
+              <li>Designing the framework for exploratory and clustering-based patient analytics on historical IVF/IUI data.</li>
+              <li>Selecting the tool stack (Python, SQL, Power BI) for a prototype lab-quality dashboard tracking core oocyte and embryo KPIs.</li>
+            </ul>
+          </li>
 
-            <!-- CARD 2 -->
-            <a
-              class="card reveal"
-              href="https://github.com/eglantinedupuy-hub/startup-failures-causal-inference"
-              target="_blank"
-              rel="noopener"
-            >
-              <div class="card-photo">
-                <img
-                  src="project-images/startup-failures.png"
-                  alt="Causal graph linking confounders, high funding, and lifespan, from the startup failures causal inference project"
-                  loading="lazy"
-                />
-              </div>
-              <div class="card-text">
-                <h3>Causal Inference on Startup Failures</h3>
-                <p class="card-stat">Est. effect: +2.2 years from high funding (95% CI 1.6&ndash;2.8)</p>
-                <p>
-                  I wanted to know whether more funding, or losing to tech
-                  giants, actually changes how long a failed startup lasts.
-                  So I built causal models (CausalML, DoWhy) on 356 failed
-                  startups and stress-tested the estimates with refutation
-                  tests. Here's what I found: funding has a real, moderate
-                  effect; losing to giants doesn't.
-                </p>
-                <p class="card-tools">Python &middot; CausalML &middot; DoWhy &middot; XGBoost</p>
-                <p class="card-link">View on GitHub &rarr;</p>
-              </div>
-            </a>
+          <li>
+            <h3>Research Associate · <a class="org" href="https://dealroom.co/" rel="noopener">Dealroom.co</a></h3>
+            <p class="progression">Graduate Program → Innovation Analyst → Research Associate</p>
+            <p class="meta">Data platform on global tech ecosystems &amp; startups · Amsterdam · Full-time · Sep 2023 – Dec 2025</p>
+            <ul class="bullets">
+              <li>Produced over 20 market-intelligence reports and presented at more than five industry conferences; each report reached 2k+ online viewers, backed by a 40k+ LinkedIn audience.</li>
+              <li>Authored a Blue Economy deep dive referenced at the UN World Ocean Conference and by the World Economic Forum.</li>
+              <li>Ran reports end to end, from selling and sector taxonomy to data validation, analysis in BigQuery SQL and visualization in Datawrapper.</li>
+            </ul>
+            <details class="more">
+              <summary><span class="when-closed">Show more</span><span class="when-open">Show less</span></summary>
+              <ul class="bullets">
+                <li>Collaborated with Bpifrance, France’s leading public investment bank, to assess the State of Deep Tech in France.</li>
+                <li>Produced the most comprehensive industry report to date on Longevity for Speedinvest (European VC) and Generali (global insurer), and shared the insights on Dealroom’s podcast.</li>
+                <li>Focus areas: Climate Tech (green mobility, sustainable food &amp; AgriTech), Deep Tech (robotics, AI) and Health (biotech, digital health).</li>
+                <li>Managed client communication, created social media assets, and presented findings in person and online.</li>
+                <li>Tools: BigQuery SQL, Excel (financial modeling), Datawrapper, ChatGPT and OpenAI integrations.</li>
+              </ul>
+            </details>
+          </li>
 
-            <!-- CARD 3 -->
-            <div class="card reveal">
-              <div class="card-photo">Project Image</div>
-              <div class="card-text">
-                <h3>Project Title</h3>
-                <p>Short description of what you did and the tools you used.</p>
+          <li>
+            <h3>Jr. Business Developer · <a class="org" href="https://d2x.com/" rel="noopener">D2X Group</a></h3>
+            <p class="meta">Digital assets derivatives exchange · Amsterdam · Internship · Jul 2022 – Dec 2022</p>
+            <ul class="bullets">
+              <li>Joined at a very early stage; the startup has since become the first regulated trading platform for institutional investors in crypto derivatives.</li>
+              <li>Researched new revenue opportunities, strategic partnerships and key industry developments for the CEO; insights were regularly reported to the board of investors, executive committee and financial regulators.</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ---------------- PROJECTS ---------------- -->
+      <section id="projects" class="panel" aria-labelledby="projects-title">
+        <h2 id="projects-title">Projects</h2>
+        <div class="filters" role="group" aria-label="Filter projects by tag" hidden>
+            <!-- render:filters -->
+            <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="filter-btn" data-filter="python" aria-pressed="false">Python</button>
+            <button type="button" class="filter-btn" data-filter="machine-learning" aria-pressed="false">Machine Learning</button>
+            <button type="button" class="filter-btn" data-filter="regression" aria-pressed="false">Regression</button>
+            <button type="button" class="filter-btn" data-filter="scikit-learn" aria-pressed="false">scikit-learn</button>
+            <button type="button" class="filter-btn" data-filter="causal-inference" aria-pressed="false">Causal Inference</button>
+            <button type="button" class="filter-btn" data-filter="dowhy" aria-pressed="false">DoWhy</button>
+            <button type="button" class="filter-btn" data-filter="causalml" aria-pressed="false">CausalML</button>
+            <!-- /render:filters -->
+        </div>
+        <p class="filter-status" role="status" aria-live="polite"></p>
+        <ul class="cards">
+            <!-- render:cards -->
+            <li class="card" data-tags="python machine-learning regression scikit-learn">
+              <div class="card-media">
+                <picture>
+                  <source srcset="assets/img/projects/quebec-funding-thumb.webp" type="image/webp" />
+                  <img src="assets/img/projects/quebec-funding-thumb.png" alt="Box plot comparing funding round amounts with and without a public investor" width="722" height="463" loading="lazy" decoding="async" />
+                </picture>
               </div>
-            </div>
+              <div class="card-body">
+                <h3 class="card-title" id="card-quebec-funding"><a class="card-link" href="projects/quebec-funding.html">Predicting Quebec Startup Funding Round Size</a></h3>
+                <p class="card-hook">What predicts how much a Quebec startup raises in a single round?</p>
+                <p class="card-result"><span class="visually-hidden">Key result: </span>Tuned Random Forest: test RMSE $19.3M on 621 disclosed rounds; growth stage beats public backing as a predictor</p>
+                <ul class="tag-list" aria-label="Tools and methods">
+                  <li class="tag">Python</li>
+                  <li class="tag">Machine Learning</li>
+                  <li class="tag">Regression</li>
+                  <li class="tag">scikit-learn</li>
+                </ul>
+              </div>
+            </li>
+            <li class="card" data-tags="python causal-inference machine-learning dowhy causalml">
+              <div class="card-media">
+                <picture>
+                  <source srcset="assets/img/projects/causal-failures-thumb.webp" type="image/webp" />
+                  <img src="assets/img/projects/causal-failures-thumb.png" alt="Causal graph linking founding era, sector and business model to funding and lifespan" width="830" height="506" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title" id="card-causal-failures"><a class="card-link" href="projects/causal-failures.html">Causal Inference on Startup Failures</a></h3>
+                <p class="card-hook">Does raising more money actually make a failing startup last longer?</p>
+                <p class="card-result"><span class="visually-hidden">Key result: </span>High funding adds about +2.2 years of lifespan (95% CI 1.6–2.8); losing to tech giants shows no detectable effect</p>
+                <ul class="tag-list" aria-label="Tools and methods">
+                  <li class="tag">Python</li>
+                  <li class="tag">Causal Inference</li>
+                  <li class="tag">Machine Learning</li>
+                  <li class="tag">DoWhy</li>
+                  <li class="tag">CausalML</li>
+                </ul>
+              </div>
+            </li>
+            <!-- /render:cards -->
+        </ul>
+      </section>
+
+      <!-- ---------------- EDUCATION & SKILLS ---------------- -->
+      <section id="education" class="panel" aria-labelledby="education-title">
+        <h2 id="education-title">Education &amp; Skills</h2>
+        <ol class="timeline">
+          <li>
+            <h3>Master of Management in Analytics (MMA) · <span class="org">McGill University</span> <span class="badge">In progress</span></h3>
+            <p class="meta">Desautels Faculty of Management · Montreal · Expected 2027 · GPA 4.0</p>
+          </li>
+          <li>
+            <h3>Bachelor in Business Administration · <span class="org">IE University</span></h3>
+            <p class="meta">Madrid · Sep 2019 – Jul 2023 · GPA 3.7 (top 10% of class)</p>
+            <p class="meta">Honors in Entrepreneurship &amp; Innovation and Supply Chain Management</p>
+          </li>
+          <li>
+            <h3>Exchange Semester · <span class="org">McGill University</span></h3>
+            <p class="meta">Desautels Faculty of Management · Montreal · Jan – May 2022</p>
+          </li>
+          <li>
+            <h3>International Baccalaureate · <span class="org">International School of Brussels</span></h3>
+            <p class="meta">Brussels · Graduated May 2019</p>
+          </li>
+        </ol>
+
+        <div class="subsection">
+          <h3>Technical skills</h3>
+          <div class="pill-group">
+            <span class="label">Software</span>
+            <ul class="pills">
+              <li class="pill">Python</li>
+              <li class="pill">SQL (BigQuery &amp; MySQL)</li>
+              <li class="pill">Databricks</li>
+              <li class="pill">Confluent</li>
+              <li class="pill">Looker Studio</li>
+              <li class="pill">Excel</li>
+              <li class="pill">Datawrapper</li>
+              <li class="pill">LLM tools</li>
+            </ul>
+          </div>
+          <div class="pill-group">
+            <span class="label">Methods (perfecting)</span>
+            <ul class="pills">
+              <li class="pill">NLP</li>
+              <li class="pill">Multiple linear regression</li>
+              <li class="pill">Causal inference</li>
+              <li class="pill">Random forest</li>
+            </ul>
+          </div>
+          <div class="pill-group">
+            <span class="label">Certifications (in progress)</span>
+            <ul class="pills">
+              <li class="pill">Microsoft Azure Cloud &amp; Solutions Architect</li>
+              <li class="pill">dbt Fundamentals</li>
+              <li class="pill">Anthropic AI Fluency</li>
+              <li class="pill">Jira</li>
+              <li class="pill">Power BI</li>
+              <li class="pill">Power Query</li>
+              <li class="pill">Snowflake</li>
+              <li class="pill">AWS</li>
+            </ul>
           </div>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
 
-    <footer>Portfolio page designed using Claude Code, Anthropic</footer>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>© Eglantine Dupuy</p>
+        <p>Portfolio page designed using Claude Code, Anthropic</p>
+      </div>
+    </footer>
 
-    <!-- ============================================================
-       TABS + SCROLL REVEAL
-       ============================================================ -->
-    <script>
-      (function () {
-        var tabs = Array.prototype.slice.call(
-          document.querySelectorAll(".tab-button")
-        );
-        var panels = document.querySelectorAll(".tab-content");
-
-        function activate(tab, focusTab) {
-          tabs.forEach(function (btn) {
-            var selected = btn === tab;
-            btn.setAttribute("aria-selected", selected ? "true" : "false");
-            btn.tabIndex = selected ? 0 : -1;
-          });
-          panels.forEach(function (panel) {
-            panel.classList.toggle("active", panel.id === tab.getAttribute("aria-controls"));
-          });
-          if (focusTab) tab.focus();
-          revealVisible();
-        }
-
-        tabs.forEach(function (tab, index) {
-          tab.addEventListener("click", function () {
-            activate(tab, false);
-          });
-
-          tab.addEventListener("keydown", function (e) {
-            var newIndex = null;
-            if (e.key === "ArrowRight") newIndex = (index + 1) % tabs.length;
-            else if (e.key === "ArrowLeft")
-              newIndex = (index - 1 + tabs.length) % tabs.length;
-            else if (e.key === "Home") newIndex = 0;
-            else if (e.key === "End") newIndex = tabs.length - 1;
-
-            if (newIndex !== null) {
-              e.preventDefault();
-              activate(tabs[newIndex], true);
-            }
-          });
-        });
-
-        /* ---------- scroll reveal ---------- */
-        var revealEls = document.querySelectorAll(".reveal");
-        var observer;
-
-        if ("IntersectionObserver" in window) {
-          observer = new IntersectionObserver(
-            function (entries) {
-              entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                  entry.target.classList.add("is-visible");
-                  observer.unobserve(entry.target);
-                }
-              });
-            },
-            { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
-          );
-          revealEls.forEach(function (el) {
-            observer.observe(el);
-          });
-        } else {
-          revealEls.forEach(function (el) {
-            el.classList.add("is-visible");
-          });
-        }
-
-        function revealVisible() {
-          if (!observer) return;
-          revealEls.forEach(function (el) {
-            if (!el.classList.contains("is-visible")) {
-              var rect = el.getBoundingClientRect();
-              if (rect.top < window.innerHeight && rect.bottom > 0) {
-                el.classList.add("is-visible");
-                observer.unobserve(el);
-              }
-            }
-          });
-        }
-
-        revealVisible();
-      })();
-    </script>
+    <script src="assets/js/site.js" defer></script>
   </body>
 </html>

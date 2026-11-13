@@ -1,0 +1,37 @@
+{
+  "_readme": "Single source of truth for project cards (index.html) and prev/next links (projects/*.html). After editing, run: python scripts/render.py",
+  "projects": [
+    {
+      "slug": "quebec-funding",
+      "title": "Predicting Quebec Startup Funding Round Size",
+      "page": "projects/quebec-funding.html",
+      "hook": "What predicts how much a Quebec startup raises in a single round?",
+      "keyResult": "Tuned Random Forest: test RMSE $19.3M on 621 disclosed rounds; growth stage beats public backing as a predictor",
+      "tags": ["Python", "Machine Learning", "Regression", "scikit-learn"],
+      "thumbnail": {
+        "base": "assets/img/projects/quebec-funding-thumb",
+        "width": 722,
+        "height": 463,
+        "alt": "Box plot comparing funding round amounts with and without a public investor"
+      },
+      "repo": "https://github.com/eglantinedupuy-hub/quebec-startup-funding-prediction",
+      "data": "Dealroom.co (aggregates only)"
+    },
+    {
+      "slug": "causal-failures",
+      "title": "Causal Inference on Startup Failures",
+      "page": "projects/causal-failures.html",
+      "hook": "Does raising more money actually make a failing startup last longer?",
+      "keyResult": "High funding adds about +2.2 years of lifespan (95% CI 1.6–2.8); losing to tech giants shows no detectable effect",
+      "tags": ["Python", "Causal Inference", "Machine Learning", "DoWhy", "CausalML"],
+      "thumbnail": {
+        "base": "assets/img/projects/causal-failures-thumb",
+        "width": 830,
+        "height": 506,
+        "alt": "Causal graph linking founding era, sector and business model to funding and lifespan"
+      },
+      "repo": "https://github.com/eglantinedupuy-hub/startup-failures-causal-inference",
+      "data": "Kaggle “Startup Failures” (CC BY-NC 4.0)"
+    }
+  ]
+}
