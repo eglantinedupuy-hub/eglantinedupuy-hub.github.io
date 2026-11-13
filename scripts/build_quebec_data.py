@@ -150,6 +150,8 @@ def model(df):
         "nDisclosed": int(len(df)), "nTrain": int(len(train)), "nTest": int(len(test)),
         "cvRmse": cv,
         "tunedCvRmse": round(float(-search.best_score_), 2),
+        "tunedFolds": [round(float(-search.cv_results_[f"split{i}_test_score"][search.best_index_]), 2)
+                       for i in range(5)],
         "bestParams": {k.replace("model__", ""): int(v) for k, v in search.best_params_.items()},
         "testRmse": round(float(rmse), 2), "testMae": round(float(mae), 2),
         "featureImportance": [{"feature": k, "importance": round(float(v), 4)}

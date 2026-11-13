@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Causal Inference on Startup Failures | Eglantine Dupuy</title>
+    <meta name="description" content="Does more funding make failed startups last longer? Causal estimates with CausalML and DoWhy on 356 failed startups, stress-tested with refutation tests." />
+    <meta name="theme-color" content="#fafaf7" />
+    <link rel="icon" type="image/jpeg" href="../assets/img/photo.jpg" />
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <div class="wrap">
+        <a class="home" href="../index.html">Eglantine Dupuy</a>
+        <a href="../index.html#projects">All projects</a>
+      </div>
+    </header>
+
+    <main id="main" class="wrap" tabindex="-1">
+      <article class="article">
+        <header class="article-header">
+          <h1>Causal Inference on Startup Failures</h1>
+          <p class="hook">Among startups that eventually failed, does raising more money actually make them last longer? And does losing to a tech giant cut their life short?</p>
+          <ul class="tag-list" aria-label="Tools and methods">
+            <li class="tag">Python</li>
+            <li class="tag">Causal Inference</li>
+            <li class="tag">Machine Learning</li>
+            <li class="tag">DoWhy</li>
+            <li class="tag">CausalML</li>
+          </ul>
+          <div class="article-actions">
+            <a class="btn btn-primary" href="https://github.com/eglantinedupuy-hub/startup-failures-causal-inference" rel="noopener">View code on GitHub</a>
+            <a class="btn" href="#explorer">Explore the data</a>
+          </div>
+        </header>
+
+        <aside class="tldr" aria-labelledby="tldr-title">
+          <h2 id="tldr-title">TL;DR</h2>
+          <dl>
+            <dt>Question</dt>
+            <dd>Does high funding (above the $20M median) cause failed startups to survive longer? Does losing to a tech giant shorten their lifespan?</dd>
+            <dt>Method</dt>
+            <dd>356 failed startups. Confounders: founding year and era, sector and business model. Effects estimated with CausalML (S- and T-learners) and DoWhy (backdoor adjustment), then stress-tested with refutation tests.</dd>
+            <dt>Result</dt>
+            <dd>High funding: <strong>+2.2 years of lifespan (95% CI 1.6–2.8)</strong>, consistent across four methods (2.0–2.5). Tech giants: <strong>+0.44 years (95% CI −0.27 to 1.15)</strong>, no detectable effect.</dd>
+            <dt>Takeaway</dt>
+            <dd>Capital buys runway, about two extra years for startups that fail anyway, and most clearly for B2B companies. Losing to a giant isn’t what shortens a failed startup’s life in this data.</dd>
+          </dl>
+        </aside>
+
+        <noscript><p class="noscript-note" style="margin-top: 2rem">The charts on this page need JavaScript. Every key number is also stated in the text.</p></noscript>
+
+        <section aria-labelledby="problem">
+          <span class="step">1 · Problem</span>
+          <h2 id="problem">Correlation is easy. Is it causal?</h2>
+          <p>
+            High-funded failed startups lived <strong>2.45 years longer</strong> on average than low-funded ones. But they are not
+            the same kinds of companies: they differ in sector, era and business model. A naive comparison would mix the effect of
+            money with the effect of being, say, a B2B company in the 2010s. I set out to separate the two.
+          </p>
+          <ul>
+            <li><strong>Question 1:</strong> does raising more money <em>cause</em> failed startups to survive longer?</li>
+            <li><strong>Question 2:</strong> do startups that lost to tech giants (e.g. Google, Amazon) have shorter lifespans than comparable startups that didn’t?</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="data">
+          <span class="step">2 · Data</span>
+          <h2 id="data">356 failed startups, cleaned from six files</h2>
+          <p>
+            The data is the Kaggle <em>Startup Failures</em> dataset (CC BY-NC 4.0): failed startups across six sectors, with years of
+            operation, funding raised and 13 binary failure-cause flags. Cleaning took it from 409 raw rows to 356:
+          </p>
+          <ul>
+            <li>fixed a schema mismatch in one sector file and removed 5 duplicates across files;</li>
+            <li>parsed founding year, end year and lifespan from two different text formats, and funding into $ millions;</li>
+            <li>dropped 46 rows whose funding belonged to a parent company (e.g. “$0 (Coinbase-funded)”) and 1 unparseable row;</li>
+            <li>built the treatment (<code>high_funding</code>, above the $20M median), founding era, and business-model flags (<code>hardware</code>, <code>physical_ops</code>, <code>b2b</code>) from keyword rules, reviewed by hand.</li>
+          </ul>
+          <p>
+            I deliberately <strong>excluded the 13 failure-cause flags</strong> as confounders, because funding could cause them rather than the other way round.
+          </p>
+        </section>
+
+        <section aria-labelledby="method">
+          <span class="step">3 · Method</span>
+          <h2 id="method">State the assumptions, then try to break the estimate</h2>
+          <figure class="figure">
+            <picture>
+              <source srcset="../assets/img/projects/causal-failures-thumb.webp" type="image/webp" />
+              <img src="../assets/img/projects/causal-failures-thumb.png" width="830" height="506" loading="lazy" decoding="async"
+                alt="Causal graph: eleven confounders (sector, founding era, founding year, hardware, physical operations and B2B flags) each have arrows into both high funding and lifespan." />
+            </picture>
+            <figcaption><strong>Causal graph for the funding treatment.</strong> Each confounder affects both funding and lifespan; DoWhy uses this graph to find a valid backdoor adjustment set. Figure from the notebook.</figcaption>
+          </figure>
+          <ol>
+            <li><strong>Balance checks:</strong> high-funded startups are more often hardware (21% vs. 7%) and B2B (22% vs. 12%), so the groups need adjusting.</li>
+            <li><strong>CausalML:</strong> average treatment effect from a linear S-learner and an XGBoost T-learner.</li>
+            <li><strong>DoWhy:</strong> explicit causal graph, backdoor identification, then linear regression and propensity score stratification.</li>
+            <li><strong>Refutation:</strong> random common cause, placebo treatment, data subset, and an unobserved-confounder sensitivity analysis.</li>
+            <li><strong>Heterogeneity:</strong> how the effect varies by business model and era. Then the whole identify → estimate → refute loop again for the tech-giants treatment.</li>
+          </ol>
+        </section>
+
+        <section aria-labelledby="results">
+          <span class="step">4 · Results</span>
+          <h2 id="results">About two extra years from funding; nothing from giants</h2>
+
+          <figure class="figure" aria-labelledby="forest-title">
+            <p class="figure-title" id="forest-title">Estimated effect on lifespan, with 95% confidence intervals</p>
+            <div class="controls">
+              <div class="segmented" id="forest-toggle" role="group" aria-label="Treatment">
+                <button data-value="funding" aria-pressed="true">High funding</button>
+                <button data-value="giants">Lost to a tech giant</button>
+              </div>
+            </div>
+            <div class="chart-box">
+              <canvas id="chart-forest" role="img" aria-label="Forest plot of estimated effects on lifespan in years. For high funding all methods estimate 2.0 to 2.5 years with intervals above zero. For losing to a tech giant the estimate is 0.44 years with an interval crossing zero."></canvas>
+            </div>
+            <figcaption id="forest-caption">Dots are point estimates and bars are 95% intervals. The dashed line marks zero effect. Propensity score stratification returns no interval.</figcaption>
+            <details class="data-table"><summary>Show data table</summary><div id="table-forest"></div></details>
+          </figure>
+
+          <p>
+            <strong>Funding → lifespan.</strong> Adjusting for confounders shrinks the raw 2.45-year gap to 2.0–2.5 years:
+            2.21 (linear regression, 95% CI 1.59–2.82), 2.02 (XGBoost T-learner) and 2.47 (propensity score stratification).
+            Every interval stays above zero.
+          </p>
+          <p>
+            <strong>Tech giants → lifespan.</strong> The adjusted estimate is +0.44 years (95% CI −0.27 to 1.15, p = 0.23):
+            indistinguishable from zero, and if anything in the opposite direction to the hypothesis.
+          </p>
+
+          <h3>Who benefits most?</h3>
+          <figure class="figure" aria-labelledby="sub-title">
+            <p class="figure-title" id="sub-title">Effect of high funding by subgroup (years of lifespan)</p>
+            <div class="controls">
+              <div class="segmented" id="sub-toggle" role="group" aria-label="Subgroup dimension">
+                <button data-value="Business model" aria-pressed="true">B2B</button>
+                <button data-value="Hardware">Hardware</button>
+                <button data-value="Founding era">Founding era</button>
+              </div>
+            </div>
+            <div class="chart-box">
+              <canvas id="chart-subgroups" role="img" aria-label="Grouped bar chart comparing the model-estimated effect of high funding with the raw lifespan gap for each subgroup. The effect is largest for B2B startups at about 4 years."></canvas>
+            </div>
+            <figcaption id="sub-caption">Exploratory: XGBoost T-learner averages from a single model fit, with no uncertainty estimates. Groups overlap.</figcaption>
+            <details class="data-table"><summary>Show data table</summary><div id="table-subgroups"></div></details>
+          </figure>
+
+          <h3>How fragile is the funding result?</h3>
+          <div class="table-scroll">
+            <table>
+              <caption class="visually-hidden">Refutation tests for the effect of high funding (linear regression estimate 2.21 years)</caption>
+              <thead>
+                <tr><th scope="col">Refutation test</th><th scope="col" class="num">New estimate</th><th scope="col">What it shows</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Add a random common cause</td><td class="num">2.21</td><td>Stable (p = 0.98)</td></tr>
+                <tr><td>Placebo (shuffled) treatment</td><td class="num">0.04</td><td>Effect disappears, as it should (p = 0.84)</td></tr>
+                <tr><td>Re-estimate on a 90% subset</td><td class="num">2.21</td><td>Stable (p = 0.88)</td></tr>
+                <tr><td>Simulated unobserved confounder</td><td class="num">−0.97 to 2.66</td><td>Falls toward zero, and can turn negative, if a strong hidden factor exists</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">Original estimate: 2.21 years. Values from the notebook’s printed DoWhy outputs.</p>
+          <figure class="figure">
+            <picture>
+              <source srcset="../assets/img/projects/causal-sensitivity.webp" type="image/webp" />
+              <img src="../assets/img/projects/causal-sensitivity.png" width="614" height="548" loading="lazy" decoding="async"
+                alt="Heat map of the funding effect under a simulated unobserved confounder. With no confounder effect on treatment the estimate stays near 2.2 to 2.7 years; as that effect rises above about 0.1 the estimate falls to around zero, with a minimum of minus 0.97." />
+            </picture>
+            <figcaption><strong>Sensitivity to an unobserved confounder.</strong> Something like unmeasured founder experience, if strongly tied to both funding and lifespan, could explain the effect away. Figure from the notebook.</figcaption>
+          </figure>
+        </section>
+
+        <section aria-labelledby="meaning">
+          <span class="step">5 · What it means</span>
+          <h2 id="meaning">For founders and VCs</h2>
+          <ul>
+            <li><strong>Money buys time, not survival.</strong> Every company here failed. High funding bought about two more years of life, not a different outcome.</li>
+            <li><strong>B2B is where capital stretches furthest.</strong> The estimated effect is about 4 years for B2B startups against 1.6 for others, and the raw gaps show the same pattern (4.65 vs. 1.83).</li>
+            <li><strong>Losing to a tech giant doesn’t explain lifespan.</strong> Startups flagged as losing to giants did not live shorter lives than comparable startups.</li>
+            <li><strong>Timing matters.</strong> When a startup was founded explains most of the variation in the funding effect (XGBoost feature importance ≈ 0.52 for founding year).</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="explorer">
+          <span class="step">Explore</span>
+          <h2 id="explorer">Data explorer</h2>
+          <p>
+            Compare high- and low-funded failed startups within a sector, era or business model. These are raw averages, not causal
+            estimates. Groups with fewer than 5 startups are hidden.
+          </p>
+          <figure class="figure" aria-labelledby="ex-title">
+            <p class="figure-title" id="ex-title">Average lifespan by funding level</p>
+            <div class="controls">
+              <label class="control">Sector <select id="ex-sector"></select></label>
+              <label class="control">Founding era <select id="ex-era"></select></label>
+              <label class="control">Business model <select id="ex-model"></select></label>
+            </div>
+            <div class="stat-row" id="ex-stats" aria-live="polite"></div>
+            <div class="chart-box">
+              <canvas id="chart-explorer" role="img" aria-label="Bar chart of average lifespan in years for high-funded versus low-funded startups matching the selected filters. Exact values are in the data table below."></canvas>
+            </div>
+            <figcaption id="ex-note"></figcaption>
+            <details class="data-table"><summary>Show data table</summary><div id="table-explorer"></div></details>
+          </figure>
+        </section>
+
+        <section aria-labelledby="limits">
+          <span class="step">6 · Limitations &amp; next steps</span>
+          <h2 id="limits">What this can’t tell you</h2>
+          <ul>
+            <li><strong>Failed startups only:</strong> results describe startups that failed, not startups in general.</li>
+            <li><strong>Unmeasured confounders:</strong> founder experience, team size, location and market size could confound both estimates.</li>
+            <li><strong>Reverse timing:</strong> both treatments may partly reflect survival itself. Longer-lived startups have more time to raise money, or to run into a tech giant.</li>
+            <li><strong>Hand-built labels:</strong> business-model labels come from keyword rules with manual review; the Giants flag was assigned retrospectively from press coverage.</li>
+            <li><strong>Small subgroups:</strong> heterogeneous-effect results are exploratory with 356 startups; only 12 hardware startups had low funding.</li>
+          </ul>
+          <!-- TODO(Eglantine): add the next steps you would actually pursue (e.g. adding surviving startups as a comparison group). Not in the repo, so left out rather than invented. -->
+          <p class="note">Built as Assignment 2 for Enterprise Data Science (McGill MMA). The notebook includes an AI-use disclosure.</p>
+        </section>
+
+        <nav class="pager" aria-label="More projects">
+        <!-- render:pager -->
+        <a class="pager-link" href="../index.html#projects">&larr; All projects</a>
+        <a class="pager-link" href="../projects/quebec-funding.html" rel="prev"><span class="pager-label">Previous</span> Predicting Quebec Startup Funding Round Size</a>
+        <!-- /render:pager -->
+        </nav>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>© Eglantine Dupuy</p>
+        <p><a href="../index.html">Back to portfolio</a></p>
+      </div>
+    </footer>
+
+    <script src="../assets/vendor/chart.umd.min.js" defer></script>
+    <script src="../assets/js/charts.js" defer></script>
+    <script src="../assets/js/projects/causal-failures.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Predicting Quebec Startup Funding Round Size | Eglantine Dupuy</title>
+    <meta name="description" content="Regression on 621 disclosed Dealroom.co funding rounds in Quebec: what predicts round size, and why public backing matters less than growth stage." />
+    <meta name="theme-color" content="#fafaf7" />
+    <link rel="icon" type="image/jpeg" href="../assets/img/photo.jpg" />
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <div class="wrap">
+        <a class="home" href="../index.html">Eglantine Dupuy</a>
+        <a href="../index.html#projects">All projects</a>
+      </div>
+    </header>
+
+    <main id="main" class="wrap" tabindex="-1">
+      <article class="article">
+        <header class="article-header">
+          <h1>Predicting Quebec Startup Funding Round Size</h1>
+          <p class="hook">What predicts how much a Quebec startup raises in a single round, and does having a government investor at the table matter?</p>
+          <ul class="tag-list" aria-label="Tools and methods">
+            <li class="tag">Python</li>
+            <li class="tag">Machine Learning</li>
+            <li class="tag">Regression</li>
+            <li class="tag">scikit-learn</li>
+          </ul>
+          <div class="article-actions">
+            <a class="btn btn-primary" href="https://github.com/eglantinedupuy-hub/quebec-startup-funding-prediction" rel="noopener">View code on GitHub</a>
+            <a class="btn" href="#explorer">Explore the data</a>
+          </div>
+        </header>
+
+        <aside class="tldr" aria-labelledby="tldr-title">
+          <h2 id="tldr-title">TL;DR</h2>
+          <dl>
+            <dt>Question</dt>
+            <dd>What predicts the size of a startup funding round in Quebec?</dd>
+            <dt>Method</dt>
+            <dd>Regression on 621 disclosed Dealroom.co rounds (Quebec HQ, 2021–present). Linear Regression, Decision Tree and Random Forest compared with 5-fold cross-validation, then the Random Forest was tuned.</dd>
+            <dt>Result</dt>
+            <dd>Tuned Random Forest: <strong>test RMSE $19.3M, MAE $7.6M</strong>. Growth stage, launch year, total rounds raised and round type were the strongest predictors.</dd>
+            <dt>Takeaway</dt>
+            <dd>Publicly backed rounds are 4–5× larger at the median, but the model says that is mostly timing: they happen at later stages. Use the model to benchmark a round against similar Quebec companies, not to make decisions on its own.</dd>
+          </dl>
+        </aside>
+
+        <noscript><p class="noscript-note" style="margin-top: 2rem">The charts on this page need JavaScript. Every key number is also stated in the text.</p></noscript>
+
+        <section aria-labelledby="problem">
+          <span class="step">1 · Problem</span>
+          <h2 id="problem">Benchmarking a round against its peers</h2>
+          <p>
+            Founders and investors constantly ask “is this round big or small for a company like ours?”. I framed it as a
+            supervised regression problem: predict the disclosed amount of a funding round (<code>Amount (USD M)</code>)
+            from company and round characteristics. The goal is a benchmarking tool for comparing a prospective round with similar Quebec
+            companies, not a standalone decision-making tool.
+          </p>
+          <p>
+            I also wanted to test one specific belief: that rounds with a government or semi-public investor are bigger.
+          </p>
+        </section>
+
+        <section aria-labelledby="data">
+          <span class="step">2 · Data</span>
+          <h2 id="data">1,141 rounds, and almost half without an amount</h2>
+          <p>
+            The data is a Dealroom.co export of funding rounds for Quebec-headquartered companies, dated 2021 to the present
+            (exported 16 September 2026). I flagged rounds with at least one government or semi-public investor by hand.
+            The raw data is proprietary, so it is not published here; everything below is aggregated.
+          </p>
+          <p>
+            <strong>Disclosure is not random.</strong> 520 of 1,141 rounds (45.6%) have no disclosed amount, and missing
+            amounts concentrate in early-stage and hard-to-access round types: Support Program and Spinout rounds are
+            disclosed less than 15% of the time, against about 70% for Seed and Early VC. The modeling sample of 621 rounds
+            therefore skews toward later-stage, better-documented rounds.
+          </p>
+          <figure class="figure">
+            <picture>
+              <source srcset="../assets/img/projects/quebec-disclosure.webp" type="image/webp" />
+              <img src="../assets/img/projects/quebec-disclosure.png" width="702" height="586" loading="lazy" decoding="async"
+                alt="Stacked bar chart of disclosed versus undisclosed rounds for the five round types with the most undisclosed amounts. Support Program and Spinout rounds are mostly undisclosed; Seed and Early VC are about 70% disclosed." />
+            </picture>
+            <figcaption><strong>Amount disclosure by round type</strong> (top 5 round types by number of undisclosed rounds). Figure from the notebook.</figcaption>
+          </figure>
+          <p>
+            <strong>Round sizes are heavily right-skewed.</strong> Most disclosed rounds are a few million dollars, but a handful
+            of mega-rounds (up to $417.5M) stretch the distribution. That is why I report RMSE alongside the more outlier-robust
+            MAE, and why I used median rather than mean imputation.
+          </p>
+          <figure class="figure">
+            <picture>
+              <source srcset="../assets/img/projects/quebec-distribution.webp" type="image/webp" />
+              <img src="../assets/img/projects/quebec-distribution.png" width="702" height="473" loading="lazy" decoding="async"
+                alt="Histogram of disclosed funding round amounts: most rounds are under $20M with a long tail up to $417.5M." />
+            </picture>
+            <figcaption><strong>Distribution of disclosed round amounts</strong> (USD M). Figure from the notebook.</figcaption>
+          </figure>
+        </section>
+
+        <section aria-labelledby="method">
+          <span class="step">3 · Method</span>
+          <h2 id="method">From a linear baseline to a tuned forest</h2>
+          <ol>
+            <li><strong>Preparation:</strong> dropped rounds without a disclosed amount, built <code>Government Backed</code>, <code>Semi-Public</code> and <code>Publicly Backed</code> flags, and did a stratified 80/20 train/test split (496 / 125 rounds).</li>
+            <li><strong>Preprocessing pipeline:</strong> median imputation and scaling for numeric features; most-frequent imputation and one-hot encoding for categorical features, in a single <code>ColumnTransformer</code>.</li>
+            <li><strong>Model comparison:</strong> Linear Regression, Decision Tree and Random Forest, scored by 5-fold cross-validated RMSE.</li>
+            <li><strong>Tuning and evaluation:</strong> <code>RandomizedSearchCV</code> on the Random Forest, then a single evaluation on the held-out test set with a bootstrap 95% confidence interval for RMSE.</li>
+          </ol>
+
+          <figure class="figure" aria-labelledby="models-title">
+            <p class="figure-title" id="models-title">Cross-validated error by model (lower is better)</p>
+            <div class="controls">
+              <div class="segmented" id="models-toggle" role="group" aria-label="Chart view">
+                <button data-value="mean" aria-pressed="true">Average</button>
+                <button data-value="range">Show range across folds</button>
+              </div>
+            </div>
+            <div class="chart-box">
+              <canvas id="chart-models" role="img" aria-label="Bar chart of 5-fold cross-validated RMSE: Linear Regression 25.13, Decision Tree 21.67, Random Forest 20.99, tuned Random Forest 20.67 million dollars."></canvas>
+            </div>
+            <figcaption>RMSE in USD millions on the training set’s 5 cross-validation folds. Tuning improved the Random Forest by about 1.5%, a small gain, as expected for a small, noisy dataset.</figcaption>
+            <details class="data-table"><summary>Show data table</summary><div id="table-models"></div></details>
+          </figure>
+        </section>
+
+        <section aria-labelledby="results">
+          <span class="step">4 · Results</span>
+          <h2 id="results">A $19.3M test error, driven by stage and history</h2>
+          <p>
+            On the held-out test set, the tuned Random Forest reached an <strong>RMSE of $19.30M and an MAE of $7.56M</strong>
+            (bootstrap 95% CI for RMSE: $8.83M–$29.96M). Test RMSE is close to the cross-validated $20.67M, so the model is not
+            overfitting the training folds.
+          </p>
+
+          <figure class="figure" aria-labelledby="pva-title">
+            <p class="figure-title" id="pva-title">Predicted vs. actual round size on the test set, by actual round size</p>
+            <div class="chart-box">
+              <canvas id="chart-pva" role="img" aria-label="Grouped bar chart of median actual versus median predicted round size for each actual-size bucket in the test set. The model over-predicts small rounds and under-predicts large ones."></canvas>
+            </div>
+            <figcaption>
+              Medians of the 125 test-set rounds, grouped by actual amount. Small rounds are over-predicted and large rounds under-predicted:
+              the model pulls toward the middle. Rounds above $100M (4 in the test set) are not shown, so that no individual round can be identified.
+              Computed by re-running the notebook pipeline with the same seeds.
+            </figcaption>
+            <details class="data-table"><summary>Show data table</summary><div id="table-pva"></div></details>
+          </figure>
+
+          <h3>What drives the prediction</h3>
+          <p>
+            Growth stage (especially “late stage”, the single strongest feature), launch year, total rounds raised and round type
+            dominated feature importance. <code>Publicly Backed</code> did not make the top 15.
+          </p>
+          <figure class="figure" aria-labelledby="imp-title">
+            <p class="figure-title" id="imp-title">Random Forest feature importance</p>
+            <div class="controls">
+              <div class="segmented" id="imp-toggle" role="group" aria-label="Number of features">
+                <button data-value="5" aria-pressed="true">Top 5</button>
+                <button data-value="15">Top 15</button>
+              </div>
+            </div>
+            <div class="chart-box tall">
+              <canvas id="chart-importance" role="img" aria-label="Horizontal bar chart of feature importance. Growth stage: late stage is highest at about 0.20, followed by launch year at 0.10 and total rounds number at 0.08."></canvas>
+            </div>
+            <figcaption>Impurity-based importance from the tuned model; one-hot categories appear as separate features.</figcaption>
+            <details class="data-table"><summary>Show data table</summary><div id="table-importance"></div></details>
+          </figure>
+        </section>
+
+        <section aria-labelledby="meaning">
+          <span class="step">5 · What it means</span>
+          <h2 id="meaning">For founders and VCs</h2>
+          <ul>
+            <li><strong>Public backing is a marker of timing.</strong> Rounds with a government or semi-public investor have a median size roughly 4–5× larger ($10–11M vs. $2–2.2M). But once growth stage is in the model, backing adds little. Publicly backed rounds tend to happen later, and stage already explains size. This is association, not evidence that backing causes bigger rounds.</li>
+            <li><strong>Stage and track record set the benchmark.</strong> Where a company is in its growth and how many rounds it has already raised matter far more than who is in the round.</li>
+            <li><strong>Treat it as a range, not a point.</strong> A typical miss of about $7.6M, and larger misses on mega-rounds, make the model useful for “is this round in the normal range for a company like ours?”, not for pricing a specific deal.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="explorer">
+          <span class="step">Explore</span>
+          <h2 id="explorer">Data explorer</h2>
+          <p>
+            Filter all 1,141 rounds by round type and public backing. Groups with fewer than 5 rounds are hidden, and a median is
+            only shown when at least 5 disclosed amounts back it. 2026 is a partial year (data exported in September).
+          </p>
+          <figure class="figure" aria-labelledby="explorer-title">
+            <p class="figure-title" id="explorer-title">Quebec funding rounds by year</p>
+            <div class="controls">
+              <label class="control">Round type <select id="ex-round"></select></label>
+              <label class="control">Public backing <select id="ex-public"></select></label>
+            </div>
+            <div class="controls">
+              <div class="segmented" id="ex-metric" role="group" aria-label="Metric">
+                <button data-value="n" aria-pressed="true">Number of rounds</button>
+                <button data-value="rate">Disclosure rate</button>
+                <button data-value="median">Median amount</button>
+              </div>
+            </div>
+            <div class="stat-row" id="ex-stats" aria-live="polite"></div>
+            <div class="chart-box">
+              <canvas id="chart-explorer" role="img" aria-label="Bar chart of the selected metric by round year, 2021 to 2026, for the selected filters. Exact values are in the data table below."></canvas>
+            </div>
+            <figcaption id="ex-note">Source: Dealroom.co, aggregated.</figcaption>
+            <details class="data-table"><summary>Show data table</summary><div id="table-explorer"></div></details>
+          </figure>
+        </section>
+
+        <section aria-labelledby="limits">
+          <span class="step">6 · Limitations &amp; next steps</span>
+          <h2 id="limits">What this can’t tell you</h2>
+          <ul>
+            <li><strong>Non-random missingness:</strong> about 46% of amounts are undisclosed, biasing the sample toward later-stage, better-documented rounds.</li>
+            <li><strong>Skew and sample size:</strong> a right-skewed target with a few very large rounds, and a modest sample of 621 disclosed rounds given that skew.</li>
+            <li><strong>Possible look-ahead leakage:</strong> growth stage and total rounds number are measured as of the data export, not at the time of each round.</li>
+            <li><strong>Sparse industry encoding:</strong> multi-label industry tags produced many sparse one-hot columns rather than a clean encoding.</li>
+            <li><strong>No causal claim:</strong> there is no random assignment or control region, so associations (e.g. public backing) are not causal effects.</li>
+          </ul>
+          <!-- TODO(Eglantine): add “next steps” you would actually pursue (e.g. point-in-time stage features, a log-amount target). Not listed in the repo, so left out rather than invented. -->
+          <p class="note">
+            Structure and several helper functions adapted from Aurélien Géron’s end-to-end ML project in <em>Hands-On Machine Learning</em>.
+            Built as Assignment 1 for Enterprise Data Science (McGill MMA).
+          </p>
+        </section>
+
+        <nav class="pager" aria-label="More projects">
+        <!-- render:pager -->
+        <a class="pager-link" href="../index.html#projects">&larr; All projects</a>
+        <a class="pager-link" href="../projects/causal-failures.html" rel="next"><span class="pager-label">Next</span> Causal Inference on Startup Failures</a>
+        <!-- /render:pager -->
+        </nav>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>© Eglantine Dupuy</p>
+        <p><a href="../index.html">Back to portfolio</a></p>
+      </div>
+    </footer>
+
+    <script src="../assets/vendor/chart.umd.min.js" defer></script>
+    <script src="../assets/js/charts.js" defer></script>
+    <script src="../assets/js/projects/quebec-funding.js" defer></script>
+  </body>
+</html>

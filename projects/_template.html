@@ -1,0 +1,124 @@
+<!doctype html>
+<!--
+  PROJECT PAGE TEMPLATE
+  1. Copy this file to projects/<slug>.html.
+  2. Add an entry to data/projects.json (slug, title, page, hook, keyResult, tags, thumbnail, repo).
+  3. Put chart data (aggregates only) in data/<slug>/ and charts in assets/js/projects/<slug>.js
+     (use assets/js/projects/quebec-funding.js as the pattern). Delete the script tag if there are no charts.
+  4. Run:  python scripts/render.py   (adds the homepage card and prev/next links)
+  5. Remove the robots meta tag below in your copy.
+  Replace every ALL-CAPS placeholder. Never state a number that isn't in your repo's outputs.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>PROJECT TITLE | Eglantine Dupuy</title>
+    <meta name="description" content="ONE-SENTENCE SUMMARY FOR SEARCH AND LINK PREVIEWS." />
+    <meta name="theme-color" content="#fafaf7" />
+    <link rel="icon" type="image/jpeg" href="../assets/img/photo.jpg" />
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <div class="wrap">
+        <a class="home" href="../index.html">Eglantine Dupuy</a>
+        <a href="../index.html#projects">All projects</a>
+      </div>
+    </header>
+
+    <main id="main" class="wrap" tabindex="-1">
+      <article class="article">
+        <header class="article-header">
+          <h1>PROJECT TITLE</h1>
+          <p class="hook">THE QUESTION, IN ONE SENTENCE.</p>
+          <ul class="tag-list" aria-label="Tools and methods">
+            <li class="tag">TAG</li>
+          </ul>
+          <div class="article-actions">
+            <a class="btn btn-primary" href="REPO URL" rel="noopener">View code on GitHub</a>
+          </div>
+        </header>
+
+        <aside class="tldr" aria-labelledby="tldr-title">
+          <h2 id="tldr-title">TL;DR</h2>
+          <dl>
+            <dt>Question</dt><dd>QUESTION</dd>
+            <dt>Method</dt><dd>DATA + METHOD IN ONE OR TWO SENTENCES</dd>
+            <dt>Result</dt><dd><strong>HEADLINE NUMBER</strong> AND WHAT IT MEANS</dd>
+            <dt>Takeaway</dt><dd>BUSINESS TAKEAWAY FOR VCS / FOUNDERS</dd>
+          </dl>
+        </aside>
+
+        <section aria-labelledby="problem">
+          <span class="step">1 · Problem</span>
+          <h2 id="problem">HEADING</h2>
+          <p>WHY THIS QUESTION MATTERS.</p>
+        </section>
+
+        <section aria-labelledby="data">
+          <span class="step">2 · Data</span>
+          <h2 id="data">HEADING</h2>
+          <p>SOURCE, LICENSE, SIZE, CLEANING. IF THE DATA IS PROPRIETARY, SAY IT IS NOT PUBLISHED AND SHOW AGGREGATES ONLY.</p>
+        </section>
+
+        <section aria-labelledby="method">
+          <span class="step">3 · Method</span>
+          <h2 id="method">HEADING</h2>
+          <ol><li>STEP</li></ol>
+        </section>
+
+        <section aria-labelledby="results">
+          <span class="step">4 · Results</span>
+          <h2 id="results">HEADING</h2>
+          <!-- Interactive chart pattern:
+          <figure class="figure" aria-labelledby="c1-title">
+            <p class="figure-title" id="c1-title">CHART TITLE</p>
+            <div class="controls"><div class="segmented" id="c1-toggle" role="group" aria-label="View">
+              <button data-value="a" aria-pressed="true">View A</button><button data-value="b">View B</button>
+            </div></div>
+            <div class="chart-box"><canvas id="chart-c1" role="img" aria-label="DESCRIBE WHAT THE CHART SHOWS"></canvas></div>
+            <figcaption>CAPTION</figcaption>
+            <details class="data-table"><summary>Show data table</summary><div id="table-c1"></div></details>
+          </figure>
+          -->
+        </section>
+
+        <section aria-labelledby="meaning">
+          <span class="step">5 · What it means</span>
+          <h2 id="meaning">For founders and VCs</h2>
+          <ul><li>TAKEAWAY</li></ul>
+        </section>
+
+        <section aria-labelledby="limits">
+          <span class="step">6 · Limitations &amp; next steps</span>
+          <h2 id="limits">What this can’t tell you</h2>
+          <ul><li>LIMITATION</li></ul>
+        </section>
+
+        <nav class="pager" aria-label="More projects">
+        <!-- render:pager -->
+        <!-- /render:pager -->
+        </nav>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>© Eglantine Dupuy</p>
+        <p><a href="../index.html">Back to portfolio</a></p>
+      </div>
+    </footer>
+
+    <script src="../assets/vendor/chart.umd.min.js" defer></script>
+    <script src="../assets/js/charts.js" defer></script>
+    <script src="../assets/js/projects/SLUG.js" defer></script>
+  </body>
+</html>

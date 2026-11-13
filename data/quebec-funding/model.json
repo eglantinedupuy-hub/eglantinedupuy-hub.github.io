@@ -35,6 +35,13 @@
   }
  },
  "tunedCvRmse": 20.67,
+ "tunedFolds": [
+  12.43,
+  16.15,
+  15.09,
+  21.85,
+  37.84
+ ],
  "bestParams": {
   "max_depth": 17,
   "max_features": 13,
