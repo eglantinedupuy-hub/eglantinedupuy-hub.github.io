@@ -10,6 +10,7 @@ site works without JavaScript and GitHub Pages needs no build step:
 Usage:  python scripts/render.py
 """
 
+import hashlib
 import html
 import json
 import re
@@ -195,11 +196,34 @@ def render_dealroom():
     print(f"index.html: Dealroom showcase with {total} slides, {len(links)} links")
 
 
+def stamp_assets():
+    """Append ?v=<content hash> to local CSS/JS references in every page, so
+    browsers fetch new files after a change instead of serving a cached copy."""
+    pages = [ROOT / "index.html"] + sorted((ROOT / "projects").glob("*.html"))
+    pattern = re.compile(r'((?:href|src)="((?:\.\./)?assets/(?:css|js)/[^"?]+\.(?:css|js)))(?:\?v=[0-9a-f]+)?"')
+    for page in pages:
+        text = page.read_text(encoding="utf-8")
+
+        def repl(m):
+            ref = m.group(2)
+            f = (page.parent / ref).resolve()
+            if not f.exists():  # e.g. the template's placeholder SLUG.js
+                return m.group(0)
+            digest = hashlib.sha1(f.read_bytes()).hexdigest()[:10]
+            return f'{m.group(1)}?v={digest}"'
+
+        new = pattern.sub(repl, text)
+        if new != text:
+            page.write_text(new, encoding="utf-8", newline="\n")
+    print(f"asset versions stamped in {len(pages)} pages")
+
+
 def main():
     projects = json.loads((ROOT / "data" / "projects.json").read_text(encoding="utf-8"))["projects"]
     render_index(projects)
     render_pages(projects)
     render_dealroom()
+    stamp_assets()
 
 
 if __name__ == "__main__":
