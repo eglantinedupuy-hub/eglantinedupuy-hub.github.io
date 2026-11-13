@@ -169,24 +169,28 @@ def render_dealroom():
     if links:
         cards = []
         for l in links:
-            thumb = ""
-            if l.get("thumbnail"):
-                t = esc(l["thumbnail"])  # base path; .webp + .jpg fallback
-                thumb = (f'<picture class="link-thumb"><source srcset="{t}.webp" type="image/webp" />'
-                         f'<img src="{t}.jpg" alt="" width="640" height="360" loading="lazy" decoding="async" /></picture>')
-            cards.append(f"""<li class="link-card">
+            t = esc(l.get("thumbnail", ""))  # base path; .webp + .jpg fallback
+            is_audio = l["type"].lower().startswith("podcast")
+            badge = ('<span class="media-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>'
+                     if is_audio else "")
+            thumb = (f'<div class="media-thumb"><picture><source srcset="{t}.webp" type="image/webp" />'
+                     f'<img src="{t}.jpg" alt="" width="640" height="360" loading="lazy" decoding="async" /></picture>{badge}</div>'
+                     if t else "")
+            cards.append(f"""<li class="media-card">
   {thumb}
-  <div class="link-body">
-    <span class="link-type">{esc(l["type"])}</span>
-    <h5 class="link-title"><a class="link-anchor" href="{esc(l["url"])}" rel="noopener">{esc(l["title"])}</a></h5>
-    <p class="link-desc">{esc(l.get("description", ""))}</p>
+  <div class="media-body">
+    <span class="media-type">{esc(l["type"])}</span>
+    <h5 class="media-title">{esc(l["title"])}</h5>
+    <p class="media-desc">{esc(l.get("description", ""))}</p>
+    <a class="media-cta" href="{esc(l["url"])}" rel="noopener">{esc(l.get("cta", "Open"))}<span class="visually-hidden">: {esc(l["title"])}</span> <span aria-hidden="true">&rarr;</span></a>
   </div>
 </li>""")
-        html_out += f"""
-  <h4 class="showcase-title">Podcasts &amp; articles</h4>
-  <ul class="link-cards">
+        featured = f"""
+  <h4 class="showcase-title featured-title">Podcasts &amp; article</h4>
+  <ul class="media-cards">
 {indent_lines(chr(10).join(cards), "    ")}
   </ul>"""
+        html_out = html_out.replace('<div class="showcase">', '<div class="showcase">' + featured, 1)
     html_out += "\n</div>"
 
     idx = ROOT / "index.html"

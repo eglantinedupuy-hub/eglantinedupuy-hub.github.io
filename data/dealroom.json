@@ -183,21 +183,24 @@
       "title": "The Longevity Tech Stack - startups, funding and trends",
       "url": "https://www.youtube.com/watch?v=0-SF8qtkSVY",
       "description": "Invited onto Dealroom's Podcast to discuss the findings of the Longevity & Healthy Ageing report I authored.",
-      "thumbnail": "assets/img/dealroom/links/longevity-podcast"
+      "thumbnail": "assets/img/dealroom/links/longevity-podcast",
+      "cta": "Watch on YouTube"
     },
     {
       "type": "Podcast · NewWave",
       "title": "The State of European Climate Tech",
       "url": "https://open.spotify.com/episode/0TeDrgzMK6TJ0qLSZmnoKb",
       "description": "Invited onto the NewWave Podcast to discuss the findings of The State of European Climate Tech which I authored.",
-      "thumbnail": "assets/img/dealroom/links/climate-tech-podcast"
+      "thumbnail": "assets/img/dealroom/links/climate-tech-podcast",
+      "cta": "Listen on Spotify"
     },
     {
       "type": "Article · Dealroom.co",
       "title": "Oil Spills: Innovative cleanup methods",
       "url": "https://dealroom.co/blog/oil-spills-innovative-cleanup-methods",
       "description": "Article I authored investigating technological solutions to prevent and mitigate the impacts of Oil Spills.",
-      "thumbnail": "assets/img/dealroom/links/oil-spills-article"
+      "thumbnail": "assets/img/dealroom/links/oil-spills-article",
+      "cta": "Read on Dealroom.co"
     }
   ],
   "intro": "Collection of slides from the reports I authored displaying my sector knowledge and quantitative analytical skills. Main sectors: Climate Tech, HealthTech & BioTech, Deep Tech amongst others."
