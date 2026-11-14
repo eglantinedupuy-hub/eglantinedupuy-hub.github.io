@@ -1,0 +1,36 @@
+{
+ "asOf": "November 12, 2026",
+ "window": "3 fiscal years to 2025",
+ "companies": [
+  {
+   "ticker": "ACM",
+   "name": "AECOM",
+   "isWsp": false,
+   "revenueCagr": 7.1,
+   "fcfMargin": 4.3,
+   "reinvestment": 19.9,
+   "roic": 18.7,
+   "netDebtToEbitda": 1.39
+  },
+  {
+   "ticker": "J",
+   "name": "Jacobs",
+   "isWsp": false,
+   "revenueCagr": 7.1,
+   "fcfMargin": 6.9,
+   "reinvestment": 0.9,
+   "roic": 10.2,
+   "netDebtToEbitda": 1.59
+  },
+  {
+   "ticker": "WSP.TO",
+   "name": "WSP Global",
+   "isWsp": true,
+   "revenueCagr": 15.3,
+   "fcfMargin": 7.3,
+   "reinvestment": 87.8,
+   "roic": 9.2,
+   "netDebtToEbitda": 1.81
+  }
+ ]
+}

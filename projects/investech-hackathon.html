@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InvestTech Hackathon: WSP Index Admission | Eglantine Dupuy</title>
+    <meta name="description" content="Should WSP Global join Onesheet's Serial Acquirers & Consolidators index? An evidence-based screen and dashboard built at the Investech Hackathon in Montréal." />
+    <meta name="theme-color" content="#fafaf7" />
+    <link rel="icon" type="image/jpeg" href="../assets/img/photo.jpg" />
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/site.css?v=4bcb323a24" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <div class="wrap">
+        <a class="home" href="../index.html">Eglantine Dupuy</a>
+        <a href="../index.html#projects">All projects</a>
+      </div>
+    </header>
+
+    <main id="main" class="wrap" tabindex="-1">
+      <article class="article">
+        <header class="article-header">
+          <h1>InvestTech Hackathon: should WSP join the index?</h1>
+          <p class="hook">Investech Hackathon (Onesheet × Deck), Montréal, November 12, 2026. Instead of a stock pitch, we built a tool that decides with evidence whether a Canadian company belongs in a live index.</p>
+          <ul class="tag-list" aria-label="Tools and methods">
+            <li class="tag">Python</li>
+            <li class="tag">Financial Analysis</li>
+            <li class="tag">Dashboard</li>
+            <li class="tag">API</li>
+          </ul>
+          <div class="article-actions">
+            <a class="btn btn-primary" href="https://investech-hackathon-starter.vercel.app" rel="noopener">Open the live dashboard</a>
+            <a class="btn" href="https://github.com/Taganas2002/investech-hackathon-starter" rel="noopener">View code on GitHub</a>
+          </div>
+        </header>
+
+        <aside class="tldr" aria-labelledby="tldr-title">
+          <h2 id="tldr-title">TL;DR</h2>
+          <dl>
+            <dt>Question</dt>
+            <dd>Should WSP Global (TSX: WSP) be admitted to Onesheet’s <em>Serial Acquirers &amp; Consolidators</em> index?</dd>
+            <dt>Method</dt>
+            <dd>Screened five Canadian candidates exactly like the current index members (6 tests on 3 years of standardized statements), then built a dashboard testing whether WSP’s growth is real and reaches shareholders.</dd>
+            <dt>Result</dt>
+            <dd><strong>Admit WSP.</strong> Revenue grew <strong>~15% a year</strong> vs ~7% for AECOM and Jacobs, and free cash flow per share grew <strong>~16% a year</strong> despite ~3% annual share dilution.</dd>
+            <dt>Takeaway</dt>
+            <dd>The proof point to watch is leverage in February 2027: 2.2x in September 2026 against a promise of under 2.0x within 12 months of the TRC deal.</dd>
+          </dl>
+        </aside>
+
+        <noscript><p class="noscript-note" style="margin-top: 2rem">The charts on this page need JavaScript. Every key number is also stated in the text.</p></noscript>
+
+        <!-- TODO(Eglantine): add a short "My role" paragraph (what you personally built or analysed, team size)
+             and any hackathon outcome (placing, jury feedback). Not in the README, so left out rather than invented. -->
+
+        <section aria-labelledby="problem">
+          <span class="step">1 · Problem</span>
+          <h2 id="problem">Complete a live index with Canadian companies</h2>
+          <p>
+            Onesheet runs two live indexes: <em>REITs across borders</em> and <em>Serial acquirers &amp; consolidators</em>
+            (15 holdings, mostly US, such as AMETEK, Waste Connections, Roper, AECOM and Jacobs). Both are built by
+            capped market cap, then a multi-signal tilt, then a minimum-volatility optimization.
+          </p>
+          <p>
+            The mission: complete these indexes with Canadian companies. For serial acquirers the candidates were
+            Constellation Software, Topicus.com, TFI International, WSP Global and Aecon Group. The organizers stressed that
+            <strong>the pick isn’t what matters most</strong>: every stock in their indexes was chosen by a custom tool that
+            revealed why the business is attractive. So we built one.
+          </p>
+        </section>
+
+        <section aria-labelledby="data">
+          <span class="step">2 · Data</span>
+          <h2 id="data">Live API data, checked against filings</h2>
+          <ul>
+            <li><strong>Onesheet API</strong> (live, primary): company profiles with ~100 metrics, each linked to a filing quote; prices; annual statements; earnings call transcripts; FX rates.</li>
+            <li><strong>WSP press releases</strong>: deal terms and management promises (TRC, the Arcadis proposal and smaller deals).</li>
+            <li><strong>Dealroom</strong>: WSP’s financing history and profiles of acquired or targeted companies.</li>
+            <li><strong>Earnings call transcripts</strong>: management claims, each quote verified word for word.</li>
+          </ul>
+          <p>
+            We set strict data-quality rules: missing data is shown as missing, never estimated; filings win over
+            third-party data (Dealroom shows ~74,000 WSP employees, filings ~85,500, so we use filings); company-defined
+            metrics are never compared across companies; and nothing is summed across currencies or units.
+          </p>
+        </section>
+
+        <section aria-labelledby="method">
+          <span class="step">3 · Method</span>
+          <h2 id="method">Screen first, then build the evidence</h2>
+          <h3>Step 1: screen all five candidates like the index</h3>
+          <p>Each candidate and each current member was measured the same way over the last 3 fiscal years. A candidate passes a test if it is at least as good as the weakest quarter of current members.</p>
+          <div class="table-scroll">
+            <table>
+              <caption class="visually-hidden">The six admission tests</caption>
+              <thead><tr><th scope="col">Test</th><th scope="col">Measure</th></tr></thead>
+              <tbody>
+                <tr><td>Is it a serial acquirer?</td><td>Acquisition spend ÷ free cash flow</td></tr>
+                <tr><td>Does buying produce growth?</td><td>Revenue growth per year</td></tr>
+                <tr><td>Does it generate cash?</td><td>Free cash flow margin</td></tr>
+                <tr><td>Are returns good?</td><td>Return on invested capital (ROIC)</td></tr>
+                <tr><td>Is the balance sheet safe?</td><td>Net debt ÷ EBITDA</td></tr>
+                <tr><td>Does management deliver?</td><td>Earnings-call promises checked against later filings</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-scroll" style="margin-top: 1.5rem">
+            <table>
+              <caption class="visually-hidden">Screen result for each candidate</caption>
+              <thead><tr><th scope="col">Candidate</th><th scope="col">Result</th></tr></thead>
+              <tbody>
+                <tr><td>Constellation Software</td><td>Passes every test</td></tr>
+                <tr><td>Topicus</td><td>Passes every financial test (no recent earnings calls in the data)</td></tr>
+                <tr><td><strong>WSP Global</strong></td><td><strong>Fails only free cash flow margin</strong></td></tr>
+                <tr><td>TFI International</td><td>Fails margins, returns, leverage and management delivery</td></tr>
+                <tr><td>Aecon</td><td>Net seller of businesses: not a serial acquirer</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Step 2: why WSP is the interesting case</h3>
+          <p>
+            Constellation and Topicus are the obvious picks. WSP is Canada’s most aggressive consolidator: it reinvested
+            <strong>88% of its free cash flow</strong> into acquisitions (index median 52%), with recent deals including
+            POWER Engineers (2024), Ricardo (2025) and TRC (2026). It failed only the free cash flow margin test (7% vs a
+            bar of 11%), a test that isn’t fair to an engineering firm, which sells people’s time. It also partly funded
+            deals by issuing shares. So the real question became: <strong>is WSP’s growth real, and does it reach existing shareholders?</strong>
+          </p>
+
+          <h3>Step 3: a dashboard that answers it</h3>
+          <p>
+            Each section responds to one issue raised by the screen: <strong>peer comparison</strong> (against engineering
+            peers, not software companies), <strong>value per share</strong> (growth vs dilution), <strong>acquisitions and deal
+            execution</strong> (management’s promises vs later filings) and <strong>index fit</strong> (does WSP raise or lower
+            the index’s volatility). A decision page combines four pillars into a verdict using rules set in one config.
+          </p>
+          <figure class="figure">
+            <picture>
+              <source srcset="../assets/img/projects/investech-hackathon-thumb.webp" type="image/webp" />
+              <img src="../assets/img/projects/investech-hackathon-thumb.png" width="960" height="540" loading="lazy" decoding="async"
+                alt="Dashboard decision page: verdict ADMIT. Peer quality, value per share and deal execution pass; index fit shows insufficient data." />
+            </picture>
+            <figcaption><strong>The dashboard’s decision page.</strong> <a href="https://investech-hackathon-starter.vercel.app" rel="noopener">Explore it live</a> (offline snapshot mode).</figcaption>
+          </figure>
+        </section>
+
+        <section aria-labelledby="results">
+          <span class="step">4 · Results</span>
+          <h2 id="results">Growth that reaches shareholders</h2>
+
+          <figure class="figure" aria-labelledby="peers-title">
+            <p class="figure-title" id="peers-title">WSP vs engineering peers already in the index</p>
+            <div class="controls">
+              <div class="segmented" id="peers-toggle" role="group" aria-label="Measure">
+                <button data-value="revenueCagr" aria-pressed="true">Revenue growth</button>
+                <button data-value="fcfMargin">FCF margin</button>
+                <button data-value="reinvestment">Reinvestment</button>
+                <button data-value="roic">ROIC</button>
+                <button data-value="netDebtToEbitda">Net debt ÷ EBITDA</button>
+              </div>
+            </div>
+            <div class="chart-box">
+              <canvas id="chart-peers" role="img" aria-label="Bar chart comparing WSP Global, AECOM and Jacobs on the selected measure. WSP's revenue growth is about 15% a year versus about 7% for both peers."></canvas>
+            </div>
+            <figcaption id="peers-caption">3 fiscal years to 2025, from standardized statements.</figcaption>
+            <details class="data-table"><summary>Show data table</summary><div id="table-peers"></div></details>
+          </figure>
+          <p>
+            <strong>WSP beats its engineering peers on growth:</strong> ~15% a year vs ~7% for AECOM and Jacobs, with a higher
+            FCF margin than both. It trails them on return on capital and carries more debt, the usual trade-off of a serial
+            acquirer, since acquisitions add goodwill and are partly debt-funded.
+          </p>
+
+          <figure class="figure" aria-labelledby="ps-title">
+            <p class="figure-title" id="ps-title">Did growth survive dilution? Totals vs per share (2021 = 100)</p>
+            <div class="controls">
+              <div class="segmented" id="ps-toggle" role="group" aria-label="Measure">
+                <button data-value="fcf" aria-pressed="true">Free cash flow</button>
+                <button data-value="revenue">Revenue</button>
+                <button data-value="earnings">Earnings</button>
+              </div>
+            </div>
+            <div class="chart-box">
+              <canvas id="chart-ps" role="img" aria-label="Line chart, indexed to 2021 equals 100, of WSP's total and per-share growth with diluted share count. Per-share lines grow almost as fast as totals."></canvas>
+            </div>
+            <figcaption>WSP, fiscal years 2021–2025. Per share = total ÷ diluted weighted-average shares.</figcaption>
+            <details class="data-table"><summary>Show data table</summary><div id="table-ps"></div></details>
+          </figure>
+          <p>
+            <strong>Growth reached shareholders despite dilution:</strong> from 2021 to 2025, diluted shares grew ~3% a year,
+            yet free cash flow per share still grew ~16% a year (vs ~19% in total) and revenue per share ~12% (vs ~15%).
+          </p>
+          <ul>
+            <li><strong>Acquisitions outran cash flow:</strong> WSP spent ~1.35x its free cash flow on acquisitions over 2021–2025, funded with debt and new shares. The TRC shares were issued at C$232.80; the stock traded around C$184 on November 12, 2026.</li>
+            <li><strong>Management is on track, not yet proven:</strong> leverage was 2.2x in September 2026 against a promise of under 2.0x within 12 months of the TRC closing (~February 2027). Most TRC promises are measurable only in 2027.</li>
+          </ul>
+          <div class="callout"><strong>Verdict: admit WSP</strong>, with leverage in February 2027 as the proof point to watch.</div>
+        </section>
+
+        <section aria-labelledby="meaning">
+          <span class="step">5 · What it means</span>
+          <h2 id="meaning">For index builders and investors</h2>
+          <ul>
+            <li><strong>Judge a company against its real peers.</strong> A margin bar set by software companies would have excluded a strong engineering consolidator.</li>
+            <li><strong>Check that growth reaches shareholders.</strong> Per-share measures separate real value creation from growth bought with dilution.</li>
+            <li><strong>Hold management to its word.</strong> Promises from earnings calls become dated checkpoints, verified against later filings.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="limits">
+          <span class="step">6 · Limitations &amp; next steps</span>
+          <h2 id="limits">What this can’t tell you yet</h2>
+          <ul>
+            <li><strong>Short price history</strong> (~100 trading days): index-fit results are indicative only.</li>
+            <li><strong>Simplified index method:</strong> Onesheet’s signals, caps and optimizer settings are not public.</li>
+            <li><strong>Window-sensitive:</strong> per-share results depend on the years chosen, and the peer findings used only AECOM and Jacobs.</li>
+            <li><strong>Judgment calls:</strong> decision thresholds are shown with each pillar and adjustable.</li>
+          </ul>
+          <h3>Next steps</h3>
+          <ol>
+            <li>Load all five engineering peers and the index members’ prices.</li>
+            <li>Run the same deep dive on Constellation and Topicus to recommend the full Canadian basket.</li>
+            <li>Adapt the tool to the REIT index with real-estate measures (occupancy, same-property NOI, AFFO per unit).</li>
+            <li>Re-check management promises automatically as results come out (next checkpoint: WSP Q4 2026, ~February 2027).</li>
+          </ol>
+          <p class="note">Not investment advice. Figures are as of November 12, 2026, from the Onesheet API, company filings and press releases, and Dealroom.</p>
+        </section>
+
+        <nav class="pager" aria-label="More projects">
+        <!-- render:pager -->
+        <a class="pager-link" href="../index.html#projects">&larr; All projects</a>
+        <a class="pager-link" href="../projects/quebec-funding.html" rel="next"><span class="pager-label">Next</span> Predicting Quebec Startup Funding Round Size</a>
+        <!-- /render:pager -->
+        </nav>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>© Eglantine Dupuy</p>
+        <p><a href="../index.html">Back to portfolio</a></p>
+      </div>
+    </footer>
+
+    <script src="../assets/vendor/chart.umd.min.js" defer></script>
+    <script src="../assets/js/charts.js?v=5a3b9db02e" defer></script>
+    <script src="../assets/js/projects/investech-hackathon.js?v=33fa4c63c8" defer></script>
+  </body>
+</html>

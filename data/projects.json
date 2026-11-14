@@ -2,12 +2,39 @@
   "_readme": "Single source of truth for project cards (index.html) and prev/next links (projects/*.html). After editing, run: python scripts/render.py",
   "projects": [
     {
+      "slug": "investech-hackathon",
+      "title": "InvestTech Hackathon",
+      "page": "projects/investech-hackathon.html",
+      "hook": "Should WSP Global join Onesheet’s Serial Acquirers & Consolidators index? A tool that answers with evidence, not a stock pitch.",
+      "keyResult": "Verdict: admit WSP. Revenue grew ~15% a year vs ~7% for index peers, and free cash flow per share still grew ~16% a year despite dilution",
+      "tags": [
+        "Python",
+        "Financial Analysis",
+        "Dashboard",
+        "API"
+      ],
+      "thumbnail": {
+        "base": "assets/img/projects/investech-hackathon-thumb",
+        "width": 960,
+        "height": 540,
+        "alt": "Dashboard decision page: verdict ADMIT, with peer quality, value per share and deal execution passing and index fit pending more data"
+      },
+      "repo": "https://github.com/Taganas2002/investech-hackathon-starter",
+      "demo": "https://investech-hackathon-starter.vercel.app",
+      "data": "Onesheet API, company filings, Dealroom"
+    },
+    {
       "slug": "quebec-funding",
       "title": "Predicting Quebec Startup Funding Round Size",
       "page": "projects/quebec-funding.html",
       "hook": "What predicts how much a Quebec startup raises in a single round?",
       "keyResult": "Tuned Random Forest: test RMSE $19.3M on 621 disclosed rounds; growth stage beats public backing as a predictor",
-      "tags": ["Python", "Machine Learning", "Regression", "scikit-learn"],
+      "tags": [
+        "Python",
+        "Machine Learning",
+        "Regression",
+        "scikit-learn"
+      ],
       "thumbnail": {
         "base": "assets/img/projects/quebec-funding-thumb",
         "width": 722,
@@ -23,7 +50,13 @@
       "page": "projects/causal-failures.html",
       "hook": "Does raising more money actually make a failing startup last longer?",
       "keyResult": "High funding adds about +2.2 years of lifespan (95% CI 1.6–2.8); losing to tech giants shows no detectable effect",
-      "tags": ["Python", "Causal Inference", "Machine Learning", "DoWhy", "CausalML"],
+      "tags": [
+        "Python",
+        "Causal Inference",
+        "Machine Learning",
+        "DoWhy",
+        "CausalML"
+      ],
       "thumbnail": {
         "base": "assets/img/projects/causal-failures-thumb",
         "width": 830,

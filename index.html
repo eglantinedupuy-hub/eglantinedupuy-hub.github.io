@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/site.css?v=69adac8626" />
+    <link rel="stylesheet" href="assets/css/site.css?v=4bcb323a24" />
   </head>
 
   <body>
@@ -436,6 +436,9 @@
             <!-- render:filters -->
             <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All</button>
             <button type="button" class="filter-btn" data-filter="python" aria-pressed="false">Python</button>
+            <button type="button" class="filter-btn" data-filter="financial-analysis" aria-pressed="false">Financial Analysis</button>
+            <button type="button" class="filter-btn" data-filter="dashboard" aria-pressed="false">Dashboard</button>
+            <button type="button" class="filter-btn" data-filter="api" aria-pressed="false">API</button>
             <button type="button" class="filter-btn" data-filter="machine-learning" aria-pressed="false">Machine Learning</button>
             <button type="button" class="filter-btn" data-filter="regression" aria-pressed="false">Regression</button>
             <button type="button" class="filter-btn" data-filter="scikit-learn" aria-pressed="false">scikit-learn</button>
@@ -447,6 +450,25 @@
         <p class="filter-status" role="status" aria-live="polite"></p>
         <ul class="cards">
             <!-- render:cards -->
+            <li class="card" data-tags="python financial-analysis dashboard api">
+              <div class="card-media">
+                <picture>
+                  <source srcset="assets/img/projects/investech-hackathon-thumb.webp" type="image/webp" />
+                  <img src="assets/img/projects/investech-hackathon-thumb.png" alt="Dashboard decision page: verdict ADMIT, with peer quality, value per share and deal execution passing and index fit pending more data" width="960" height="540" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title" id="card-investech-hackathon"><a class="card-link" href="projects/investech-hackathon.html">InvestTech Hackathon</a></h3>
+                <p class="card-hook">Should WSP Global join Onesheet’s Serial Acquirers &amp; Consolidators index? A tool that answers with evidence, not a stock pitch.</p>
+                <p class="card-result"><span class="visually-hidden">Key result: </span>Verdict: admit WSP. Revenue grew ~15% a year vs ~7% for index peers, and free cash flow per share still grew ~16% a year despite dilution</p>
+                <ul class="tag-list" aria-label="Tools and methods">
+                  <li class="tag">Python</li>
+                  <li class="tag">Financial Analysis</li>
+                  <li class="tag">Dashboard</li>
+                  <li class="tag">API</li>
+                </ul>
+              </div>
+            </li>
             <li class="card" data-tags="python machine-learning regression scikit-learn">
               <div class="card-media">
                 <picture>
