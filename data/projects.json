@@ -70,7 +70,7 @@
       "slug": "letterboxd-dashboard",
       "title": "Letterboxd Film Dashboard",
       "page": "https://letterboxd-dashboard-steel.vercel.app/",
-      "hook": "A live dashboard of my Letterboxd film diary: what I watch, how I rate, and when.",
+      "hook": "A live dashboard of my Letterboxd film diary, watching and rating stats as well as a personal tool to pick my next watch based on mood.",
       "keyResult": "241 films logged since 2023 at an average 3.53★; refreshes daily from my Letterboxd RSS feed and the TMDB API",
       "tags": [
         "Python",
