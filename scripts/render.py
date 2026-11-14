@@ -51,16 +51,21 @@ def picture(thumb, prefix=""):
     )
 
 
+def is_external(p):
+    return p["page"].startswith(("http://", "https://"))
+
+
 def card(p):
     tags = " ".join(slugify(t) for t in p["tags"])
     tag_items = "\n".join(f'      <li class="tag">{esc(t)}</li>' for t in p["tags"])
     title_id = f'card-{p["slug"]}'
+    ext = ' target="_blank" rel="noopener"' if is_external(p) else ""
     return f"""<li class="card" data-tags="{tags}">
   <div class="card-media">
 {indent_lines(picture(p["thumbnail"]), "    ")}
   </div>
   <div class="card-body">
-    <h3 class="card-title" id="{title_id}"><a class="card-link" href="{esc(p["page"])}">{esc(p["title"])}</a></h3>
+    <h3 class="card-title" id="{title_id}"><a class="card-link" href="{esc(p["page"])}"{ext}>{esc(p["title"])}</a></h3>
     <p class="card-hook">{esc(p["hook"])}</p>
     <p class="card-result"><span class="visually-hidden">Key result: </span>{esc(p["keyResult"])}</p>
     <ul class="tag-list" aria-label="Tools and methods">
@@ -95,6 +100,7 @@ def render_index(projects):
 
 
 def render_pages(projects):
+    projects = [p for p in projects if not is_external(p)]  # external demos have no page or pager
     n = len(projects)
     for i, p in enumerate(projects):
         path = ROOT / p["page"]
