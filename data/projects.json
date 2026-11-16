@@ -88,6 +88,29 @@
       "repo": "https://github.com/eglantinedupuy-hub/letterboxd-dashboard",
       "demo": "https://letterboxd-dashboard-steel.vercel.app/",
       "data": "Personal Letterboxd export + RSS, TMDB API"
+    },
+    {
+      "slug": "spotify-dashboard",
+      "title": "Spotify Listening Dashboard",
+      "page": "https://spotify-dashboard-ebon.vercel.app",
+      "hook": "A live dashboard of my Spotify listening history: charts over time, top artists and tracks, genres, listening habits and year-over-year totals.",
+      "keyResult": "827,800 minutes and 240,125 plays across 14,955 artists since 2013, built from my full Spotify streaming history, the Spotify Web API and Last.fm genres",
+      "tags": [
+        "Python",
+        "Next.js",
+        "TypeScript",
+        "Dashboard",
+        "API"
+      ],
+      "thumbnail": {
+        "base": "assets/img/projects/spotify-dashboard-thumb",
+        "width": 960,
+        "height": 540,
+        "alt": "Dashboard overview: minutes listened, plays, top artist and top track for this month and this year, plus current top artists and recently played songs"
+      },
+      "repo": "https://github.com/eglantinedupuy-hub/spotify-dashboard",
+      "demo": "https://spotify-dashboard-ebon.vercel.app",
+      "data": "Personal Spotify streaming history export, Spotify Web API, Last.fm"
     }
   ]
 }
