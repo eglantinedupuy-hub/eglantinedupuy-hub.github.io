@@ -70,7 +70,7 @@
       "slug": "spotify-dashboard",
       "title": "Spotify Listening Dashboard",
       "page": "https://spotify-dashboard-ebon.vercel.app",
-      "hook": "A live dashboard of my Spotify listening history as well as a tool to rediscover my liked but buried songs that I can filter and re-export to a new playlist in Spotify.",
+      "hook": "A live dashboard of my Spotify listening history as well as a tool to rediscover my liked but buried songs that I can filter and re-export to a new playlist in Spotify, supporting my DJ activity.",
       "keyResult": "827,800 minutes and 240,125 plays across 14,955 artists since 2013, built from my full Spotify streaming history, the Spotify Web API and Last.fm genres",
       "tags": [
         "Python",
