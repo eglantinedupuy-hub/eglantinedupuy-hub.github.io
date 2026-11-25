@@ -90,6 +90,29 @@
       "data": "Personal Spotify streaming history export, Spotify Web API, Last.fm"
     },
     {
+      "slug": "strava-dashboard",
+      "title": "Strava Running Dashboard",
+      "page": "https://strava-dashboard-lovat-one.vercel.app/",
+      "hook": "A dashboard of everything I've logged on Strava, plus a Kudos lab that models what actually gets my runs kudos.",
+      "keyResult": "226 activities and 1,931 km since 2024, including 179 runs; Poisson and logistic models on 2,142 kudos received",
+      "tags": [
+        "Python",
+        "Next.js",
+        "TypeScript",
+        "Dashboard",
+        "Regression"
+      ],
+      "thumbnail": {
+        "base": "assets/img/projects/strava-dashboard-thumb",
+        "width": 960,
+        "height": 540,
+        "alt": "Dashboard overview: total activities, distance, moving time, elevation and kudos received, above a stacked bar chart of kilometres per month"
+      },
+      "repo": "https://github.com/eglantinedupuy-hub/strava-dashboard",
+      "demo": "https://strava-dashboard-lovat-one.vercel.app/",
+      "data": "Personal Strava export (public activities only)"
+    },
+    {
       "slug": "letterboxd-dashboard",
       "title": "Letterboxd Film Dashboard",
       "page": "https://letterboxd-dashboard-steel.vercel.app/",
